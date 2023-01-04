@@ -1,0 +1,42 @@
+// 字型
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Noto+Sans+TC:wght@100;300;400;500;700;900&family=Varela&display=swap');
+$font: (
+    "BebasNeue": ('Bebas Neue', cursive),
+    "Varela": ('Varela', sans-serif),
+    "PingFang": ('PingFang TC', 'Noto Sans TC', sans-serif),
+);
+// 用法：
+// .f-Varela {
+//     font-family: map-get($font, Varela);
+// }
+
+
+// 字重
+$font-weight: (
+    "Thin": 100,
+    "Lite": 300,
+    "Regular": 400,
+    "Medium": 500,
+    "Bold": 700,
+    "Black": 900,
+);
+// 用法：
+// .fw-100 {
+//     font-weight: map-get($font-weight, Thin);
+// }
+
+
+// 字級
+$font-size: 1px !default;
+
+
+// 色彩定義
+$color: (
+    "primary": #7D0200,
+    "off-white": #E4E4E4,
+    "dark": #323232,
+);
+// 用法：
+// .primary {
+//     color: map-get($color, primary);
+// }

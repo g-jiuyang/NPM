@@ -1,0 +1,97 @@
+/* -- Components.scss -- */
+
+//　文字設定
+h2 {
+    @include font-size(128);
+    @include font(map-get($font, BebasNeue));
+    line-height: calc($font-size * 128);
+}
+
+.subtitle {
+    @include font-size(36);
+    @include font(map-get($font, Varela));
+    line-height: calc($font-size * 48);
+    text-transform: uppercase;
+}
+
+.content {
+    @include font-size(28);
+    @include font(map-get($font, Varela));
+    line-height: calc($font-size * 40);
+}
+
+.description {
+    @include font-size(24);
+    @include font(map-get($font, Varela));
+    line-height: calc($font-size * 36);
+}
+
+
+// Buttons
+button {
+    background-color: transparent;
+    border: 2px solid map-get($color, primary);
+    padding: 20px 40px;
+    @include font-size(24);
+    color: map-get($color, primary);
+    text-transform: uppercase;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all .2s ease-in-out;
+
+    &:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 100%;
+        bottom: 0;
+        left: -100%;
+        height: 100%;
+        background: linear-gradient(60deg, map-get($color, primary) 50%, transparent 51%);
+        transition: all .3s ease-in-out;
+        z-index: -1;
+    }
+
+    &:hover {
+        color: map-get($color, off-white);
+
+        &:after {
+            left: 0;
+            right: -120%;
+        }
+    }
+}
+
+
+/* Swiper Styles */
+// thumbs
+.swiper-pagination-bullet {
+    width: 14px;
+    height: 14px;
+    background-color: #D9D9D9;
+    opacity: 1;
+
+    &-active {
+        background-color: map-get($color, primary);
+    }
+}
+
+.swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+    margin: 0 6px;
+}
+
+.swiper-horizontal>.swiper-pagination-bullets {
+    bottom: 24px;
+}
+
+@media screen and (min-width: 1440px) {}
+
+
+@media screen and (max-width: 1024px) {}
+
+
+@media screen and (max-width: 767px) {}
+
+
+@media screen and (max-width: 320px) {}

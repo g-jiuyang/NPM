@@ -1,0 +1,45 @@
+// 字型+字重
+@mixin font($f: map-get($font, PingFang), $fw: map-get($font-weight, Regular), $fs: 28) {
+    font-family: $f;
+    font-weight: $fw;
+    font-size: calc($font-size * $fs);
+}
+
+// 用法：
+// .pingfang200 {
+//     @include font(map-get($font, PingFang), map-get($font-weight, Thin), 24);
+// }
+
+
+// 字級
+@mixin font-size($fs: 28) {
+    font-size: calc($font-size * $fs);
+}
+
+// 用法：
+// .fs {
+//     @include font-size(12);
+// }
+
+// 顏色
+@each $name,
+$color in $color {
+    .color-#{$name} {
+        color: $color;
+    }
+
+    .bg-#{$name} {
+        background-color: $color;
+    }
+}
+
+
+// 超連結顏色
+@mixin a-color($color, $hover: darken($color, 5%)) {
+    color: $color;
+    transition: color .5s;
+
+    &:hover {
+        color: $hover;
+    }
+}

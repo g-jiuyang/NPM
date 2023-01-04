@@ -1,0 +1,60 @@
+/* -- Global.scss -- */
+/* 反白選取樣式 */
+::-moz-selection {
+    background-color: rgba(map-get($color, primary), .9);
+    color: map-get($color, white);
+}
+
+::selection {
+    background-color: rgba(map-get($color, primary), .9);
+    color: map-get($color, white);
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+body {
+    @include font(map-get($font, Varela));
+    -webkit-tap-highlight-color: transparent;
+    @include font-size(28);
+    line-height: calc($font-size * 40);
+    background-color: map-get($color, off-white);
+}
+
+
+/* 文字設定 */
+h1 {
+    @include font(map-get($font, BebasNeue), map-get($font-weight, Regular), 220);
+    line-height: calc($font-size * 230);
+}
+
+p,
+span {
+    a {
+        color: map-get($color, dark);
+        text-decoration: underline;
+        transition: color .3s;
+
+        &:hover {
+            color: map-get($color, primary);
+        }
+    }
+}
+
+
+/* 圖片設定 */
+img {
+    max-width: 100%;
+}
+
+@media screen and (min-width: 1440px) {}
+
+
+@media screen and (max-width: 1024px) {}
+
+
+@media screen and (max-width: 767px) {}
+
+
+@media screen and (max-width: 320px) {}

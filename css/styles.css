@@ -1,0 +1,276 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Noto+Sans+TC:wght@100;300;400;500;700;900&family=Varela&display=swap");
+.color-primary {
+  color: #7D0200;
+}
+
+.bg-primary {
+  background-color: #7D0200;
+}
+
+.color-off-white {
+  color: #E4E4E4;
+}
+
+.bg-off-white {
+  background-color: #E4E4E4;
+}
+
+.color-dark {
+  color: #323232;
+}
+
+.bg-dark {
+  background-color: #323232;
+}
+
+/* -- Global.scss -- */
+/* 反白選取樣式 */
+::-moz-selection {
+  background-color: rgba(125, 2, 0, 0.9);
+}
+
+::selection {
+  background-color: rgba(125, 2, 0, 0.9);
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+  font-family: "Varela", sans-serif;
+  font-weight: 400;
+  font-size: 28px;
+  -webkit-tap-highlight-color: transparent;
+  font-size: 28px;
+  line-height: 40px;
+  background-color: #E4E4E4;
+}
+
+/* 文字設定 */
+h1 {
+  font-family: "Bebas Neue", cursive;
+  font-weight: 400;
+  font-size: 220px;
+  line-height: 230px;
+}
+
+p a,
+span a {
+  color: #323232;
+  text-decoration: underline;
+  transition: color 0.3s;
+}
+p a:hover,
+span a:hover {
+  color: #7D0200;
+}
+
+/* 圖片設定 */
+img {
+  max-width: 100%;
+}
+
+/* -- Layout.scss -- */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 5svh calc(50svw - 600px) 0;
+  height: 8svw;
+  max-height: 154px;
+  color: #E4E4E4;
+  z-index: 5;
+  transition: transform 0.3s ease-in-out;
+  -webkit-backdrop-filter: blur(20px);
+          backdrop-filter: blur(20px);
+  display: flex;
+}
+header.hidden {
+  transform: translateY(-100%);
+}
+header .main-logo {
+  flex: 1;
+  flex-grow: 0;
+}
+header .main-logo img {
+  max-width: 255px;
+}
+header .options {
+  flex: 3;
+  justify-content: flex-end;
+}
+header .nav {
+  font-family: "PingFang TC", "Noto Sans TC", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  flex: 3;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+header .nav li {
+  flex: 120px;
+}
+header .nav li a {
+  background: linear-gradient(60deg, #7D0200 50%, #323232 51%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 250% 100%;
+  background-position: 100%;
+  transition: all 0.5s ease-in-out;
+  cursor: pointer;
+}
+header .nav li a:hover {
+  background-position: 0 100%;
+}
+header .language {
+  flex: 1;
+}
+header .wallet {
+  flex: 1;
+}
+
+.full-cut {
+  height: 100svh;
+  overflow-y: auto;
+  -ms-scroll-snap-type: y mandatory;
+      scroll-snap-type: y mandatory;
+}
+.full-cut section {
+  height: 100svh;
+  width: 100%;
+  scroll-snap-align: center;
+}
+
+#main {
+  padding: 8svw calc(50svw - 600px);
+  font-size: 220px;
+  height: auto;
+  position: relative;
+}
+#main .banner {
+  position: absolute;
+  width: 50svw;
+  height: 28svw;
+  right: calc(50svw - 600px);
+  top: calc(8svh + 1.1em);
+}
+#main h1 {
+  margin-bottom: calc(28svw - 1.1em);
+}
+#main .subtitle {
+  width: 50svw;
+  margin-left: calc(1200px - 50svw);
+}
+
+#go-top {
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+  width: 84px;
+  height: 84px;
+  border-radius: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+  z-index: 5;
+}
+#go-top.hidden {
+  transform: translateY(200%);
+}
+#go-top img {
+  transition: filter 0.3s ease-in-out;
+}
+#go-top:hover img {
+  filter: brightness(0) invert(1);
+}
+
+/* -- Components.scss -- */
+h2 {
+  font-size: 128px;
+  font-family: "Bebas Neue", cursive;
+  font-weight: 400;
+  font-size: 28px;
+  line-height: 128px;
+}
+
+.subtitle {
+  font-size: 36px;
+  font-family: "Varela", sans-serif;
+  font-weight: 400;
+  font-size: 28px;
+  line-height: 48px;
+  text-transform: uppercase;
+}
+
+.content {
+  font-size: 28px;
+  font-family: "Varela", sans-serif;
+  font-weight: 400;
+  font-size: 28px;
+  line-height: 40px;
+}
+
+.description {
+  font-size: 24px;
+  font-family: "Varela", sans-serif;
+  font-weight: 400;
+  font-size: 28px;
+  line-height: 36px;
+}
+
+button {
+  background-color: transparent;
+  border: 2px solid #7D0200;
+  padding: 20px 40px;
+  font-size: 24px;
+  color: #7D0200;
+  text-transform: uppercase;
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.2s ease-in-out;
+}
+button:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 100%;
+  bottom: 0;
+  left: -100%;
+  height: 100%;
+  background: linear-gradient(60deg, #7D0200 50%, transparent 51%);
+  transition: all 0.3s ease-in-out;
+  z-index: -1;
+}
+button:hover {
+  color: #E4E4E4;
+}
+button:hover:after {
+  left: 0;
+  right: -120%;
+}
+
+/* Swiper Styles */
+.swiper-pagination-bullet {
+  width: 14px;
+  height: 14px;
+  background-color: #D9D9D9;
+  opacity: 1;
+}
+.swiper-pagination-bullet-active {
+  background-color: #7D0200;
+}
+
+.swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+  margin: 0 6px;
+}
+
+.swiper-horizontal > .swiper-pagination-bullets {
+  bottom: 24px;
+}
