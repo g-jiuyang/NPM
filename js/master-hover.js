@@ -1,41 +1,41 @@
-$(".div1").on({
+$(".master1").on({
   mouseenter: function () {
     console.log('hello');
-    $('.div2, .div3').addClass('widthlow');
-    $('.div1').addClass('widthmax');
+    $('.master2, .master3').addClass('widthlow');
+    $('.master1').addClass('widthmax');
     $(".widthmax").addClass('opacity');
   },
   mouseleave: function () {
-    $('.div2, .div3').removeClass('widthlow');
-    $('.div1').removeClass('widthmax');
-    $('.div1').removeClass('opacity');
+    $('.master2, .master3').removeClass('widthlow');
+    $('.master1').removeClass('widthmax');
+    $('.master1').removeClass('opacity');
   }
 });
 
-$(".div2").on({
+$(".master2").on({
   mouseenter: function () {
     console.log('hello');
-    $('.div1, .div3').addClass('widthlow');
-    $('.div2').addClass('widthmax');
+    $('.master1, .master3').addClass('widthlow');
+    $('.master2').addClass('widthmax');
     $('.widthmax').addClass('opacity');
   },
   mouseleave: function () {
-    $('.div1, .div3').removeClass('widthlow');
-    $('.div2').removeClass('widthmax');
-    $('.div2').removeClass('opacity');
+    $('.master1, .master3').removeClass('widthlow');
+    $('.master2').removeClass('widthmax');
+    $('.master2').removeClass('opacity');
   }
 });
 
-$(".div3").on({
+$(".master3").on({
   mouseenter: function () {
     console.log('hello');
-    $('.div1, .div2').addClass('widthlow');
-    $('.div3').addClass('widthmax');
+    $('.master1, .master2').addClass('widthlow');
+    $('.master3').addClass('widthmax');
     $('.widthmax').addClass('opacity');
   },
   mouseleave: function () {
-    $('.div1, .div2').removeClass('widthlow');
-    $('.div3').removeClass('widthmax');
-    $('.div3').removeClass('opacity');
+    $('.master1, .master2').removeClass('widthlow');
+    $('.master3').removeClass('widthmax');
+    $('.master3').removeClass('opacity');
   }
 });

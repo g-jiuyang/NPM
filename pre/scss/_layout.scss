@@ -130,24 +130,24 @@ header {
 
     .accord-wrapper {
         overflow: hidden;
-        height: 400px;
 
-        .div1,
-        .div2,
-        .div3 {
-            float: left;
+        .master1,
+        .master2,
+        .master3 {
             transition: width 0.5s ease-in-out;
             transform: skew(0, 0);
-            background-color: transparent;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: calc(50svw * .76);
         }
     }
 
-    .div1,
-    .div2,
-    .div3 {
+    .master1,
+    .master2,
+    .master3 {
+        background-position: center;
+        background-repeat: no-repeat;
+        // background-size: calc(50svw * .76);
+        background-size: cover;
+        float: left;
+        height: 25svw;
         width: 33.333%;
         filter: grayscale(1);
     }
@@ -162,25 +162,24 @@ header {
         filter: grayscale(0);
 
         &:hover {
-            .smoky {
+            .intro {
                 opacity: 1;
                 transform: translateY(0);
                 transition-property: opacity, transform;
                 transition-duration: .5s;
-                transition-delay: .5s;
+                transition-delay: .3s;
             }
         }
     }
 
     .accord-content {
-        color: #fff;
-        padding: 35px;
-        height: 400px;
+        color: map-get($color, off-white);
+        height: 100%;
         display: flex;
         align-items: flex-end;
         position: relative;
 
-        .smoky {
+        .intro {
             transform: translateY(100%);
             position: absolute;
             left: 0;
@@ -188,12 +187,19 @@ header {
             bottom: 0;
             opacity: 0;
             height: 38%;
-            padding: 50px 0 24px 36px;
+            padding: 24px 36px;
             background: linear-gradient(to bottom, transparent 0%, map-get($color, primary) 100%);
+            display: flex;
+            flex-wrap: wrap;
+            align-items: flex-end;
+
+            p {
+                flex: 100%;
+            }
         }
     }
 
-    .div1 {
+    .master1 {
         background-image: url(../img/master01.jpg);
 
         .accord-content {
@@ -211,7 +217,7 @@ header {
         }
     }
 
-    .div2 {
+    .master2 {
         background-image: url(../img/master02.jpg);
 
         .accord-content {
@@ -230,7 +236,7 @@ header {
         }
     }
 
-    .div3 {
+    .master3 {
         background-image: url(../img/master03.jpg);
 
         .accord-content {

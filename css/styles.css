@@ -189,22 +189,21 @@ header .wallet {
 }
 #master .accord-wrapper {
   overflow: hidden;
-  height: 400px;
 }
-#master .accord-wrapper .div1,
-#master .accord-wrapper .div2,
-#master .accord-wrapper .div3 {
-  float: left;
+#master .accord-wrapper .master1,
+#master .accord-wrapper .master2,
+#master .accord-wrapper .master3 {
   transition: width 0.5s ease-in-out;
   transform: skew(0, 0);
-  background-color: transparent;
+}
+#master .master1,
+#master .master2,
+#master .master3 {
   background-position: center;
   background-repeat: no-repeat;
-  background-size: 38svw;
-}
-#master .div1,
-#master .div2,
-#master .div3 {
+  background-size: cover;
+  float: left;
+  height: 25svw;
   width: 33.333%;
   filter: grayscale(1);
 }
@@ -216,22 +215,21 @@ header .wallet {
   transition: width 1s;
   filter: grayscale(0);
 }
-#master .widthmax:hover .smoky {
+#master .widthmax:hover .intro {
   opacity: 1;
   transform: translateY(0);
   transition-property: opacity, transform;
   transition-duration: 0.5s;
-  transition-delay: 0.5s;
+  transition-delay: 0.3s;
 }
 #master .accord-content {
-  color: #fff;
-  padding: 35px;
-  height: 400px;
+  color: #E4E4E4;
+  height: 100%;
   display: flex;
   align-items: flex-end;
   position: relative;
 }
-#master .accord-content .smoky {
+#master .accord-content .intro {
   transform: translateY(100%);
   position: absolute;
   left: 0;
@@ -239,17 +237,23 @@ header .wallet {
   bottom: 0;
   opacity: 0;
   height: 38%;
-  padding: 50px 0 24px 36px;
+  padding: 24px 36px;
   background: linear-gradient(to bottom, transparent 0%, #7D0200 100%);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
 }
-#master .div1 {
+#master .accord-content .intro p {
+  flex: 100%;
+}
+#master .master1 {
   background-image: url(../img/master01.jpg);
 }
-#master .div1 .accord-content {
+#master .master1 .accord-content {
   position: relative;
   z-index: 1;
 }
-#master .div1:before {
+#master .master1:before {
   content: "";
   position: absolute;
   bottom: 0;
@@ -257,15 +261,15 @@ header .wallet {
   height: 100%;
   width: calc(100% + 60px);
 }
-#master .div2 {
+#master .master2 {
   background-image: url(../img/master02.jpg);
 }
-#master .div2 .accord-content {
+#master .master2 .accord-content {
   background: none;
   position: relative;
   z-index: 1;
 }
-#master .div2:before {
+#master .master2:before {
   content: "";
   position: absolute;
   top: 0;
@@ -273,15 +277,15 @@ header .wallet {
   height: 100%;
   width: 100%;
 }
-#master .div3 {
+#master .master3 {
   background-image: url(../img/master03.jpg);
 }
-#master .div3 .accord-content {
+#master .master3 .accord-content {
   background: none;
   position: relative;
   z-index: 1;
 }
-#master .div3:after {
+#master .master3:after {
   content: "";
   position: absolute;
   bottom: 0;
