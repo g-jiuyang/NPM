@@ -148,7 +148,7 @@ header .wallet {
 #main {
   padding: 8svw calc(50svw - 600px);
   font-size: 220px;
-  height: auto;
+  overflow-y: scroll;
   position: relative;
 }
 #main .banner {
@@ -164,6 +164,261 @@ header .wallet {
 #main .subtitle {
   width: 50svw;
   margin-left: calc(1200px - 50svw);
+}
+
+#master {
+  position: relative;
+  padding: 160px calc(50svw - 600px);
+  line-height: 128px;
+}
+#master h2 {
+  position: relative;
+}
+#master h2:after {
+  content: url(../img/dot.png);
+  position: absolute;
+  top: 30px;
+  left: -30px;
+}
+#master .container {
+  position: absolute;
+  width: 50svw;
+  height: 25svw;
+  right: calc(50svw - 600px);
+  top: 368px;
+}
+#master .accord-wrapper {
+  overflow: hidden;
+  height: 400px;
+}
+#master .accord-wrapper .div1,
+#master .accord-wrapper .div2,
+#master .accord-wrapper .div3 {
+  float: left;
+  transition: width 0.5s ease-in-out;
+  transform: skew(0, 0);
+  background-color: transparent;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 38svw;
+}
+#master .div1,
+#master .div2,
+#master .div3 {
+  width: 33.333%;
+  filter: grayscale(1);
+}
+#master .widthlow {
+  width: 17%;
+}
+#master .widthmax {
+  width: 66%;
+  transition: width 1s;
+  filter: grayscale(0);
+}
+#master .widthmax:hover .smoky {
+  opacity: 1;
+  transform: translateY(0);
+  transition-property: opacity, transform;
+  transition-duration: 0.5s;
+  transition-delay: 0.5s;
+}
+#master .accord-content {
+  color: #fff;
+  padding: 35px;
+  height: 400px;
+  display: flex;
+  align-items: flex-end;
+  position: relative;
+}
+#master .accord-content .smoky {
+  transform: translateY(100%);
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+  height: 38%;
+  padding: 50px 0 24px 36px;
+  background: linear-gradient(to bottom, transparent 0%, #7D0200 100%);
+}
+#master .div1 {
+  background-image: url(../img/master01.jpg);
+}
+#master .div1 .accord-content {
+  position: relative;
+  z-index: 1;
+}
+#master .div1:before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: -74px;
+  height: 100%;
+  width: calc(100% + 60px);
+}
+#master .div2 {
+  background-image: url(../img/master02.jpg);
+}
+#master .div2 .accord-content {
+  background: none;
+  position: relative;
+  z-index: 1;
+}
+#master .div2:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+#master .div3 {
+  background-image: url(../img/master03.jpg);
+}
+#master .div3 .accord-content {
+  background: none;
+  position: relative;
+  z-index: 1;
+}
+#master .div3:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: -74px;
+  height: 100%;
+  width: calc(100% + 60px);
+}
+#master .bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100svw;
+  height: 100svh;
+  z-index: 0;
+}
+#master .bg span {
+  position: absolute;
+  background-color: #E4E4E4;
+  -webkit-animation: breath 5s infinite;
+          animation: breath 5s infinite;
+}
+#master .bg span:first-child {
+  width: 4svw;
+  height: 4svw;
+  top: 30.5svw;
+  left: 16.5svw;
+  z-index: 5;
+  -webkit-animation-name: breath-f;
+          animation-name: breath-f;
+}
+#master .bg span:nth-child(2) {
+  width: 9.5svw;
+  height: 9.5svw;
+  top: 32.5svw;
+  left: 10svw;
+}
+#master .bg span:nth-child(3) {
+  width: 5svw;
+  height: 5svw;
+  top: 40.5svw;
+  left: 18svw;
+}
+#master .bg span:nth-child(4) {
+  width: 7svw;
+  height: 7svw;
+  top: 4.5svw;
+  right: 14svw;
+  z-index: 5;
+  -webkit-animation-name: breath-f;
+          animation-name: breath-f;
+}
+#master .bg span:nth-child(5) {
+  width: 5svw;
+  height: 5svw;
+  top: 9.5svw;
+  right: 10svw;
+}
+#master .bg span:nth-child(6) {
+  width: 2.5svw;
+  height: 2.5svw;
+  top: 15.5svw;
+  right: 14svw;
+  z-index: 5;
+  -webkit-animation-name: breath-f;
+          animation-name: breath-f;
+}
+#master .bg span:nth-child(7) {
+  width: 3svw;
+  height: 3svw;
+  top: 17.5svw;
+  right: 12svw;
+  z-index: 5;
+  -webkit-animation-name: breath-f;
+          animation-name: breath-f;
+}
+@-webkit-keyframes breath {
+  5% {
+    box-shadow: 0 0 20px transparent;
+  }
+  60% {
+    box-shadow: 0 0 20px rgba(50, 50, 50, 0.12);
+  }
+  65% {
+    box-shadow: 0 0 20px rgba(50, 50, 50, 0.12);
+  }
+  95% {
+    box-shadow: 0 0 20px transparent;
+  }
+}
+@keyframes breath {
+  5% {
+    box-shadow: 0 0 20px transparent;
+  }
+  60% {
+    box-shadow: 0 0 20px rgba(50, 50, 50, 0.12);
+  }
+  65% {
+    box-shadow: 0 0 20px rgba(50, 50, 50, 0.12);
+  }
+  95% {
+    box-shadow: 0 0 20px transparent;
+  }
+}
+@-webkit-keyframes breath-f {
+  5% {
+    box-shadow: 0 0 20px transparent;
+  }
+  25% {
+    box-shadow: 0 0 20px rgba(50, 50, 50, 0.12);
+  }
+  75% {
+    box-shadow: 0 0 20px rgba(50, 50, 50, 0.12);
+  }
+  95% {
+    box-shadow: 0 0 20px transparent;
+  }
+}
+@keyframes breath-f {
+  5% {
+    box-shadow: 0 0 20px transparent;
+  }
+  25% {
+    box-shadow: 0 0 20px rgba(50, 50, 50, 0.12);
+  }
+  75% {
+    box-shadow: 0 0 20px rgba(50, 50, 50, 0.12);
+  }
+  95% {
+    box-shadow: 0 0 20px transparent;
+  }
+}
+
+#about {
+  position: relative;
+  padding: 160px calc(50svw - 600px);
+  background-image: url(../img/p-About.jpg);
+  background-size: 100%;
 }
 
 #go-top {
@@ -185,6 +440,7 @@ header .wallet {
 }
 #go-top img {
   transition: filter 0.3s ease-in-out;
+  max-width: initial;
 }
 #go-top:hover img {
   filter: brightness(0) invert(1);
@@ -192,24 +448,21 @@ header .wallet {
 
 /* -- Components.scss -- */
 h2 {
-  font-size: 128px;
   font-family: "Bebas Neue", cursive;
   font-weight: 400;
-  font-size: 28px;
+  font-size: 128px;
   line-height: 128px;
 }
 
 .subtitle {
-  font-size: 36px;
   font-family: "Varela", sans-serif;
   font-weight: 400;
-  font-size: 28px;
+  font-size: 36px;
   line-height: 48px;
   text-transform: uppercase;
 }
 
 .content {
-  font-size: 28px;
   font-family: "Varela", sans-serif;
   font-weight: 400;
   font-size: 28px;
@@ -217,10 +470,9 @@ h2 {
 }
 
 .description {
-  font-size: 24px;
   font-family: "Varela", sans-serif;
   font-weight: 400;
-  font-size: 28px;
+  font-size: 24px;
   line-height: 36px;
 }
 

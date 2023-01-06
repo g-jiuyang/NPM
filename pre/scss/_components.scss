@@ -2,27 +2,23 @@
 
 //　文字設定
 h2 {
-    @include font-size(128);
-    @include font(map-get($font, BebasNeue));
+    @include font(map-get($font, BebasNeue), 400, 128);
     line-height: calc($font-size * 128);
 }
 
 .subtitle {
-    @include font-size(36);
-    @include font(map-get($font, Varela));
+    @include font(map-get($font, Varela), 400, 36);
     line-height: calc($font-size * 48);
     text-transform: uppercase;
 }
 
 .content {
-    @include font-size(28);
-    @include font(map-get($font, Varela));
+    @include font(map-get($font, Varela), 400, 28);
     line-height: calc($font-size * 40);
 }
 
 .description {
-    @include font-size(24);
-    @include font(map-get($font, Varela));
+    @include font(map-get($font, Varela), 400, 24);
     line-height: calc($font-size * 36);
 }
 

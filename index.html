@@ -23,15 +23,15 @@
 	<header>
 		<a class="main-logo" href="#"><img src="img/logoX.png"></a>
 		<!-- <div class="options">
-			<ul class="nav">
-				<li><a href="">about</a></li>
-				<li><a href="">how to mint</a></li>
-				<li><a href="">faq</a></li>
-				<li><a href="">master plan</a></li>
-			</ul>
-			<div class="language">language</div>
-			<button class="wallet">wallet</button>
-		</div> -->
+				<ul class="nav">
+					<li><a href="">about</a></li>
+					<li><a href="">how to mint</a></li>
+					<li><a href="">faq</a></li>
+					<li><a href="">master plan</a></li>
+				</ul>
+				<div class="language">language</div>
+				<button class="wallet">wallet</button>
+			</div> -->
 	</header>
 	<div class="full-cut">
 		<section id="main">
@@ -52,8 +52,41 @@
 			</div>
 			<p class="subtitle">Get a 3D NFT model, chance to get customized collection, ticket, valuable painting.</p>
 		</section>
-		<section id="master" style="filter: brightness(30%);">
-			<img src="img/p-Master.jpg">
+		<section id="master">
+			<div class="bg">
+				<span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+			</div>
+			<h2>International<br>Master</h2>
+			<div class="container">
+				<div class="row">
+					<div class="accord-wrapper">
+						<div class="div1">
+							<div class="accord-content">
+								<div class="smoky">
+									<p class="subtitle">龐均</p>
+									<p class="description">Short description</p>
+								</div>
+							</div>
+						</div>
+						<div class="div2">
+							<div class="accord-content">
+								<div class="smoky">
+									<p class="subtitle">龐均</p>
+									<p class="description">Short description</p>
+								</div>
+							</div>
+						</div>
+						<div class="div3">
+							<div class="accord-content">
+								<div class="smoky">
+									<p class="subtitle">龐均</p>
+									<p class="description">Short description</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
 		</section>
 		<section id="about" style="filter: brightness(30%);">
 			<img src="img/p-About.jpg">
@@ -73,30 +106,33 @@
 		<section id="partner" style="filter: brightness(30%);">
 			<img src="img/p-Partner.jpg">
 		</section>
-		<!-- <button id="go-top" class="hidden"><img src="img/icon/arrow.svg"></button> -->
+		<button id="go-top" class="hidden"><img src="img/icon/arrow.svg"></button>
 		<footer>
 			footer
 		</footer>
 	</div>
+
+
+	<!-- jQuery -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+	<script src="js/header-hide.js"></script>
+	<script src="js/master-hover.js"></script>
+	<script src="js/go-top.js"></script>
+
+	<!-- Swiper 套件 -->
+	<script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+	<script type="text/javascript">
+		// 圖片輪播
+		var Swiper = new Swiper('.swiper', {
+			slidesPerView: 'auto',
+			spaceBetween: 30,
+			pagination: {
+				el: '.swiper-pagination',
+				clickable: true,
+			},
+		});
+	</script>
 </body>
-
-
-<!-- jQuery -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<script src="js/header-hide.js"></script>
-
-<!-- Swiper 套件 -->
-<script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
-<script type="text/javascript">
-	// 圖片輪播
-	var Swiper = new Swiper('.swiper', {
-		slidesPerView: 'auto',
-		spaceBetween: 30,
-		pagination: {
-			el: '.swiper-pagination',
-			clickable: true,
-		},
-	});
-</script>
 
 </html>

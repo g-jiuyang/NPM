@@ -83,7 +83,7 @@ header {
 #main {
     padding: 8svw calc(50svw - 600px);
     @include font-size(220);
-    height: auto;
+    overflow-y: scroll;
     position: relative;
 
     .banner {
@@ -102,6 +102,267 @@ header {
         width: 50svw;
         margin-left: calc(1200px - 50svw);
     }
+}
+
+#master {
+    position: relative;
+    padding: 160px calc(50svw - 600px);
+    line-height: 128px;
+
+    h2 {
+        position: relative;
+
+        &:after {
+            content: url(../img/dot.png);
+            position: absolute;
+            top: 30px;
+            left: -30px;
+        }
+    }
+
+    .container {
+        position: absolute;
+        width: 50svw;
+        height: 25svw;
+        right: calc(50svw - 600px);
+        top: 368px;
+    }
+
+    .accord-wrapper {
+        overflow: hidden;
+        height: 400px;
+
+        .div1,
+        .div2,
+        .div3 {
+            float: left;
+            transition: width 0.5s ease-in-out;
+            transform: skew(0, 0);
+            background-color: transparent;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: calc(50svw * .76);
+        }
+    }
+
+    .div1,
+    .div2,
+    .div3 {
+        width: 33.333%;
+        filter: grayscale(1);
+    }
+
+    .widthlow {
+        width: 17%;
+    }
+
+    .widthmax {
+        width: 66%;
+        transition: width 1s;
+        filter: grayscale(0);
+
+        &:hover {
+            .smoky {
+                opacity: 1;
+                transform: translateY(0);
+                transition-property: opacity, transform;
+                transition-duration: .5s;
+                transition-delay: .5s;
+            }
+        }
+    }
+
+    .accord-content {
+        color: #fff;
+        padding: 35px;
+        height: 400px;
+        display: flex;
+        align-items: flex-end;
+        position: relative;
+
+        .smoky {
+            transform: translateY(100%);
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            opacity: 0;
+            height: 38%;
+            padding: 50px 0 24px 36px;
+            background: linear-gradient(to bottom, transparent 0%, map-get($color, primary) 100%);
+        }
+    }
+
+    .div1 {
+        background-image: url(../img/master01.jpg);
+
+        .accord-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        &:before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: -74px;
+            height: 100%;
+            width: calc(100% + 60px);
+        }
+    }
+
+    .div2 {
+        background-image: url(../img/master02.jpg);
+
+        .accord-content {
+            background: none;
+            position: relative;
+            z-index: 1;
+        }
+
+        &:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+        }
+    }
+
+    .div3 {
+        background-image: url(../img/master03.jpg);
+
+        .accord-content {
+            background: none;
+            position: relative;
+            z-index: 1;
+        }
+
+        &:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: -74px;
+            height: 100%;
+            width: calc(100% + 60px);
+        }
+    }
+
+    .bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100svw;
+        height: 100svh;
+        z-index: 0;
+
+        span {
+            position: absolute;
+            background-color: map-get($color, off-white);
+            animation: breath 5s infinite;
+
+            &:first-child {
+                width: 4svw;
+                height: 4svw;
+                top: 30.5svw;
+                left: 16.5svw;
+                z-index: 5;
+                animation-name: breath-f;
+            }
+
+            &:nth-child(2) {
+                width: 9.5svw;
+                height: 9.5svw;
+                top: 32.5svw;
+                left: 10svw;
+            }
+
+            &:nth-child(3) {
+                width: 5svw;
+                height: 5svw;
+                top: 40.5svw;
+                left: 18svw;
+            }
+
+            &:nth-child(4) {
+                width: 7svw;
+                height: 7svw;
+                top: 4.5svw;
+                right: 14svw;
+                z-index: 5;
+                animation-name: breath-f;
+            }
+
+            &:nth-child(5) {
+                width: 5svw;
+                height: 5svw;
+                top: 9.5svw;
+                right: 10svw;
+            }
+
+            &:nth-child(6) {
+                width: 2.5svw;
+                height: 2.5svw;
+                top: 15.5svw;
+                right: 14svw;
+                z-index: 5;
+                animation-name: breath-f;
+            }
+
+            &:nth-child(7) {
+                width: 3svw;
+                height: 3svw;
+                top: 17.5svw;
+                right: 12svw;
+                z-index: 5;
+                animation-name: breath-f;
+            }
+        }
+    }
+
+    @keyframes breath {
+        5% {
+            box-shadow: 0 0 20px transparent;
+        }
+
+        60% {
+            box-shadow: 0 0 20px rgba(map-get($color, dark), .12);
+        }
+
+        65% {
+            box-shadow: 0 0 20px rgba(map-get($color, dark), .12);
+        }
+
+        95% {
+            box-shadow: 0 0 20px transparent;
+        }
+    }
+
+    @keyframes breath-f {
+        5% {
+            box-shadow: 0 0 20px transparent;
+        }
+
+        25% {
+            box-shadow: 0 0 20px rgba(map-get($color, dark), .12);
+        }
+
+        75% {
+            box-shadow: 0 0 20px rgba(map-get($color, dark), .12);
+        }
+
+        95% {
+            box-shadow: 0 0 20px transparent;
+        }
+    }
+}
+
+#about {
+    position: relative;
+    padding: 160px calc(50svw - 600px);
+    background-image: url(../img/p-About.jpg);
+    background-size: 100%;
 }
 
 #go-top {
@@ -123,6 +384,7 @@ header {
 
     img {
         transition: filter .3s ease-in-out;
+        max-width: initial;
     }
 
     &:hover {

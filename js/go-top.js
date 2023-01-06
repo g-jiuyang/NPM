@@ -1,13 +1,10 @@
-var $window = $(window);
-var $fullCut = $('.full-cut');
-var goTop = $('#go-top');
-
 $('#go-top').click(function () {
-	$window.animate({
-		scrollTop: 0
-	}, 'fast');
-
-	$fullCut.animate({
-		scrollTop: 0
-	}, 'fast');
-})
+	$('html,body').animate({ scrollTop: 0 }, 300);
+});
+$(window).scroll(function () {
+	if ($(this).scrollTop() > 300) {
+		$('#go-top').removeClass('hidden');
+	} else {
+		$('#go-top').addClass('hidden');
+	}
+}).scroll();
