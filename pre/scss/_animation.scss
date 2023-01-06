@@ -1,0 +1,47 @@
+/* -- animation.scss -- */
+
+@keyframes breath {
+    5% {
+        box-shadow: 0 0 20px transparent;
+    }
+
+    65% {
+        box-shadow: 0 0 20px rgba(map-get($color, dark), .12);
+    }
+
+    70% {
+        box-shadow: 0 0 20px rgba(map-get($color, dark), .12);
+    }
+
+    95% {
+        box-shadow: 0 0 20px transparent;
+    }
+}
+
+@keyframes breath-f {
+    5% {
+        box-shadow: 0 0 20px transparent;
+    }
+
+    30% {
+        box-shadow: 0 0 20px rgba(map-get($color, dark), .12);
+    }
+
+    80% {
+        box-shadow: 0 0 20px rgba(map-get($color, dark), .12);
+    }
+
+    95% {
+        box-shadow: 0 0 20px transparent;
+    }
+}
+
+@keyframes deco-round {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(359deg);
+    }
+}

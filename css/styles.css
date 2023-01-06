@@ -24,6 +24,79 @@
   background-color: #323232;
 }
 
+/* -- animation.scss -- */
+@-webkit-keyframes breath {
+  5% {
+    box-shadow: 0 0 20px transparent;
+  }
+  65% {
+    box-shadow: 0 0 20px rgba(50, 50, 50, 0.12);
+  }
+  70% {
+    box-shadow: 0 0 20px rgba(50, 50, 50, 0.12);
+  }
+  95% {
+    box-shadow: 0 0 20px transparent;
+  }
+}
+@keyframes breath {
+  5% {
+    box-shadow: 0 0 20px transparent;
+  }
+  65% {
+    box-shadow: 0 0 20px rgba(50, 50, 50, 0.12);
+  }
+  70% {
+    box-shadow: 0 0 20px rgba(50, 50, 50, 0.12);
+  }
+  95% {
+    box-shadow: 0 0 20px transparent;
+  }
+}
+@-webkit-keyframes breath-f {
+  5% {
+    box-shadow: 0 0 20px transparent;
+  }
+  30% {
+    box-shadow: 0 0 20px rgba(50, 50, 50, 0.12);
+  }
+  80% {
+    box-shadow: 0 0 20px rgba(50, 50, 50, 0.12);
+  }
+  95% {
+    box-shadow: 0 0 20px transparent;
+  }
+}
+@keyframes breath-f {
+  5% {
+    box-shadow: 0 0 20px transparent;
+  }
+  30% {
+    box-shadow: 0 0 20px rgba(50, 50, 50, 0.12);
+  }
+  80% {
+    box-shadow: 0 0 20px rgba(50, 50, 50, 0.12);
+  }
+  95% {
+    box-shadow: 0 0 20px transparent;
+  }
+}
+@-webkit-keyframes deco-round {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(359deg);
+  }
+}
+@keyframes deco-round {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(359deg);
+  }
+}
 /* -- Global.scss -- */
 /* 反白選取樣式 */
 ::-moz-selection {
@@ -166,6 +239,23 @@ header .wallet {
   margin-left: calc(1200px - 50svw);
 }
 
+#master .bg,
+#about .bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100svw;
+  height: 100svh;
+  z-index: -1;
+}
+#master .bg span,
+#about .bg span {
+  position: absolute;
+  background-color: #E4E4E4;
+  -webkit-animation: breath 5s infinite;
+          animation: breath 5s infinite;
+}
+
 #master {
   position: relative;
   padding: 8svw calc(50svw - 600px);
@@ -293,20 +383,6 @@ header .wallet {
   height: 100%;
   width: calc(100% + 60px);
 }
-#master .bg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100svw;
-  height: 100svh;
-  z-index: 0;
-}
-#master .bg span {
-  position: absolute;
-  background-color: #E4E4E4;
-  -webkit-animation: breath 5s infinite;
-          animation: breath 5s infinite;
-}
 #master .bg span:first-child {
   width: 4svw;
   height: 4svw;
@@ -361,68 +437,77 @@ header .wallet {
   -webkit-animation-name: breath-f;
           animation-name: breath-f;
 }
-@-webkit-keyframes breath {
-  5% {
-    box-shadow: 0 0 20px transparent;
-  }
-  60% {
-    box-shadow: 0 0 20px rgba(50, 50, 50, 0.12);
-  }
-  65% {
-    box-shadow: 0 0 20px rgba(50, 50, 50, 0.12);
-  }
-  95% {
-    box-shadow: 0 0 20px transparent;
-  }
-}
-@keyframes breath {
-  5% {
-    box-shadow: 0 0 20px transparent;
-  }
-  60% {
-    box-shadow: 0 0 20px rgba(50, 50, 50, 0.12);
-  }
-  65% {
-    box-shadow: 0 0 20px rgba(50, 50, 50, 0.12);
-  }
-  95% {
-    box-shadow: 0 0 20px transparent;
-  }
-}
-@-webkit-keyframes breath-f {
-  5% {
-    box-shadow: 0 0 20px transparent;
-  }
-  25% {
-    box-shadow: 0 0 20px rgba(50, 50, 50, 0.12);
-  }
-  75% {
-    box-shadow: 0 0 20px rgba(50, 50, 50, 0.12);
-  }
-  95% {
-    box-shadow: 0 0 20px transparent;
-  }
-}
-@keyframes breath-f {
-  5% {
-    box-shadow: 0 0 20px transparent;
-  }
-  25% {
-    box-shadow: 0 0 20px rgba(50, 50, 50, 0.12);
-  }
-  75% {
-    box-shadow: 0 0 20px rgba(50, 50, 50, 0.12);
-  }
-  95% {
-    box-shadow: 0 0 20px transparent;
-  }
-}
 
 #about {
   position: relative;
-  padding: 160px calc(50svw - 600px);
-  background-image: url(../img/p-About.jpg);
-  background-size: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 calc(50svw - 600px);
+}
+#about .subtitle {
+  width: 35svw;
+  padding-bottom: 56px;
+}
+#about .blindbox {
+  position: relative;
+}
+#about .blindbox img {
+  border-radius: 100px;
+}
+#about .blindbox:after {
+  content: url(../img/deco-outline.png);
+  position: absolute;
+  top: -150px;
+  left: -150px;
+  z-index: -1;
+  -webkit-animation: deco-round 15s linear infinite;
+          animation: deco-round 15s linear infinite;
+}
+#about .bg span:first-child {
+  width: 13svw;
+  height: 13svw;
+  top: 8svw;
+  left: 8svw;
+}
+#about .bg span:nth-child(2) {
+  width: 5svw;
+  height: 5svw;
+  top: 6.5svw;
+  left: 18.5svw;
+  z-index: 5;
+  -webkit-animation-name: breath-f;
+          animation-name: breath-f;
+}
+#about .bg span:nth-child(3) {
+  width: 4.5svw;
+  height: 4.5svw;
+  bottom: 6svw;
+  left: 12svw;
+  z-index: 5;
+  -webkit-animation-name: breath-f;
+          animation-name: breath-f;
+}
+#about .bg span:nth-child(4) {
+  width: 5svw;
+  height: 5svw;
+  bottom: 2.5svw;
+  left: 15.5svw;
+}
+#about .bg span:nth-child(5) {
+  width: 9.5svw;
+  height: 9.5svw;
+  bottom: 3.5svw;
+  right: 9.5svw;
+}
+#about .bg span:nth-child(6) {
+  width: 5svw;
+  height: 5svw;
+  bottom: 2.5svw;
+  right: 16.5svw;
+  z-index: 5;
+  -webkit-animation-name: breath-f;
+          animation-name: breath-f;
 }
 
 #go-top {
@@ -483,6 +568,7 @@ h2 {
 button {
   background-color: transparent;
   border: 2px solid #7D0200;
+  border-radius: 100px;
   padding: 20px 40px;
   font-size: 24px;
   color: #7D0200;
@@ -490,7 +576,7 @@ button {
   position: relative;
   cursor: pointer;
   overflow: hidden;
-  transition: all 0.2s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 button:after {
   content: "";
@@ -501,7 +587,7 @@ button:after {
   left: -100%;
   height: 100%;
   background: linear-gradient(60deg, #7D0200 50%, transparent 51%);
-  transition: all 0.3s ease-in-out;
+  transition: all 0.4s ease-in-out;
   z-index: -1;
 }
 button:hover {

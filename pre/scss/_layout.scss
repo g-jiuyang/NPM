@@ -104,6 +104,24 @@ header {
     }
 }
 
+#master,
+#about {
+    .bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100svw;
+        height: 100svh;
+        z-index: -1;
+
+        span {
+            position: absolute;
+            background-color: map-get($color, off-white);
+            animation: breath 5s infinite;
+        }
+    }
+}
+
 #master {
     position: relative;
     padding: 8svw calc(50svw - 600px);
@@ -256,18 +274,7 @@ header {
     }
 
     .bg {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100svw;
-        height: 100svh;
-        z-index: 0;
-
         span {
-            position: absolute;
-            background-color: map-get($color, off-white);
-            animation: breath 5s infinite;
-
             &:first-child {
                 width: 4svw;
                 height: 4svw;
@@ -326,49 +333,88 @@ header {
             }
         }
     }
-
-    @keyframes breath {
-        5% {
-            box-shadow: 0 0 20px transparent;
-        }
-
-        60% {
-            box-shadow: 0 0 20px rgba(map-get($color, dark), .12);
-        }
-
-        65% {
-            box-shadow: 0 0 20px rgba(map-get($color, dark), .12);
-        }
-
-        95% {
-            box-shadow: 0 0 20px transparent;
-        }
-    }
-
-    @keyframes breath-f {
-        5% {
-            box-shadow: 0 0 20px transparent;
-        }
-
-        25% {
-            box-shadow: 0 0 20px rgba(map-get($color, dark), .12);
-        }
-
-        75% {
-            box-shadow: 0 0 20px rgba(map-get($color, dark), .12);
-        }
-
-        95% {
-            box-shadow: 0 0 20px transparent;
-        }
-    }
 }
 
 #about {
     position: relative;
-    padding: 160px calc(50svw - 600px);
-    background-image: url(../img/p-About.jpg);
-    background-size: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 calc(50svw - 600px);
+
+    .subtitle {
+        width: 35svw;
+        padding-bottom: 56px;
+    }
+
+    .blindbox {
+        position: relative;
+
+        img {
+            border-radius: 100px;
+        }
+
+        &:after {
+            content: url(../img/deco-outline.png);
+            position: absolute;
+            top: -150px;
+            left: -150px;
+            z-index: -1;
+            animation: deco-round 15s linear infinite;
+        }
+    }
+
+    .bg {
+        span {
+            &:first-child {
+                width: 13svw;
+                height: 13svw;
+                top: 8svw;
+                left: 8svw;
+            }
+
+            &:nth-child(2) {
+                width: 5svw;
+                height: 5svw;
+                top: 6.5svw;
+                left: 18.5svw;
+                z-index: 5;
+                animation-name: breath-f;
+            }
+
+            &:nth-child(3) {
+                width: 4.5svw;
+                height: 4.5svw;
+                bottom: 6svw;
+                left: 12svw;
+                z-index: 5;
+                animation-name: breath-f;
+            }
+
+            &:nth-child(4) {
+                width: 5svw;
+                height: 5svw;
+                bottom: 2.5svw;
+                left: 15.5svw;
+            }
+
+            &:nth-child(5) {
+                width: 9.5svw;
+                height: 9.5svw;
+                bottom: 3.5svw;
+                right: 9.5svw;
+            }
+
+            &:nth-child(6) {
+                width: 5svw;
+                height: 5svw;
+                bottom: 2.5svw;
+                right: 16.5svw;
+                z-index: 5;
+                animation-name: breath-f;
+            }
+        }
+    }
 }
 
 #go-top {
