@@ -106,7 +106,7 @@ header {
 
 #master {
     position: relative;
-    padding: 160px calc(50svw - 600px);
+    padding: 8svw calc(50svw - 600px);
     line-height: 128px;
 
     h2 {
@@ -125,7 +125,7 @@ header {
         width: 50svw;
         height: 25svw;
         right: calc(50svw - 600px);
-        top: 368px;
+        top: calc(8svw + 200px);
     }
 
     .accord-wrapper {

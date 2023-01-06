@@ -168,7 +168,7 @@ header .wallet {
 
 #master {
   position: relative;
-  padding: 160px calc(50svw - 600px);
+  padding: 8svw calc(50svw - 600px);
   line-height: 128px;
 }
 #master h2 {
@@ -185,7 +185,7 @@ header .wallet {
   width: 50svw;
   height: 25svw;
   right: calc(50svw - 600px);
-  top: 368px;
+  top: calc(8svw + 200px);
 }
 #master .accord-wrapper {
   overflow: hidden;
