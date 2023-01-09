@@ -97,14 +97,48 @@
     transform: rotate(359deg);
   }
 }
+@-webkit-keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(-100% - 1rem));
+  }
+}
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(-100% - 1rem));
+  }
+}
+@-webkit-keyframes rscroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(100% + 1rem));
+  }
+}
+@keyframes rscroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(100% + 1rem));
+  }
+}
 /* -- Global.scss -- */
 /* 反白選取樣式 */
 ::-moz-selection {
-  background-color: rgba(125, 2, 0, 0.9);
+  background-color: rgba(125, 2, 0, 0.8);
+  color: #E4E4E4;
 }
 
 ::selection {
-  background-color: rgba(125, 2, 0, 0.9);
+  background-color: rgba(125, 2, 0, 0.8);
+  color: #E4E4E4;
 }
 
 ::-webkit-scrollbar {
@@ -112,13 +146,13 @@
 }
 
 body {
-  font-family: "Varela", sans-serif;
+  font-family: "Varela", "PingFang TC", "Noto Sans TC", sans-serif;
   font-weight: 400;
   font-size: 28px;
   -webkit-tap-highlight-color: transparent;
-  font-size: 28px;
   line-height: 40px;
   background-color: #E4E4E4;
+  color: #323232;
 }
 
 /* 文字設定 */
@@ -215,7 +249,22 @@ header .wallet {
 .full-cut section {
   height: 100svh;
   width: 100%;
-  scroll-snap-align: center;
+  scroll-snap-align: start;
+}
+
+.bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100svw;
+  height: 100svh;
+  z-index: -1;
+}
+.bg span {
+  position: absolute;
+  background-color: #E4E4E4;
+  -webkit-animation: breath 5s infinite;
+          animation: breath 5s infinite;
 }
 
 #main {
@@ -239,26 +288,23 @@ header .wallet {
   margin-left: calc(1200px - 50svw);
 }
 
-#master .bg,
-#about .bg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100svw;
-  height: 100svh;
-  z-index: -1;
+#master,
+#about,
+#craft,
+#mint,
+#faq,
+#team {
+  position: relative;
 }
-#master .bg span,
-#about .bg span {
-  position: absolute;
-  background-color: #E4E4E4;
-  -webkit-animation: breath 5s infinite;
-          animation: breath 5s infinite;
+
+#master,
+#about,
+#mint,
+#faq {
+  padding: 8svw calc(50svw - 600px);
 }
 
 #master {
-  position: relative;
-  padding: 8svw calc(50svw - 600px);
   line-height: 128px;
 }
 #master h2 {
@@ -439,11 +485,9 @@ header .wallet {
 }
 
 #about {
-  position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 calc(50svw - 600px);
 }
 #about .subtitle {
   width: 35svw;
@@ -454,12 +498,15 @@ header .wallet {
 }
 #about .blindbox img {
   border-radius: 100px;
+  max-width: 400px;
 }
 #about .blindbox:after {
   content: url(../img/deco-outline.png);
   position: absolute;
   top: -150px;
   left: -150px;
+  width: 300px;
+  height: 300px;
   z-index: -1;
   -webkit-animation: deco-round 15s linear infinite;
           animation: deco-round 15s linear infinite;
@@ -510,6 +557,237 @@ header .wallet {
           animation-name: breath-f;
 }
 
+#craft {
+  overflow: hidden;
+}
+#craft .marquee {
+  display: flex;
+  overflow: hidden;
+  width: 100%;
+  grid-column-gap: 1rem;
+}
+#craft .marquee .marquee-content {
+  display: flex;
+  min-width: 100%;
+  justify-content: space-around;
+  flex: 0 0 auto;
+  grid-column-gap: 1rem;
+  min-width: -webkit-fit-content;
+  min-width: -moz-fit-content;
+  min-width: fit-content;
+  margin-right: 28px;
+}
+#craft .marquee .marquee-content.rscroll {
+  animation: scroll 90s linear infinite reverse;
+}
+#craft .marquee .marquee-content.scroll {
+  -webkit-animation: scroll 90s linear infinite;
+          animation: scroll 90s linear infinite;
+}
+#craft .marquee .marquee-content .text-block {
+  font-family: "Bebas Neue", cursive;
+  font-weight: 400;
+  font-size: 154px;
+  line-height: 1;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+}
+#craft .marquee .marquee-content .text-block.strokeme {
+  color: #E4E4E4;
+  text-shadow: -2px -2px 0 #313131, 2px -2px 0 #313131, -2px 2px 0 #313131, 2px 2px 0 #313131;
+}
+#craft .marquee .marquee-content .text-block .small {
+  display: flex;
+  align-items: center;
+  gap: 44px;
+}
+#craft .craft {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+#mint {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: auto;
+}
+#mint h2 {
+  position: relative;
+}
+#mint h2:after {
+  content: url(../img/deco.png);
+  position: absolute;
+  top: calc(50% - 88px);
+  right: 0;
+  width: 176px;
+  height: 176px;
+  z-index: -1;
+  -webkit-animation: deco-round 15s linear infinite;
+          animation: deco-round 15s linear infinite;
+}
+#mint ul {
+  display: flex;
+  text-align: center;
+  width: 1200px;
+  border-top: 1px solid #323232;
+  margin-top: 36px;
+}
+#mint ul li {
+  flex: 1;
+  position: relative;
+  padding-top: 54px;
+}
+#mint ul li img {
+  display: block;
+  margin: 0 auto;
+}
+#mint ul li h3 {
+  font-family: "Bebas Neue", cursive;
+  font-weight: 400;
+  font-size: 36px;
+  margin-top: 20px;
+}
+#mint ul li p {
+  font-family: "PingFang TC", "Noto Sans TC", sans-serif;
+  font-weight: 400;
+  font-size: 24px;
+  margin-bottom: 28px;
+}
+#mint ul li:before {
+  display: inline-block;
+  width: 60px;
+  height: 60px;
+  border-radius: 30px;
+  background-color: #323232;
+  color: #E4E4E4;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateY(-50%);
+  font-size: 32px;
+  line-height: 60px;
+}
+#mint ul li:first-child:before {
+  content: "1";
+}
+#mint ul li:nth-child(2):before {
+  content: "2";
+}
+#mint ul li:last-child:before {
+  content: "3";
+}
+#mint ul li:last-child:after {
+  content: "";
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
+  background-color: #323232;
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translateY(-50%);
+}
+
+#faq {
+  height: auto;
+}
+#faq dl {
+  margin-left: 240px;
+}
+#faq dl dd {
+  overflow: hidden;
+  height: auto;
+  max-height: 0;
+  padding: 0;
+  font-family: "Varela", "PingFang TC", "Noto Sans TC", sans-serif;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 36px;
+  transition: all 0.2s ease-in-out;
+}
+#faq dl dt {
+  padding: 32px 0;
+  cursor: pointer;
+  font-family: "Varela", "PingFang TC", "Noto Sans TC", sans-serif;
+  font-weight: 400;
+  font-size: 28px;
+  line-height: 40px;
+  text-transform: uppercase;
+  background: linear-gradient(120deg, #7D0200 50%, #323232 51%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 250% 100%;
+  background-position: 100%;
+  transition: background-position 0.7s ease-in-out;
+}
+#faq dl dt:hover {
+  background-position: 0;
+}
+#faq dl dt:not(:first-child) {
+  border-top: 1px solid #323232;
+}
+#faq dl dt.show + dd {
+  padding-bottom: 32px;
+  max-height: 100svh;
+  transition: all 0.3s ease-in-out;
+  transition-delay: 0.2s;
+}
+
+#team {
+  padding: 3svw 0 5svw calc(50svw - 600px);
+  height: auto;
+}
+#team .deco {
+  width: 140px;
+  height: 140px;
+  margin-bottom: 3svw;
+  -webkit-animation: deco-round 15s linear infinite;
+          animation: deco-round 15s linear infinite;
+}
+#team .swiper-slide .img {
+  position: relative;
+  overflow: hidden;
+}
+#team .swiper-slide .img img {
+  min-width: 100%;
+  min-height: 100%;
+}
+#team .swiper-slide .img:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 10px;
+  left: 0;
+  background-color: #7D0200;
+  opacity: 0.3;
+  transition: all 0.3s ease-in-out;
+}
+#team .swiper-slide h3 {
+  font-family: "Varela", "PingFang TC", "Noto Sans TC", sans-serif;
+  font-weight: 400;
+  font-size: 28px;
+  line-height: 40px;
+  text-transform: uppercase;
+}
+#team .swiper-slide p {
+  font-family: "Varela", "PingFang TC", "Noto Sans TC", sans-serif;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 36px;
+}
+#team .swiper-slide:hover .img:after {
+  background-color: transparent;
+}
+
 #go-top {
   position: fixed;
   bottom: 50px;
@@ -544,7 +822,7 @@ h2 {
 }
 
 .subtitle {
-  font-family: "Varela", sans-serif;
+  font-family: "Varela", "PingFang TC", "Noto Sans TC", sans-serif;
   font-weight: 400;
   font-size: 36px;
   line-height: 48px;
@@ -552,14 +830,14 @@ h2 {
 }
 
 .content {
-  font-family: "Varela", sans-serif;
+  font-family: "Varela", "PingFang TC", "Noto Sans TC", sans-serif;
   font-weight: 400;
   font-size: 28px;
   line-height: 40px;
 }
 
 .description {
-  font-family: "Varela", sans-serif;
+  font-family: "Varela", "PingFang TC", "Noto Sans TC", sans-serif;
   font-weight: 400;
   font-size: 24px;
   line-height: 36px;
@@ -584,9 +862,9 @@ button:after {
   top: 0;
   right: 100%;
   bottom: 0;
-  left: -100%;
+  left: -20%;
   height: 100%;
-  background: linear-gradient(60deg, #7D0200 50%, transparent 51%);
+  background: linear-gradient(120deg, #7D0200 50%, transparent 51%);
   transition: all 0.4s ease-in-out;
   z-index: -1;
 }

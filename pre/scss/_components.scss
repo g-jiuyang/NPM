@@ -43,9 +43,9 @@ button {
         top: 0;
         right: 100%;
         bottom: 0;
-        left: -100%;
+        left: -20%;
         height: 100%;
-        background: linear-gradient(60deg, map-get($color, primary) 50%, transparent 51%);
+        background: linear-gradient(120deg, map-get($color, primary) 50%, transparent 51%);
         transition: all .4s ease-in-out;
         z-index: -1;
     }

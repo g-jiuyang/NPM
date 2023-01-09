@@ -76,7 +76,22 @@ header {
     section {
         height: 100svh;
         width: 100%;
-        scroll-snap-align: center;
+        scroll-snap-align: start;
+    }
+}
+
+.bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100svw;
+    height: 100svh;
+    z-index: -1;
+
+    span {
+        position: absolute;
+        background-color: map-get($color, off-white);
+        animation: breath 5s infinite;
     }
 }
 
@@ -105,26 +120,22 @@ header {
 }
 
 #master,
-#about {
-    .bg {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100svw;
-        height: 100svh;
-        z-index: -1;
+#about,
+#craft,
+#mint,
+#faq,
+#team {
+    position: relative;
+}
 
-        span {
-            position: absolute;
-            background-color: map-get($color, off-white);
-            animation: breath 5s infinite;
-        }
-    }
+#master,
+#about,
+#mint,
+#faq {
+    padding: 8svw calc(50svw - 600px);
 }
 
 #master {
-    position: relative;
-    padding: 8svw calc(50svw - 600px);
     line-height: 128px;
 
     h2 {
@@ -336,11 +347,9 @@ header {
 }
 
 #about {
-    position: relative;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 calc(50svw - 600px);
 
     .subtitle {
         width: 35svw;
@@ -352,6 +361,7 @@ header {
 
         img {
             border-radius: 100px;
+            max-width: 400px;
         }
 
         &:after {
@@ -359,6 +369,8 @@ header {
             position: absolute;
             top: -150px;
             left: -150px;
+            width: 300px;
+            height: 300px;
             z-index: -1;
             animation: deco-round 15s linear infinite;
         }
@@ -412,6 +424,255 @@ header {
                 right: 16.5svw;
                 z-index: 5;
                 animation-name: breath-f;
+            }
+        }
+    }
+}
+
+#craft {
+    overflow: hidden;
+
+    .marquee {
+        display: flex;
+        overflow: hidden;
+        width: 100%;
+        grid-column-gap: 1rem;
+
+        .marquee-content {
+            display: flex;
+            min-width: 100%;
+            justify-content: space-around;
+            flex: 0 0 auto;
+            grid-column-gap: 1rem;
+            min-width: fit-content;
+            margin-right: 28px;
+
+            &.rscroll {
+                animation: scroll 90s linear infinite reverse;
+            }
+
+            &.scroll {
+                animation: scroll 90s linear infinite;
+            }
+
+            .text-block {
+                @include font(map-get($font, BebasNeue), map-get($font-weight, Regular), 154);
+                line-height: 1;
+                text-transform: uppercase;
+                letter-spacing: 4px;
+
+                &.strokeme {
+                    color: map-get($color, off-white);
+                    text-shadow: -2px -2px 0 #313131, 2px -2px 0 #313131, -2px 2px 0 #313131, 2px 2px 0 #313131;
+                }
+
+                .small {
+                    display: flex;
+                    align-items: center;
+                    gap: 44px;
+                }
+            }
+        }
+    }
+
+    .craft {
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
+}
+
+#mint {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: auto;
+
+    h2 {
+        position: relative;
+
+        &:after {
+            content: url(../img/deco.png);
+            position: absolute;
+            top: calc(50% - 88px);
+            right: 0;
+            width: 176px;
+            height: 176px;
+            z-index: -1;
+            animation: deco-round 15s linear infinite;
+        }
+    }
+
+    ul {
+        display: flex;
+        text-align: center;
+        width: 1200px;
+        border-top: 1px solid map-get($color, dark);
+        margin-top: 36px;
+
+        li {
+            flex: 1;
+            position: relative;
+            padding-top: 54px;
+
+            img {
+                display: block;
+                margin: 0 auto;
+            }
+
+            h3 {
+                @include font(map-get($font, BebasNeue), map-get($font-weight, Regular), 36);
+                margin-top: 20px;
+            }
+
+            p {
+                @include font(map-get($font, PingFang), map-get($font-weight, Regular), 24);
+                margin-bottom: 28px;
+            }
+
+            &:before {
+                display: inline-block;
+                width: 60px;
+                height: 60px;
+                border-radius: 30px;
+                background-color: map-get($color, dark);
+                color: map-get($color, off-white);
+                position: absolute;
+                top: 0;
+                left: 0;
+                transform: translateY(-50%);
+                font-size: 32px;
+                line-height: 60px;
+            }
+
+            &:first-child:before {
+                content: '1';
+            }
+
+            &:nth-child(2):before {
+                content: '2';
+            }
+
+            &:last-child {
+                &:before {
+                    content: '3';
+                }
+
+                &:after {
+                    content: '';
+                    display: inline-block;
+                    width: 10px;
+                    height: 10px;
+                    border-radius: 5px;
+                    background-color: map-get($color, dark);
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    transform: translateY(-50%);
+                }
+            }
+        }
+    }
+}
+
+#faq {
+    height: auto;
+
+    dl {
+        margin-left: 240px;
+
+        dd {
+            overflow: hidden;
+            height: auto;
+            max-height: 0;
+            padding: 0;
+            @include font-discription;
+            transition: all .2s ease-in-out;
+        }
+
+        dt {
+            padding: 32px 0;
+            cursor: pointer;
+            @include font-content;
+            background: linear-gradient(120deg, map-get($color, primary) 50%, map-get($color, dark) 51%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-size: 250% 100%;
+            background-position: 100%;
+            transition: background-position .7s ease-in-out;
+
+            &:hover {
+                background-position: 0;
+            }
+
+            &:not(:first-child) {
+                border-top: 1px solid map-get($color, dark);
+            }
+
+            &.show {
+                &+dd {
+                    padding-bottom: 32px;
+                    max-height: 100svh;
+                    transition: all .3s ease-in-out;
+                    transition-delay: .2s;
+                }
+            }
+        }
+    }
+}
+
+#team {
+    padding: 3svw 0 5svw calc(50svw - 600px);
+    height: auto;
+
+    .deco {
+        width: 140px;
+        height: 140px;
+        margin-bottom: 3svw;
+        animation: deco-round 15s linear infinite;
+    }
+
+    .swiper-slide {
+        .img {
+            position: relative;
+            overflow: hidden;
+
+            img {
+                min-width: 100%;
+                min-height: 100%;
+            }
+
+            &:after {
+                content: '';
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 10px;
+                left: 0;
+                background-color: map-get($color, primary);
+                opacity: .3;
+                transition: all .3s ease-in-out;
+            }
+        }
+
+        h3 {
+            @include font-content;
+        }
+
+        p {
+            @include font-discription;
+        }
+
+        &:hover {
+            .img {
+                &:after {
+                    background-color: transparent;
+                }
             }
         }
     }

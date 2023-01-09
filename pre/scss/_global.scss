@@ -1,13 +1,13 @@
 /* -- Global.scss -- */
 /* 反白選取樣式 */
 ::-moz-selection {
-    background-color: rgba(map-get($color, primary), .9);
-    color: map-get($color, white);
+    background-color: rgba(map-get($color, primary), .8);
+    color: map-get($color, off-white);
 }
 
 ::selection {
-    background-color: rgba(map-get($color, primary), .9);
-    color: map-get($color, white);
+    background-color: rgba(map-get($color, primary), .8);
+    color: map-get($color, off-white);
 }
 
 ::-webkit-scrollbar {
@@ -15,11 +15,11 @@
 }
 
 body {
-    @include font(map-get($font, Varela));
+    @include font(map-get($font, Varela), 400, 28);
     -webkit-tap-highlight-color: transparent;
-    @include font-size(28);
     line-height: calc($font-size * 40);
     background-color: map-get($color, off-white);
+    color: map-get($color, dark);
 }
 
 

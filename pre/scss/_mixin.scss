@@ -5,6 +5,34 @@
     font-size: calc($font-size * $fs);
 }
 
+@mixin font-subtitle {
+    font-family: map-get($font, Varela);
+    font-weight: 400;
+    font-size: calc($font-size * 36);
+    line-height: calc($font-size * 48);
+
+    @media screen and (max-width: 414px) {}
+}
+
+@mixin font-content {
+    font-family: map-get($font, Varela);
+    font-weight: 400;
+    font-size: calc($font-size * 28);
+    line-height: calc($font-size * 40);
+    text-transform: uppercase;
+
+    @media screen and (max-width: 414px) {}
+}
+
+@mixin font-discription {
+    font-family: map-get($font, Varela);
+    font-weight: 400;
+    font-size: calc($font-size * 24);
+    line-height: calc($font-size * 36);
+
+    @media screen and (max-width: 414px) {}
+}
+
 // 用法：
 // .pingfang200 {
 //     @include font(map-get($font, PingFang), map-get($font-weight, Thin), 24);
