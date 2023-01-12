@@ -5,7 +5,7 @@
         box-shadow: 0 0 20px transparent;
     }
 
-    65% {
+    30% {
         box-shadow: 0 0 20px rgba(map-get($color, dark), .12);
     }
 
@@ -23,7 +23,7 @@
         box-shadow: 0 0 20px transparent;
     }
 
-    30% {
+    20% {
         box-shadow: 0 0 20px rgba(map-get($color, dark), .12);
     }
 
@@ -39,10 +39,12 @@
 @keyframes deco-round {
     0% {
         transform: rotate(0deg);
+        transform-origin: center;
     }
 
     100% {
         transform: rotate(359deg);
+        transform-origin: center;
     }
 }
 
@@ -52,7 +54,7 @@
     }
 
     to {
-        transform: translateX(calc(-100% - 1rem));
+        transform: translateX(calc(-100% - 2.75rem));
     }
 }
 
@@ -62,6 +64,6 @@
     }
 
     to {
-        transform: translateX(calc(+100% + 1rem));
+        transform: translateX(calc(+100% + 2.75rem));
     }
 }

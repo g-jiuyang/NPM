@@ -12,7 +12,7 @@ header {
     color: map-get($color, off-white);
     z-index: 5;
     transition: transform .3s ease-in-out;
-    backdrop-filter: blur(20px);
+    // backdrop-filter: blur(20px);
     display: flex;
 
     &.hidden {
@@ -44,17 +44,7 @@ header {
             flex: 120px;
 
             a {
-                background: linear-gradient(60deg, map-get($color, primary) 50%, map-get($color, dark) 51%);
-                -webkit-background-clip: text;
-                -webkit-text-fill-color: transparent;
-                background-size: 250% 100%;
-                background-position: 100%;
-                transition: all .5s ease-in-out;
-                cursor: pointer;
-
-                &:hover {
-                    background-position: 0 100%;
-                }
+                @include a-animate;
             }
         }
     }
@@ -101,6 +91,23 @@ header {
     overflow-y: scroll;
     position: relative;
 
+    h1 {
+        margin-bottom: calc(28svw - 1.1em);
+        position: relative;
+
+        &:after {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 76px;
+            height: 76px;
+            background-image: url(../img/deco.png);
+            background-size: 100%;
+            animation: deco-round 15s linear infinite;
+        }
+    }
+
     .banner {
         position: absolute;
         width: 50svw;
@@ -109,29 +116,20 @@ header {
         top: calc(8svh + 1.1em);
     }
 
-    h1 {
-        margin-bottom: calc(28svw - 1.1em);
-    }
-
     .subtitle {
         width: 50svw;
         margin-left: calc(1200px - 50svw);
     }
 }
 
-#master,
-#about,
-#craft,
-#mint,
-#faq,
-#team {
+section {
     position: relative;
 }
 
 #master,
 #about,
 #mint,
-#faq {
+footer {
     padding: 8svw calc(50svw - 600px);
 }
 
@@ -448,11 +446,11 @@ header {
             margin-right: 28px;
 
             &.rscroll {
-                animation: scroll 90s linear infinite reverse;
+                animation: scroll 30s linear infinite reverse;
             }
 
             &.scroll {
-                animation: scroll 90s linear infinite;
+                animation: scroll 30s linear infinite;
             }
 
             .text-block {
@@ -581,10 +579,23 @@ header {
 }
 
 #faq {
+    padding: 3svw calc(50svw - 600px);
     height: auto;
 
     dl {
+        height: calc(100svh - 6svw - 128px);
+        overflow-y: auto;
         margin-left: 240px;
+        padding-right: 28px;
+
+        &::-webkit-scrollbar {
+            display: inline;
+            width: 5px;
+
+            &-thumb {
+                background-color: map-get($color, dark);
+            }
+        }
 
         dd {
             overflow: hidden;
@@ -627,8 +638,8 @@ header {
 }
 
 #team {
+    // height: auto;
     padding: 3svw 0 5svw calc(50svw - 600px);
-    height: auto;
 
     .deco {
         width: 140px;
@@ -675,6 +686,124 @@ header {
                 }
             }
         }
+    }
+}
+
+#partner {
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5svw 0;
+
+    h2 {
+        padding: 0 0 28px calc(50svw - 600px);
+    }
+
+    .marquee {
+        .line {
+            display: flex;
+            overflow: hidden;
+            width: 100%;
+            grid-column-gap: 1rem;
+
+            .marquee-content {
+                display: flex;
+                min-width: 100%;
+                justify-content: space-around;
+                flex: 0 0 auto;
+                grid-column-gap: 1rem;
+                min-width: fit-content;
+                margin-right: 28px;
+                animation: scroll 20s linear infinite;
+
+                .text-block {
+                    .small {
+                        display: flex;
+                        align-items: center;
+                        gap: 44px;
+
+                        a {
+                            display: inherit;
+
+                            .color {
+                                display: none;
+                            }
+
+                            &:hover {
+                                .grey {
+                                    display: none;
+                                }
+
+                                .color {
+                                    display: inline;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        &:hover {
+            .line {
+                .marquee-content {
+                    animation-play-state: paused;
+                }
+            }
+        }
+    }
+}
+
+footer {
+    width: 100%;
+    scroll-snap-align: start;
+
+    .links {
+        display: flex;
+
+        .sns,
+        .npm {
+            flex: 1;
+
+            h3 {
+                @include font(map-get($font, BebasNeue), map-get($font-weight, Regular), 40);
+                margin-bottom: 18px;
+            }
+
+            ul {
+                li {
+                    display: inline-block;
+                    margin-right: 36px;
+
+                    a {
+                        @include a-color;
+                        @include font(map-get($font, PingFang), map-get($font-weight, Medium), 16);
+                        text-transform: uppercase;
+
+                        img {
+                            &:nth-child(2) {
+                                display: none;
+                            }
+                        }
+
+                        &:hover {
+                            img {
+                                &:first-child {
+                                    display: none;
+                                }
+
+                                &:nth-child(2) {
+                                    display: inline;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+
     }
 }
 

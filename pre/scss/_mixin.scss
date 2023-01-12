@@ -63,11 +63,26 @@ $color in $color {
 
 
 // 超連結顏色
-@mixin a-color($color, $hover: darken($color, 5%)) {
-    color: $color;
+@mixin a-color($default: map-get($color, dark), $hover: map-get($color, primary)) {
+    color: $default;
     transition: color .5s;
+    text-decoration: none;
 
     &:hover {
         color: $hover;
+    }
+}
+
+@mixin a-animate($default: map-get($color, primary), $hover: map-get($color, dark)) {
+    background: linear-gradient(60deg, $default 50%, $hover 51%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 250% 100%;
+    background-position: 100%;
+    transition: all .5s ease-in-out;
+    cursor: pointer;
+
+    &:hover {
+        background-position: 0 100%;
     }
 }
