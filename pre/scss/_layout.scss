@@ -128,8 +128,7 @@ section {
 
 #master,
 #about,
-#mint,
-footer {
+#mint {
     padding: 8svw calc(50svw - 600px);
 }
 
@@ -758,9 +757,12 @@ footer {
 footer {
     width: 100%;
     scroll-snap-align: start;
+    padding: 8svw calc(50svw - 720px);
 
     .links {
         display: flex;
+        max-width: 1200px;
+        margin: 100px auto 0;
 
         .sns,
         .npm {
@@ -804,6 +806,36 @@ footer {
         }
 
 
+    }
+
+    span {
+        display: block;
+        border-top: map-get($color, dark) 1px solid;
+        margin: 100px 0 62px 0;
+    }
+
+    .additional {
+        max-width: 1200px;
+        margin: 0 auto;
+        @include font(map-get($font, Varela), map-get($font-weight, Regular), 12);
+        line-height: 1.6;
+        display: flex;
+        justify-content: space-between;
+
+        .copyright {
+            flex: 1;
+        }
+
+        .info {
+            flex: 1;
+            display: flex;
+            justify-content: flex-end;
+            gap: 66px;
+
+            a {
+                @include a-animate;
+            }
+        }
     }
 }
 

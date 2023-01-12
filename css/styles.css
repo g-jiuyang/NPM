@@ -309,8 +309,7 @@ section {
 
 #master,
 #about,
-#mint,
-footer {
+#mint {
   padding: 8svw calc(50svw - 600px);
 }
 
@@ -862,9 +861,12 @@ footer {
 footer {
   width: 100%;
   scroll-snap-align: start;
+  padding: 8svw calc(50svw - 720px);
 }
 footer .links {
   display: flex;
+  max-width: 1200px;
+  margin: 100px auto 0;
 }
 footer .links .sns,
 footer .links .npm {
@@ -907,6 +909,42 @@ footer .links .npm ul li a:hover img:first-child {
 footer .links .sns ul li a:hover img:nth-child(2),
 footer .links .npm ul li a:hover img:nth-child(2) {
   display: inline;
+}
+footer span {
+  display: block;
+  border-top: #323232 1px solid;
+  margin: 100px 0 62px 0;
+}
+footer .additional {
+  max-width: 1200px;
+  margin: 0 auto;
+  font-family: "Varela", "PingFang TC", "Noto Sans TC", sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.6;
+  display: flex;
+  justify-content: space-between;
+}
+footer .additional .copyright {
+  flex: 1;
+}
+footer .additional .info {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  gap: 66px;
+}
+footer .additional .info a {
+  background: linear-gradient(60deg, #7D0200 50%, #323232 51%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 250% 100%;
+  background-position: 100%;
+  transition: all 0.5s ease-in-out;
+  cursor: pointer;
+}
+footer .additional .info a:hover {
+  background-position: 0 100%;
 }
 
 #go-top {
