@@ -298,6 +298,18 @@ header .options .wallet button:hover {
   color: #7D0200;
 }
 
+.full-cut {
+  height: 100svh;
+  overflow-y: auto;
+  -ms-scroll-snap-type: y mandatory;
+      scroll-snap-type: y mandatory;
+}
+.full-cut section {
+  height: 100svh;
+  width: 100%;
+  scroll-snap-align: start;
+}
+
 section {
   position: relative;
 }
@@ -358,7 +370,6 @@ section {
 }
 
 #master {
-  height: calc(50svw + 200px);
   line-height: 128px;
 }
 #master h2 {
@@ -612,10 +623,6 @@ section {
 }
 
 #craft {
-  height: 100svh;
-  font-size: 154px;
-  line-height: 154px;
-  max-height: 6em;
   overflow: hidden;
 }
 #craft .marquee {
@@ -759,8 +766,17 @@ section {
   height: auto;
 }
 #faq dl {
+  height: calc(100svh - 6svw - 128px);
+  overflow-y: auto;
   margin-left: 240px;
   padding-right: 28px;
+}
+#faq dl::-webkit-scrollbar {
+  display: inline;
+  width: 5px;
+}
+#faq dl::-webkit-scrollbar-thumb {
+  background-color: #323232;
 }
 #faq dl dd {
   overflow: hidden;

@@ -621,19 +621,8 @@ section {
     height: auto;
 
     dl {
-        // height: calc(100svh - 6svw - 128px);
-        // overflow-y: auto;
         margin-left: 240px;
         padding-right: 28px;
-
-        // &::-webkit-scrollbar {
-        //     display: inline;
-        //     width: 5px;
-
-        //     &-thumb {
-        //         background-color: map-get($color, dark);
-        //     }
-        // }
 
         dd {
             overflow: hidden;
