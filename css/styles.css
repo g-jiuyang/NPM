@@ -190,8 +190,9 @@ header {
   left: 0;
   right: 0;
   padding: 5svh calc(50svw - 600px) 0;
-  height: 8svw;
-  max-height: 154px;
+  height: -webkit-min-content;
+  height: -moz-min-content;
+  height: min-content;
   color: #E4E4E4;
   z-index: 5;
   transition: transform 0.3s ease-in-out;
@@ -210,48 +211,95 @@ header .main-logo img {
 header .options {
   flex: 3;
   justify-content: flex-end;
+  text-transform: uppercase;
+  display: flex;
+  gap: 24px;
 }
-header .nav {
+header .options .menu,
+header .options .close {
+  display: none;
+}
+header .options .nav {
   font-family: "PingFang TC", "Noto Sans TC", sans-serif;
   font-weight: 500;
   font-size: 16px;
-  flex: 3;
+  flex: 250px;
+  max-width: 250px;
+  padding-top: 10px;
+}
+header .options .nav ul {
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-end;
+  justify-content: right;
+  gap: 20px 80px;
 }
-header .nav li {
-  flex: 120px;
-}
-header .nav li a {
+header .options .nav ul li a {
   background: linear-gradient(60deg, #7D0200 50%, #323232 51%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-size: 250% 100%;
   background-position: 100%;
-  transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in;
   cursor: pointer;
 }
-header .nav li a:hover {
+header .options .nav ul li a:hover {
   background-position: 0 100%;
 }
-header .language {
-  flex: 1;
+header .options .nav ul.sns {
+  display: none;
 }
-header .wallet {
+header .options .language {
+  position: relative;
+  font-family: "PingFang TC", "Noto Sans TC", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
   flex: 1;
+  flex-grow: 0;
+  min-width: -webkit-max-content;
+  min-width: -moz-max-content;
+  min-width: max-content;
+  margin-left: 76px;
+  padding-right: 16px;
+  color: #323232;
+  background: linear-gradient(60deg, #7D0200 50%, #323232 51%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 250% 100%;
+  background-position: 100%;
+  transition: all 0.5s ease-in;
+  cursor: pointer;
+}
+header .options .language:hover {
+  background-position: 0 100%;
+}
+header .options .language:before {
+  content: url(../img/icon/globe.svg);
+  vertical-align: middle;
+  margin-right: 8px;
+}
+header .options .language:after {
+  content: url(../img/icon/arrow-s.svg);
+  position: absolute;
+  right: 0;
+  top: -2px;
+}
+header .options .wallet button {
+  font-family: "PingFang TC", "Noto Sans TC", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  flex: 1;
+  padding: 12px 24px;
+  color: #E4E4E4;
+}
+header .options .wallet button:after {
+  background: linear-gradient(120deg, #E4E4E4 50%, #7D0200 51%);
+}
+header .options .wallet button:hover {
+  color: #7D0200;
 }
 
-.full-cut {
-  height: 100svh;
-  overflow-y: auto;
-  -ms-scroll-snap-type: y mandatory;
-      scroll-snap-type: y mandatory;
-}
-.full-cut section {
-  height: 100svh;
-  width: 100%;
-  scroll-snap-align: start;
+section {
+  position: relative;
 }
 
 .bg {
@@ -269,8 +317,14 @@ header .wallet {
           animation: breath 5s infinite;
 }
 
-#main {
+#main,
+#master,
+#about,
+#mint {
   padding: 8svw calc(50svw - 600px);
+}
+
+#main {
   font-size: 220px;
   overflow-y: scroll;
   position: relative;
@@ -303,17 +357,8 @@ header .wallet {
   margin-left: calc(1200px - 50svw);
 }
 
-section {
-  position: relative;
-}
-
-#master,
-#about,
-#mint {
-  padding: 8svw calc(50svw - 600px);
-}
-
 #master {
+  height: calc(50svw + 200px);
   line-height: 128px;
 }
 #master h2 {
@@ -567,6 +612,10 @@ section {
 }
 
 #craft {
+  height: 100svh;
+  font-size: 154px;
+  line-height: 154px;
+  max-height: 6em;
   overflow: hidden;
 }
 #craft .marquee {
@@ -710,17 +759,8 @@ section {
   height: auto;
 }
 #faq dl {
-  height: calc(100svh - 6svw - 128px);
-  overflow-y: auto;
   margin-left: 240px;
   padding-right: 28px;
-}
-#faq dl::-webkit-scrollbar {
-  display: inline;
-  width: 5px;
-}
-#faq dl::-webkit-scrollbar-thumb {
-  background-color: #323232;
 }
 #faq dl dd {
   overflow: hidden;
@@ -741,15 +781,6 @@ section {
   font-size: 28px;
   line-height: 40px;
   text-transform: uppercase;
-  background: linear-gradient(120deg, #7D0200 50%, #323232 51%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-size: 250% 100%;
-  background-position: 100%;
-  transition: background-position 0.7s ease-in-out;
-}
-#faq dl dt:hover {
-  background-position: 0;
 }
 #faq dl dt:not(:first-child) {
   border-top: 1px solid #323232;
@@ -940,7 +971,7 @@ footer .additional .info a {
   -webkit-text-fill-color: transparent;
   background-size: 250% 100%;
   background-position: 100%;
-  transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in;
   cursor: pointer;
 }
 footer .additional .info a:hover {
@@ -972,6 +1003,150 @@ footer .additional .info a:hover {
   filter: brightness(0) invert(1);
 }
 
+@media screen and (max-width: 1440px) {
+  header {
+    padding: 5svh 5svw 0;
+  }
+  #main,
+#master,
+#about,
+#mint {
+    padding: 8svw 5svw;
+  }
+  #main h1 {
+    margin-bottom: calc(33.75svw - 1.1em);
+  }
+  #main .banner {
+    width: 60svw;
+    height: 33.75svw;
+    right: 5svw;
+    top: calc(8svh + 1em);
+  }
+  #main .subtitle {
+    width: 60svw;
+    margin-left: calc(100% - 60svw);
+  }
+  #master .container {
+    width: 60svw;
+    height: 33.75svw;
+    right: 5svw;
+    top: auto;
+    bottom: 20px;
+  }
+  #master .container .accord-wrapper .master1,
+#master .container .accord-wrapper .master2,
+#master .container .accord-wrapper .master3 {
+    height: 33.75svw;
+  }
+  #about .subtitle {
+    width: 45svw;
+  }
+  #mint ul {
+    width: 90svw;
+  }
+  #faq {
+    padding: 3svw 5svw;
+  }
+  #team {
+    padding: 3svw 0 5svw 5svw;
+  }
+  #partner {
+    height: 100svh;
+  }
+  #partner h2 {
+    padding-left: 5svw;
+  }
+  footer {
+    padding: 3svw 5svw 5svw;
+  }
+}
+@media screen and (max-width: 1024px) {
+  header {
+    padding-top: 20px;
+  }
+  header .options {
+    flex-wrap: wrap;
+    gap: 12px 20px;
+  }
+  header .options .nav {
+    display: none;
+  }
+  header .options .menu {
+    display: flex;
+    align-items: center;
+    border: none;
+    padding: 0;
+    order: 3;
+  }
+  header .options .menu:after {
+    display: none;
+  }
+  header .options .menu.active + .nav {
+    position: fixed;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    max-width: 100svw;
+    z-index: 5;
+    background-color: #E4E4E4;
+    padding: 120px 24px;
+  }
+  header .options .menu.active + .nav .close {
+    display: inline;
+    border: none;
+    position: absolute;
+    top: 32px;
+    right: 24px;
+    padding: 0;
+  }
+  header .options .menu.active + .nav .close:after {
+    display: none;
+  }
+  header .options .menu.active + .nav ul {
+    display: inline;
+    font-family: "Bebas Neue", cursive;
+    font-weight: 400;
+    font-size: 64px;
+    line-height: 1.2;
+  }
+  header .options .menu.active + .nav ul.sns {
+    display: inline;
+    position: absolute;
+    bottom: 48px;
+    left: 24px;
+  }
+  header .options .menu.active + .nav ul.sns li {
+    display: inline;
+    margin-right: 28px;
+  }
+  header .options .language {
+    order: 2;
+  }
+  header .options .language span {
+    display: none;
+  }
+  header .options .language:before {
+    margin-right: 0;
+  }
+  header .options .wallet {
+    flex: 100%;
+    text-align: right;
+  }
+  footer .links,
+footer .additional {
+    max-width: 85svw;
+  }
+  footer .links .sns {
+    flex: 3;
+  }
+  footer .links .npm {
+    flex: 4;
+  }
+}
 /* -- Components.scss -- */
 h2 {
   font-family: "Bebas Neue", cursive;
@@ -1019,9 +1194,9 @@ button:after {
   content: "";
   position: absolute;
   top: 0;
-  right: 100%;
+  right: 0;
   bottom: 0;
-  left: -20%;
+  left: -120%;
   height: 100%;
   background: linear-gradient(120deg, #7D0200 50%, transparent 51%);
   transition: all 0.4s ease-in-out;

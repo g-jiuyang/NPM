@@ -1,0 +1,7 @@
+$('.options .menu').click(function () {
+	$(this).addClass('active');
+})
+
+$('.options .close').click(function () {
+	$('.options .menu').removeClass('active');
+})

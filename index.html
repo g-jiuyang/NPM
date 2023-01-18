@@ -9,8 +9,11 @@
 
 	<link rel="icon" type="image/png" href="img/favicon.png">
 
+	<!-- AOS 套件 -->
+	<link href="vendor/aos/aos.css" rel="stylesheet">
+
 	<!-- Swiper 套件 -->
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+	<link rel="stylesheet" href="vendor/swiper/swiper-bundle.min.css" />
 
 	<!-- Styles -->
 	<link rel="stylesheet" href="css/reset.css">
@@ -22,716 +25,736 @@
 <body>
 	<header>
 		<a class="main-logo" href="#"><img src="img/logoX.png"></a>
-		<!-- <div class="options">
-			<ul class="nav">
-				<li><a href="">about</a></li>
-				<li><a href="">how to mint</a></li>
-				<li><a href="">faq</a></li>
-				<li><a href="">master plan</a></li>
-			</ul>
-			<div class="language">language</div>
-			<button class="wallet">wallet</button>
-		</div> -->
+		<div class="options">
+			<button class="menu"><img src="img/icon/menu.svg"></button>
+			<div class="nav">
+				<button class="close"><img src="img/icon/close.svg"></button>
+				<ul>
+					<li><a href="">about</a></li>
+					<li><a href="">how to mint</a></li>
+					<li><a href="">faq</a></li>
+					<li><a href="">master plan</a></li>
+				</ul>
+				<ul class="sns">
+					<li><a href=""><img src="img/icon/discord.svg"></a></li>
+					<li><a href=""><img src="img/icon/IG.svg"></a></li>
+					<li><a href=""><img src="img/icon/twitter.svg"></a></li>
+				</ul>
+			</div>
+			<div class="language"><span>繁體中文</span></div>
+			<div class="wallet"><button>連接錢包</button></div>
+		</div>
 	</header>
-	<div class="full-cut">
-		<section id="main">
-			<h1>Mysterious<br>Box</h1>
-			<div class="swiper banner">
+	<section id="main">
+		<h1 data-aos="fade-down-right">Mysterious<br>Box</h1>
+		<div data-aos="fade-up-left" class="swiper banner">
+			<div class="swiper-wrapper">
+				<div class="swiper-slide">
+					<img src="img/banner01.jpg">
+				</div>
+				<div class="swiper-slide">
+					<img src="img/banner01.jpg">
+				</div>
+				<div class="swiper-slide">
+					<img src="img/banner01.jpg">
+				</div>
+			</div>
+			<div class="swiper-pagination"></div>
+		</div>
+		<p data-aos="fade-up" class="subtitle">Get a 3D NFT model, chance to get customized collection, ticket,
+			valuable painting.</p>
+	</section>
+	<section id="master">
+		<div class="bg">
+			<span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+		</div>
+		<h2 data-aos="fade-down-right">International<br>Master</h2>
+		<div data-aos="fade-up-left" class="container">
+			<div class="accord-wrapper">
+				<div class="master1">
+					<div class="accord-content">
+						<div class="intro">
+							<div>
+								<p class="subtitle">龐均</p>
+								<p class="description">Short description</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="master2">
+					<div class="accord-content">
+						<div class="intro">
+							<div>
+								<p class="subtitle">龐均</p>
+								<p class="description">Short description</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="master3">
+					<div class="accord-content">
+						<div class="intro">
+							<div>
+								<p class="subtitle">龐均</p>
+								<p class="description">Short description</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section id="about">
+		<div class="bg">
+			<span></span><span></span><span></span><span></span><span></span><span></span>
+		</div>
+		<div>
+			<h2 data-aos="fade-up">About</h2>
+			<p data-aos="fade-up" data-aos-delay="100" class="subtitle">Get a 3D NFT model, chance to get customized
+				collection, ticket,
+				valuable painting.
+			</p>
+			<button data-aos="fade-up" data-aos-delay="200">Mint Now</button>
+		</div>
+		<div data-aos="zoom-in-up" data-aos-duration="1200" class="blindbox">
+			<img src="img/blindbox.gif">
+		</div>
+	</section>
+	<section data-aos="fade" data-aos-offset="300" data-aos-duration="1200" id="craft">
+		<div class="marquee">
+			<div class="marquee-content rscroll">
+				<div class="text-block">
+					<span class="small">
+						NPM X GASH <img src="img/icon/cube.svg">
+						NPM X GASH <img src="img/icon/cube.svg">
+						NPM X GASH <img src="img/icon/cube.svg">
+					</span>
+				</div>
+			</div>
+			<div class="marquee-content rscroll">
+				<div class="text-block">
+					<span class="small">
+						NPM X GASH <img src="img/icon/cube.svg">
+						NPM X GASH <img src="img/icon/cube.svg">
+						NPM X GASH <img src="img/icon/cube.svg">
+					</span>
+				</div>
+			</div>
+			<div class="marquee-content rscroll">
+				<div class="text-block">
+					<span class="small">
+						NPM X GASH <img src="img/icon/cube.svg">
+						NPM X GASH <img src="img/icon/cube.svg">
+						NPM X GASH <img src="img/icon/cube.svg">
+					</span>
+				</div>
+			</div>
+		</div>
+		<div class="marquee">
+			<div class="marquee-content scroll">
+				<div class="text-block strokeme">
+					<span class="small">
+						NPM X GASH <img src="img/icon/cube-outline.svg">
+						NPM X GASH <img src="img/icon/cube-outline.svg">
+						NPM X GASH <img src="img/icon/cube-outline.svg">
+					</span>
+				</div>
+			</div>
+			<div class="marquee-content scroll">
+				<div class="text-block strokeme">
+					<span class="small">
+						NPM X GASH <img src="img/icon/cube-outline.svg">
+						NPM X GASH <img src="img/icon/cube-outline.svg">
+						NPM X GASH <img src="img/icon/cube-outline.svg">
+					</span>
+				</div>
+			</div>
+			<div class="marquee-content scroll">
+				<div class="text-block strokeme">
+					<span class="small">
+						NPM X GASH <img src="img/icon/cube-outline.svg">
+						NPM X GASH <img src="img/icon/cube-outline.svg">
+						NPM X GASH <img src="img/icon/cube-outline.svg">
+					</span>
+				</div>
+			</div>
+		</div>
+		<div class="marquee">
+			<div class="marquee-content rscroll">
+				<div class="text-block">
+					<span class="small">
+						NPM X GASH <img src="img/icon/cube.svg">
+						NPM X GASH <img src="img/icon/cube.svg">
+						NPM X GASH <img src="img/icon/cube.svg">
+					</span>
+				</div>
+			</div>
+			<div class="marquee-content rscroll">
+				<div class="text-block">
+					<span class="small">
+						NPM X GASH <img src="img/icon/cube.svg">
+						NPM X GASH <img src="img/icon/cube.svg">
+						NPM X GASH <img src="img/icon/cube.svg">
+					</span>
+				</div>
+			</div>
+			<div class="marquee-content rscroll">
+				<div class="text-block">
+					<span class="small">
+						NPM X GASH <img src="img/icon/cube.svg">
+						NPM X GASH <img src="img/icon/cube.svg">
+						NPM X GASH <img src="img/icon/cube.svg">
+					</span>
+				</div>
+			</div>
+		</div>
+		<div class="marquee">
+			<div class="marquee-content scroll">
+				<div class="text-block strokeme">
+					<span class="small">
+						NPM X GASH <img src="img/icon/cube-outline.svg">
+						NPM X GASH <img src="img/icon/cube-outline.svg">
+						NPM X GASH <img src="img/icon/cube-outline.svg">
+					</span>
+				</div>
+			</div>
+			<div class="marquee-content scroll">
+				<div class="text-block strokeme">
+					<span class="small">
+						NPM X GASH <img src="img/icon/cube-outline.svg">
+						NPM X GASH <img src="img/icon/cube-outline.svg">
+						NPM X GASH <img src="img/icon/cube-outline.svg">
+					</span>
+				</div>
+			</div>
+			<div class="marquee-content scroll">
+				<div class="text-block strokeme">
+					<span class="small">
+						NPM X GASH <img src="img/icon/cube-outline.svg">
+						NPM X GASH <img src="img/icon/cube-outline.svg">
+						NPM X GASH <img src="img/icon/cube-outline.svg">
+					</span>
+				</div>
+			</div>
+		</div>
+		<div class="marquee">
+			<div class="marquee-content rscroll">
+				<div class="text-block">
+					<span class="small">
+						NPM X GASH <img src="img/icon/cube.svg">
+						NPM X GASH <img src="img/icon/cube.svg">
+						NPM X GASH <img src="img/icon/cube.svg">
+					</span>
+				</div>
+			</div>
+			<div class="marquee-content rscroll">
+				<div class="text-block">
+					<span class="small">
+						NPM X GASH <img src="img/icon/cube.svg">
+						NPM X GASH <img src="img/icon/cube.svg">
+						NPM X GASH <img src="img/icon/cube.svg">
+					</span>
+				</div>
+			</div>
+			<div class="marquee-content rscroll">
+				<div class="text-block">
+					<span class="small">
+						NPM X GASH <img src="img/icon/cube.svg">
+						NPM X GASH <img src="img/icon/cube.svg">
+						NPM X GASH <img src="img/icon/cube.svg">
+					</span>
+				</div>
+			</div>
+		</div>
+		<div class="marquee">
+			<div class="marquee-content scroll">
+				<div class="text-block strokeme">
+					<span class="small">
+						NPM X GASH <img src="img/icon/cube-outline.svg">
+						NPM X GASH <img src="img/icon/cube-outline.svg">
+						NPM X GASH <img src="img/icon/cube-outline.svg">
+					</span>
+				</div>
+			</div>
+			<div class="marquee-content scroll">
+				<div class="text-block strokeme">
+					<span class="small">
+						NPM X GASH <img src="img/icon/cube-outline.svg">
+						NPM X GASH <img src="img/icon/cube-outline.svg">
+						NPM X GASH <img src="img/icon/cube-outline.svg">
+					</span>
+				</div>
+			</div>
+			<div class="marquee-content scroll">
+				<div class="text-block strokeme">
+					<span class="small">
+						NPM X GASH <img src="img/icon/cube-outline.svg">
+						NPM X GASH <img src="img/icon/cube-outline.svg">
+						NPM X GASH <img src="img/icon/cube-outline.svg">
+					</span>
+				</div>
+			</div>
+		</div>
+		<div class="marquee">
+			<div class="marquee-content rscroll">
+				<div class="text-block">
+					<span class="small">
+						NPM X GASH <img src="img/icon/cube.svg">
+						NPM X GASH <img src="img/icon/cube.svg">
+						NPM X GASH <img src="img/icon/cube.svg">
+					</span>
+				</div>
+			</div>
+			<div class="marquee-content rscroll">
+				<div class="text-block">
+					<span class="small">
+						NPM X GASH <img src="img/icon/cube.svg">
+						NPM X GASH <img src="img/icon/cube.svg">
+						NPM X GASH <img src="img/icon/cube.svg">
+					</span>
+				</div>
+			</div>
+			<div class="marquee-content rscroll">
+				<div class="text-block">
+					<span class="small">
+						NPM X GASH <img src="img/icon/cube.svg">
+						NPM X GASH <img src="img/icon/cube.svg">
+						NPM X GASH <img src="img/icon/cube.svg">
+					</span>
+				</div>
+			</div>
+		</div>
+		<div class="marquee">
+			<div class="marquee-content scroll">
+				<div class="text-block strokeme">
+					<span class="small">
+						NPM X GASH <img src="img/icon/cube-outline.svg">
+						NPM X GASH <img src="img/icon/cube-outline.svg">
+						NPM X GASH <img src="img/icon/cube-outline.svg">
+					</span>
+				</div>
+			</div>
+			<div class="marquee-content scroll">
+				<div class="text-block strokeme">
+					<span class="small">
+						NPM X GASH <img src="img/icon/cube-outline.svg">
+						NPM X GASH <img src="img/icon/cube-outline.svg">
+						NPM X GASH <img src="img/icon/cube-outline.svg">
+					</span>
+				</div>
+			</div>
+			<div class="marquee-content scroll">
+				<div class="text-block strokeme">
+					<span class="small">
+						NPM X GASH <img src="img/icon/cube-outline.svg">
+						NPM X GASH <img src="img/icon/cube-outline.svg">
+						NPM X GASH <img src="img/icon/cube-outline.svg">
+					</span>
+				</div>
+			</div>
+		</div>
+		<div data-aos="zoom-in-up" data-aos-delay="800" class="craft">
+			<img src="img/craft.png">
+		</div>
+	</section>
+	<section id="mint">
+		<div>
+			<h2 data-aos="fade-up">How to <br>Mint</h2>
+			<ul>
+				<li data-aos="fade" data-aos-duration="1200" data-aos-delay="200">
+					<img src="img/step.png">
+					<h3>Connect</h3>
+					<p>連接狐狸錢包</p>
+					<button>Connect</button>
+				</li>
+				<li data-aos="fade" data-aos-duration="1200" data-aos-delay="400">
+					<img src="img/step.png">
+					<h3>Buy</h3>
+					<p>購買盲盒</p>
+					<button>Mint Now</button>
+				</li>
+				<li data-aos="fade" data-aos-duration="1200" data-aos-delay="600">
+					<img src="img/step.png">
+					<h3>Get Hatch</h3>
+					<p>立即解盲</p>
+					<button>Mint Now</button>
+				</li>
+			</ul>
+		</div>
+	</section>
+	<section id="faq">
+		<div>
+			<h2 data-aos="fade-up">FAQ</h2>
+			<dl data-aos="fade-up" data-aos-delay="300">
+				<dt>Q1. How Can I Mint A Mysterious Box?</dt>
+				<dd>NFT stands for "non-fungible token," a type of digital certificate built on blockchain
+					technology -- usually Ethereum (CRYPTO:ETH) -- that guarantees ownership of a unique digital
+					asset.</dd>
+				<dt>Q2. How Can I Mint A Mysterious Box?</dt>
+				<dd>Minting digital assets (everything from art to music to articles) as NFTs is one way for
+					artists to monetize their work.</dd>
+				<dt>Q3. How Can I Mint A Mysterious Box?</dt>
+				<dd>NFT stands for "non-fungible token," a type of digital certificate built on blockchain
+					technology -- usually Ethereum (CRYPTO:ETH) -- that guarantees ownership of a unique digital
+					asset. Minting digital assets (everything from art to music to articles) as NFTs is one way for
+					artists to monetize their work.</dd>
+				<dt>Q4. How Can I Mint A Mysterious Box?How Can I Mint A Mysterious Box?How Can I Mint A Mysterious
+					Box?How Can I Mint A Mysterious Box?</dt>
+				<dd>NFT stands for "non-fungible token," a type of digital certificate built on blockchain
+					technology -- usually Ethereum (CRYPTO:ETH) -- that guarantees ownership of a unique digital
+					asset.</dd>
+				<dt>Q5. How Can I Mint A Mysterious Box?</dt>
+				<dd>Minting digital assets (everything from art to music to articles) as NFTs is one way for
+					artists to monetize their work.</dd>
+				<dt>Q6. How Can I Mint A Mysterious Box?</dt>
+				<dd>NFT stands for "non-fungible token," a type of digital certificate built on blockchain
+					technology -- usually Ethereum (CRYPTO:ETH) -- that guarantees ownership of a unique digital
+					asset.</dd>
+			</dl>
+		</div>
+	</section>
+	<section id="team">
+		<img class="deco" src="img/deco-outline.png">
+		<div>
+			<h2 data-aos="fade-up">Teams</h2>
+			<div data-aos="fade-up" data-aos-delay="300" class="swiper teams">
 				<div class="swiper-wrapper">
 					<div class="swiper-slide">
-						<img src="img/banner01.jpg">
+						<div class="img"><img src="img/team01.jpg"></div>
+						<h3>Leo Chou</h3>
+						<p>COO</p>
 					</div>
 					<div class="swiper-slide">
-						<img src="img/banner01.jpg">
+						<div class="img"><img src="img/team01.jpg"></div>
+						<h3>Leo Chou</h3>
+						<p>Director</p>
 					</div>
 					<div class="swiper-slide">
-						<img src="img/banner01.jpg">
+						<div class="img"><img src="img/team01.jpg"></div>
+						<h3>Leo Chou</h3>
+						<p>Manager</p>
+					</div>
+					<div class="swiper-slide">
+						<div class="img"><img src="img/team01.jpg"></div>
+						<h3>Leo Chou</h3>
+						<p>Director</p>
+					</div>
+					<div class="swiper-slide">
+						<div class="img"><img src="img/team01.jpg"></div>
+						<h3>Leo Chou</h3>
+						<p>Director</p>
+					</div>
+					<div class="swiper-slide">
+						<div class="img"><img src="img/team01.jpg"></div>
+						<h3>Leo Chou</h3>
+						<p>Director</p>
+					</div>
+					<div class="swiper-slide">
+						<div class="img"><img src="img/team01.jpg"></div>
+						<h3>Leo Chou</h3>
+						<p>Director</p>
+					</div>
+					<div class="swiper-slide">
+						<div class="img"><img src="img/team01.jpg"></div>
+						<h3>Leo Chou</h3>
+						<p>Director</p>
+					</div>
+					<div class="swiper-slide">
+						<div class="img"><img src="img/team01.jpg"></div>
+						<h3>Leo Chou</h3>
+						<p>Director</p>
+					</div>
+					<div class="swiper-slide">
+						<div class="img"><img src="img/team01.jpg"></div>
+						<h3>Leo Chou</h3>
+						<p>Director</p>
 					</div>
 				</div>
-				<div class="swiper-pagination"></div>
 			</div>
-			<p class="subtitle">Get a 3D NFT model, chance to get customized collection, ticket, valuable painting.</p>
-		</section>
-		<section id="master">
-			<div class="bg">
-				<span></span><span></span><span></span><span></span><span></span><span></span><span></span>
-			</div>
-			<h2>International<br>Master</h2>
-			<div class="container">
-				<div class="accord-wrapper">
-					<div class="master1">
-						<div class="accord-content">
-							<div class="intro">
-								<div>
-									<p class="subtitle">龐均</p>
-									<p class="description">Short description</p>
-								</div>
-							</div>
+		</div>
+	</section>
+	<section id="partner">
+		<div>
+			<h2 data-aos="fade-up">Partners</h2>
+			<div data-aos="fade" data-aos-duration="1000" class="marquee">
+				<div class="line">
+					<div class="marquee-content">
+						<div class="text-block strokeme">
+							<span class="small">
+								<a href="">
+									<img class="grey" src="img/partner/minty-grey.png">
+									<img class="color" src="img/partner/minty.png">
+								</a>
+								<a href="">
+									<img class="grey" src="img/partner/readme-grey.png">
+									<img class="color" src="img/partner/readme.png">
+								</a>
+								<a href="">
+									<img class="grey" src="img/partner/ccubed-grey.png">
+									<img class="color" src="img/partner/ccubed.png">
+								</a>
+								<a href="">
+									<img class="grey" src="img/partner/redreamer-grey.png">
+									<img class="color" src="img/partner/redreamer.png">
+								</a>
+							</span>
 						</div>
 					</div>
-					<div class="master2">
-						<div class="accord-content">
-							<div class="intro">
-								<div>
-									<p class="subtitle">龐均</p>
-									<p class="description">Short description</p>
-								</div>
-							</div>
+					<div class="marquee-content">
+						<div class="text-block strokeme">
+							<span class="small">
+								<a href="">
+									<img class="grey" src="img/partner/minty-grey.png">
+									<img class="color" src="img/partner/minty.png">
+								</a>
+								<a href="">
+									<img class="grey" src="img/partner/readme-grey.png">
+									<img class="color" src="img/partner/readme.png">
+								</a>
+								<a href="">
+									<img class="grey" src="img/partner/ccubed-grey.png">
+									<img class="color" src="img/partner/ccubed.png">
+								</a>
+								<a href="">
+									<img class="grey" src="img/partner/redreamer-grey.png">
+									<img class="color" src="img/partner/redreamer.png">
+								</a>
+							</span>
 						</div>
 					</div>
-					<div class="master3">
-						<div class="accord-content">
-							<div class="intro">
-								<div>
-									<p class="subtitle">龐均</p>
-									<p class="description">Short description</p>
-								</div>
-							</div>
+					<div class="marquee-content">
+						<div class="text-block strokeme">
+							<span class="small">
+								<a href="">
+									<img class="grey" src="img/partner/minty-grey.png">
+									<img class="color" src="img/partner/minty.png">
+								</a>
+								<a href="">
+									<img class="grey" src="img/partner/readme-grey.png">
+									<img class="color" src="img/partner/readme.png">
+								</a>
+								<a href="">
+									<img class="grey" src="img/partner/ccubed-grey.png">
+									<img class="color" src="img/partner/ccubed.png">
+								</a>
+								<a href="">
+									<img class="grey" src="img/partner/redreamer-grey.png">
+									<img class="color" src="img/partner/redreamer.png">
+								</a>
+							</span>
+						</div>
+					</div>
+				</div>
+				<div class="line">
+					<div class="marquee-content">
+						<div class="text-block strokeme">
+							<span class="small">
+								<a href="">
+									<img class="grey" src="img/partner/readme-grey.png">
+									<img class="color" src="img/partner/readme.png">
+								</a>
+								<a href="">
+									<img class="grey" src="img/partner/ccubed-grey.png">
+									<img class="color" src="img/partner/ccubed.png">
+								</a>
+								<a href="">
+									<img class="grey" src="img/partner/redreamer-grey.png">
+									<img class="color" src="img/partner/redreamer.png">
+								</a>
+								<a href="">
+									<img class="grey" src="img/partner/minty-grey.png">
+									<img class="color" src="img/partner/minty.png">
+								</a>
+							</span>
+						</div>
+					</div>
+					<div class="marquee-content">
+						<div class="text-block strokeme">
+							<span class="small">
+								<a href="">
+									<img class="grey" src="img/partner/readme-grey.png">
+									<img class="color" src="img/partner/readme.png">
+								</a>
+								<a href="">
+									<img class="grey" src="img/partner/ccubed-grey.png">
+									<img class="color" src="img/partner/ccubed.png">
+								</a>
+								<a href="">
+									<img class="grey" src="img/partner/redreamer-grey.png">
+									<img class="color" src="img/partner/redreamer.png">
+								</a>
+								<a href="">
+									<img class="grey" src="img/partner/minty-grey.png">
+									<img class="color" src="img/partner/minty.png">
+								</a>
+							</span>
+						</div>
+					</div>
+					<div class="marquee-content">
+						<div class="text-block strokeme">
+							<span class="small">
+								<a href="">
+									<img class="grey" src="img/partner/readme-grey.png">
+									<img class="color" src="img/partner/readme.png">
+								</a>
+								<a href="">
+									<img class="grey" src="img/partner/ccubed-grey.png">
+									<img class="color" src="img/partner/ccubed.png">
+								</a>
+								<a href="">
+									<img class="grey" src="img/partner/redreamer-grey.png">
+									<img class="color" src="img/partner/redreamer.png">
+								</a>
+								<a href="">
+									<img class="grey" src="img/partner/minty-grey.png">
+									<img class="color" src="img/partner/minty.png">
+								</a>
+							</span>
+						</div>
+					</div>
+				</div>
+				<div class="line">
+					<div class="marquee-content">
+						<div class="text-block strokeme">
+							<span class="small">
+								<a href="">
+									<img class="grey" src="img/partner/ccubed-grey.png">
+									<img class="color" src="img/partner/ccubed.png">
+								</a>
+								<a href="">
+									<img class="grey" src="img/partner/redreamer-grey.png">
+									<img class="color" src="img/partner/redreamer.png">
+								</a>
+								<a href="">
+									<img class="grey" src="img/partner/minty-grey.png">
+									<img class="color" src="img/partner/minty.png">
+								</a>
+								<a href="">
+									<img class="grey" src="img/partner/readme-grey.png">
+									<img class="color" src="img/partner/readme.png">
+								</a>
+							</span>
+						</div>
+					</div>
+					<div class="marquee-content">
+						<div class="text-block strokeme">
+							<span class="small">
+								<a href="">
+									<img class="grey" src="img/partner/ccubed-grey.png">
+									<img class="color" src="img/partner/ccubed.png">
+								</a>
+								<a href="">
+									<img class="grey" src="img/partner/redreamer-grey.png">
+									<img class="color" src="img/partner/redreamer.png">
+								</a>
+								<a href="">
+									<img class="grey" src="img/partner/minty-grey.png">
+									<img class="color" src="img/partner/minty.png">
+								</a>
+								<a href="">
+									<img class="grey" src="img/partner/readme-grey.png">
+									<img class="color" src="img/partner/readme.png">
+								</a>
+							</span>
+						</div>
+					</div>
+					<div class="marquee-content">
+						<div class="text-block strokeme">
+							<span class="small">
+								<a href="">
+									<img class="grey" src="img/partner/ccubed-grey.png">
+									<img class="color" src="img/partner/ccubed.png">
+								</a>
+								<a href="">
+									<img class="grey" src="img/partner/redreamer-grey.png">
+									<img class="color" src="img/partner/redreamer.png">
+								</a>
+								<a href="">
+									<img class="grey" src="img/partner/minty-grey.png">
+									<img class="color" src="img/partner/minty.png">
+								</a>
+								<a href="">
+									<img class="grey" src="img/partner/readme-grey.png">
+									<img class="color" src="img/partner/readme.png">
+								</a>
+							</span>
 						</div>
 					</div>
 				</div>
 			</div>
-		</section>
-		<section id="about">
-			<div class="bg">
-				<span></span><span></span><span></span><span></span><span></span><span></span>
-			</div>
-			<div>
-				<h2>About</h2>
-				<p class="subtitle">Get a 3D NFT model, chance to get customized collection, ticket, valuable painting.
-				</p>
-				<button>Mint Now</button>
-			</div>
-			<div class="blindbox">
-				<img src="img/blindbox.gif">
-			</div>
-		</section>
-		<section id="craft">
-			<div class="marquee">
-				<div class="marquee-content rscroll">
-					<div class="text-block">
-						<span class="small">
-							NPM X GASH <img src="img/icon/cube.svg">
-							NPM X GASH <img src="img/icon/cube.svg">
-							NPM X GASH <img src="img/icon/cube.svg">
-						</span>
-					</div>
-				</div>
-				<div class="marquee-content rscroll">
-					<div class="text-block">
-						<span class="small">
-							NPM X GASH <img src="img/icon/cube.svg">
-							NPM X GASH <img src="img/icon/cube.svg">
-							NPM X GASH <img src="img/icon/cube.svg">
-						</span>
-					</div>
-				</div>
-				<div class="marquee-content rscroll">
-					<div class="text-block">
-						<span class="small">
-							NPM X GASH <img src="img/icon/cube.svg">
-							NPM X GASH <img src="img/icon/cube.svg">
-							NPM X GASH <img src="img/icon/cube.svg">
-						</span>
-					</div>
-				</div>
-			</div>
-			<div class="marquee">
-				<div class="marquee-content scroll">
-					<div class="text-block strokeme">
-						<span class="small">
-							NPM X GASH <img src="img/icon/cube-outline.svg">
-							NPM X GASH <img src="img/icon/cube-outline.svg">
-							NPM X GASH <img src="img/icon/cube-outline.svg">
-						</span>
-					</div>
-				</div>
-				<div class="marquee-content scroll">
-					<div class="text-block strokeme">
-						<span class="small">
-							NPM X GASH <img src="img/icon/cube-outline.svg">
-							NPM X GASH <img src="img/icon/cube-outline.svg">
-							NPM X GASH <img src="img/icon/cube-outline.svg">
-						</span>
-					</div>
-				</div>
-				<div class="marquee-content scroll">
-					<div class="text-block strokeme">
-						<span class="small">
-							NPM X GASH <img src="img/icon/cube-outline.svg">
-							NPM X GASH <img src="img/icon/cube-outline.svg">
-							NPM X GASH <img src="img/icon/cube-outline.svg">
-						</span>
-					</div>
-				</div>
-			</div>
-			<div class="marquee">
-				<div class="marquee-content rscroll">
-					<div class="text-block">
-						<span class="small">
-							NPM X GASH <img src="img/icon/cube.svg">
-							NPM X GASH <img src="img/icon/cube.svg">
-							NPM X GASH <img src="img/icon/cube.svg">
-						</span>
-					</div>
-				</div>
-				<div class="marquee-content rscroll">
-					<div class="text-block">
-						<span class="small">
-							NPM X GASH <img src="img/icon/cube.svg">
-							NPM X GASH <img src="img/icon/cube.svg">
-							NPM X GASH <img src="img/icon/cube.svg">
-						</span>
-					</div>
-				</div>
-				<div class="marquee-content rscroll">
-					<div class="text-block">
-						<span class="small">
-							NPM X GASH <img src="img/icon/cube.svg">
-							NPM X GASH <img src="img/icon/cube.svg">
-							NPM X GASH <img src="img/icon/cube.svg">
-						</span>
-					</div>
-				</div>
-			</div>
-			<div class="marquee">
-				<div class="marquee-content scroll">
-					<div class="text-block strokeme">
-						<span class="small">
-							NPM X GASH <img src="img/icon/cube-outline.svg">
-							NPM X GASH <img src="img/icon/cube-outline.svg">
-							NPM X GASH <img src="img/icon/cube-outline.svg">
-						</span>
-					</div>
-				</div>
-				<div class="marquee-content scroll">
-					<div class="text-block strokeme">
-						<span class="small">
-							NPM X GASH <img src="img/icon/cube-outline.svg">
-							NPM X GASH <img src="img/icon/cube-outline.svg">
-							NPM X GASH <img src="img/icon/cube-outline.svg">
-						</span>
-					</div>
-				</div>
-				<div class="marquee-content scroll">
-					<div class="text-block strokeme">
-						<span class="small">
-							NPM X GASH <img src="img/icon/cube-outline.svg">
-							NPM X GASH <img src="img/icon/cube-outline.svg">
-							NPM X GASH <img src="img/icon/cube-outline.svg">
-						</span>
-					</div>
-				</div>
-			</div>
-			<div class="marquee">
-				<div class="marquee-content rscroll">
-					<div class="text-block">
-						<span class="small">
-							NPM X GASH <img src="img/icon/cube.svg">
-							NPM X GASH <img src="img/icon/cube.svg">
-							NPM X GASH <img src="img/icon/cube.svg">
-						</span>
-					</div>
-				</div>
-				<div class="marquee-content rscroll">
-					<div class="text-block">
-						<span class="small">
-							NPM X GASH <img src="img/icon/cube.svg">
-							NPM X GASH <img src="img/icon/cube.svg">
-							NPM X GASH <img src="img/icon/cube.svg">
-						</span>
-					</div>
-				</div>
-				<div class="marquee-content rscroll">
-					<div class="text-block">
-						<span class="small">
-							NPM X GASH <img src="img/icon/cube.svg">
-							NPM X GASH <img src="img/icon/cube.svg">
-							NPM X GASH <img src="img/icon/cube.svg">
-						</span>
-					</div>
-				</div>
-			</div>
-			<div class="marquee">
-				<div class="marquee-content scroll">
-					<div class="text-block strokeme">
-						<span class="small">
-							NPM X GASH <img src="img/icon/cube-outline.svg">
-							NPM X GASH <img src="img/icon/cube-outline.svg">
-							NPM X GASH <img src="img/icon/cube-outline.svg">
-						</span>
-					</div>
-				</div>
-				<div class="marquee-content scroll">
-					<div class="text-block strokeme">
-						<span class="small">
-							NPM X GASH <img src="img/icon/cube-outline.svg">
-							NPM X GASH <img src="img/icon/cube-outline.svg">
-							NPM X GASH <img src="img/icon/cube-outline.svg">
-						</span>
-					</div>
-				</div>
-				<div class="marquee-content scroll">
-					<div class="text-block strokeme">
-						<span class="small">
-							NPM X GASH <img src="img/icon/cube-outline.svg">
-							NPM X GASH <img src="img/icon/cube-outline.svg">
-							NPM X GASH <img src="img/icon/cube-outline.svg">
-						</span>
-					</div>
-				</div>
-			</div>
-			<div class="marquee">
-				<div class="marquee-content rscroll">
-					<div class="text-block">
-						<span class="small">
-							NPM X GASH <img src="img/icon/cube.svg">
-							NPM X GASH <img src="img/icon/cube.svg">
-							NPM X GASH <img src="img/icon/cube.svg">
-						</span>
-					</div>
-				</div>
-				<div class="marquee-content rscroll">
-					<div class="text-block">
-						<span class="small">
-							NPM X GASH <img src="img/icon/cube.svg">
-							NPM X GASH <img src="img/icon/cube.svg">
-							NPM X GASH <img src="img/icon/cube.svg">
-						</span>
-					</div>
-				</div>
-				<div class="marquee-content rscroll">
-					<div class="text-block">
-						<span class="small">
-							NPM X GASH <img src="img/icon/cube.svg">
-							NPM X GASH <img src="img/icon/cube.svg">
-							NPM X GASH <img src="img/icon/cube.svg">
-						</span>
-					</div>
-				</div>
-			</div>
-			<div class="marquee">
-				<div class="marquee-content scroll">
-					<div class="text-block strokeme">
-						<span class="small">
-							NPM X GASH <img src="img/icon/cube-outline.svg">
-							NPM X GASH <img src="img/icon/cube-outline.svg">
-							NPM X GASH <img src="img/icon/cube-outline.svg">
-						</span>
-					</div>
-				</div>
-				<div class="marquee-content scroll">
-					<div class="text-block strokeme">
-						<span class="small">
-							NPM X GASH <img src="img/icon/cube-outline.svg">
-							NPM X GASH <img src="img/icon/cube-outline.svg">
-							NPM X GASH <img src="img/icon/cube-outline.svg">
-						</span>
-					</div>
-				</div>
-				<div class="marquee-content scroll">
-					<div class="text-block strokeme">
-						<span class="small">
-							NPM X GASH <img src="img/icon/cube-outline.svg">
-							NPM X GASH <img src="img/icon/cube-outline.svg">
-							NPM X GASH <img src="img/icon/cube-outline.svg">
-						</span>
-					</div>
-				</div>
-			</div>
-			<div class="craft">
-				<img src="img/craft.png">
-			</div>
-		</section>
-		<section id="mint">
-			<div>
-				<h2>How to <br>Mint</h2>
+		</div>
+	</section>
+	<button id="go-top" class="hidden"><img src="img/icon/arrow.svg"></button>
+	<footer>
+		<div class="links">
+			<div class="sns">
+				<h3>Follow Us</h3>
 				<ul>
 					<li>
-						<img src="img/step.png">
-						<h3>Connect</h3>
-						<p>連接狐狸錢包</p>
-						<button>Connect</button>
+						<a href="" target="_blank">
+							<img src="img/icon/discord.svg"><img src="img/icon/discord-hover.svg">
+						</a>
 					</li>
 					<li>
-						<img src="img/step.png">
-						<h3>Buy</h3>
-						<p>購買盲盒</p>
-						<button>Mint Now</button>
+						<a href="" target="_blank">
+							<img src="img/icon/IG.svg"><img src="img/icon/IG-hover.svg">
+						</a>
 					</li>
 					<li>
-						<img src="img/step.png">
-						<h3>Get Hatch</h3>
-						<p>立即解盲</p>
-						<button>Mint Now</button>
+						<a href="" target="_blank">
+							<img src="img/icon/twitter.svg"><img src="img/icon/twitter-hover.svg">
+						</a>
 					</li>
 				</ul>
 			</div>
-		</section>
-		<section id="faq">
-			<div>
-				<h2>FAQ</h2>
-				<dl>
-					<dt>Q1. How Can I Mint A Mysterious Box?</dt>
-					<dd>NFT stands for "non-fungible token," a type of digital certificate built on blockchain
-						technology -- usually Ethereum (CRYPTO:ETH) -- that guarantees ownership of a unique digital
-						asset.</dd>
-					<dt>Q2. How Can I Mint A Mysterious Box?</dt>
-					<dd>Minting digital assets (everything from art to music to articles) as NFTs is one way for
-						artists to monetize their work.</dd>
-					<dt>Q3. How Can I Mint A Mysterious Box?</dt>
-					<dd>NFT stands for "non-fungible token," a type of digital certificate built on blockchain
-						technology -- usually Ethereum (CRYPTO:ETH) -- that guarantees ownership of a unique digital
-						asset. Minting digital assets (everything from art to music to articles) as NFTs is one way for
-						artists to monetize their work.</dd>
-					<dt>Q4. How Can I Mint A Mysterious Box?How Can I Mint A Mysterious Box?How Can I Mint A Mysterious
-						Box?How Can I Mint A Mysterious Box?</dt>
-					<dd>NFT stands for "non-fungible token," a type of digital certificate built on blockchain
-						technology -- usually Ethereum (CRYPTO:ETH) -- that guarantees ownership of a unique digital
-						asset.</dd>
-					<dt>Q5. How Can I Mint A Mysterious Box?</dt>
-					<dd>Minting digital assets (everything from art to music to articles) as NFTs is one way for
-						artists to monetize their work.</dd>
-					<dt>Q6. How Can I Mint A Mysterious Box?</dt>
-					<dd>NFT stands for "non-fungible token," a type of digital certificate built on blockchain
-						technology -- usually Ethereum (CRYPTO:ETH) -- that guarantees ownership of a unique digital
-						asset.</dd>
-				</dl>
-			</div>
-		</section>
-		<section id="team">
-			<img class="deco" src="img/deco-outline.png">
-			<div>
-				<h2>Teams</h2>
-				<div class="swiper teams">
-					<div class="swiper-wrapper">
-						<div class="swiper-slide">
-							<div class="img"><img src="img/team01.jpg"></div>
-							<h3>Leo Chou</h3>
-							<p>COO</p>
-						</div>
-						<div class="swiper-slide">
-							<div class="img"><img src="img/team01.jpg"></div>
-							<h3>Leo Chou</h3>
-							<p>Director</p>
-						</div>
-						<div class="swiper-slide">
-							<div class="img"><img src="img/team01.jpg"></div>
-							<h3>Leo Chou</h3>
-							<p>Manager</p>
-						</div>
-						<div class="swiper-slide">
-							<div class="img"><img src="img/team01.jpg"></div>
-							<h3>Leo Chou</h3>
-							<p>Director</p>
-						</div>
-						<div class="swiper-slide">
-							<div class="img"><img src="img/team01.jpg"></div>
-							<h3>Leo Chou</h3>
-							<p>Director</p>
-						</div>
-						<div class="swiper-slide">
-							<div class="img"><img src="img/team01.jpg"></div>
-							<h3>Leo Chou</h3>
-							<p>Director</p>
-						</div>
-						<div class="swiper-slide">
-							<div class="img"><img src="img/team01.jpg"></div>
-							<h3>Leo Chou</h3>
-							<p>Director</p>
-						</div>
-						<div class="swiper-slide">
-							<div class="img"><img src="img/team01.jpg"></div>
-							<h3>Leo Chou</h3>
-							<p>Director</p>
-						</div>
-						<div class="swiper-slide">
-							<div class="img"><img src="img/team01.jpg"></div>
-							<h3>Leo Chou</h3>
-							<p>Director</p>
-						</div>
-						<div class="swiper-slide">
-							<div class="img"><img src="img/team01.jpg"></div>
-							<h3>Leo Chou</h3>
-							<p>Director</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-		<section id="partner">
-			<div>
-				<h2>Partners</h2>
-				<div class="marquee">
-					<div class="line">
-						<div class="marquee-content">
-							<div class="text-block strokeme">
-								<span class="small">
-									<a href="">
-										<img class="grey" src="img/partner/minty-grey.png">
-										<img class="color" src="img/partner/minty.png">
-									</a>
-									<a href="">
-										<img class="grey" src="img/partner/readme-grey.png">
-										<img class="color" src="img/partner/readme.png">
-									</a>
-									<a href="">
-										<img class="grey" src="img/partner/ccubed-grey.png">
-										<img class="color" src="img/partner/ccubed.png">
-									</a>
-									<a href="">
-										<img class="grey" src="img/partner/redreamer-grey.png">
-										<img class="color" src="img/partner/redreamer.png">
-									</a>
-								</span>
-							</div>
-						</div>
-						<div class="marquee-content">
-							<div class="text-block strokeme">
-								<span class="small">
-									<a href="">
-										<img class="grey" src="img/partner/minty-grey.png">
-										<img class="color" src="img/partner/minty.png">
-									</a>
-									<a href="">
-										<img class="grey" src="img/partner/readme-grey.png">
-										<img class="color" src="img/partner/readme.png">
-									</a>
-									<a href="">
-										<img class="grey" src="img/partner/ccubed-grey.png">
-										<img class="color" src="img/partner/ccubed.png">
-									</a>
-									<a href="">
-										<img class="grey" src="img/partner/redreamer-grey.png">
-										<img class="color" src="img/partner/redreamer.png">
-									</a>
-								</span>
-							</div>
-						</div>
-						<div class="marquee-content">
-							<div class="text-block strokeme">
-								<span class="small">
-									<a href="">
-										<img class="grey" src="img/partner/minty-grey.png">
-										<img class="color" src="img/partner/minty.png">
-									</a>
-									<a href="">
-										<img class="grey" src="img/partner/readme-grey.png">
-										<img class="color" src="img/partner/readme.png">
-									</a>
-									<a href="">
-										<img class="grey" src="img/partner/ccubed-grey.png">
-										<img class="color" src="img/partner/ccubed.png">
-									</a>
-									<a href="">
-										<img class="grey" src="img/partner/redreamer-grey.png">
-										<img class="color" src="img/partner/redreamer.png">
-									</a>
-								</span>
-							</div>
-						</div>
-					</div>
-					<div class="line">
-						<div class="marquee-content">
-							<div class="text-block strokeme">
-								<span class="small">
-									<a href="">
-										<img class="grey" src="img/partner/readme-grey.png">
-										<img class="color" src="img/partner/readme.png">
-									</a>
-									<a href="">
-										<img class="grey" src="img/partner/ccubed-grey.png">
-										<img class="color" src="img/partner/ccubed.png">
-									</a>
-									<a href="">
-										<img class="grey" src="img/partner/redreamer-grey.png">
-										<img class="color" src="img/partner/redreamer.png">
-									</a>
-									<a href="">
-										<img class="grey" src="img/partner/minty-grey.png">
-										<img class="color" src="img/partner/minty.png">
-									</a>
-								</span>
-							</div>
-						</div>
-						<div class="marquee-content">
-							<div class="text-block strokeme">
-								<span class="small">
-									<a href="">
-										<img class="grey" src="img/partner/readme-grey.png">
-										<img class="color" src="img/partner/readme.png">
-									</a>
-									<a href="">
-										<img class="grey" src="img/partner/ccubed-grey.png">
-										<img class="color" src="img/partner/ccubed.png">
-									</a>
-									<a href="">
-										<img class="grey" src="img/partner/redreamer-grey.png">
-										<img class="color" src="img/partner/redreamer.png">
-									</a>
-									<a href="">
-										<img class="grey" src="img/partner/minty-grey.png">
-										<img class="color" src="img/partner/minty.png">
-									</a>
-								</span>
-							</div>
-						</div>
-						<div class="marquee-content">
-							<div class="text-block strokeme">
-								<span class="small">
-									<a href="">
-										<img class="grey" src="img/partner/readme-grey.png">
-										<img class="color" src="img/partner/readme.png">
-									</a>
-									<a href="">
-										<img class="grey" src="img/partner/ccubed-grey.png">
-										<img class="color" src="img/partner/ccubed.png">
-									</a>
-									<a href="">
-										<img class="grey" src="img/partner/redreamer-grey.png">
-										<img class="color" src="img/partner/redreamer.png">
-									</a>
-									<a href="">
-										<img class="grey" src="img/partner/minty-grey.png">
-										<img class="color" src="img/partner/minty.png">
-									</a>
-								</span>
-							</div>
-						</div>
-					</div>
-					<div class="line">
-						<div class="marquee-content">
-							<div class="text-block strokeme">
-								<span class="small">
-									<a href="">
-										<img class="grey" src="img/partner/ccubed-grey.png">
-										<img class="color" src="img/partner/ccubed.png">
-									</a>
-									<a href="">
-										<img class="grey" src="img/partner/redreamer-grey.png">
-										<img class="color" src="img/partner/redreamer.png">
-									</a>
-									<a href="">
-										<img class="grey" src="img/partner/minty-grey.png">
-										<img class="color" src="img/partner/minty.png">
-									</a>
-									<a href="">
-										<img class="grey" src="img/partner/readme-grey.png">
-										<img class="color" src="img/partner/readme.png">
-									</a>
-								</span>
-							</div>
-						</div>
-						<div class="marquee-content">
-							<div class="text-block strokeme">
-								<span class="small">
-									<a href="">
-										<img class="grey" src="img/partner/ccubed-grey.png">
-										<img class="color" src="img/partner/ccubed.png">
-									</a>
-									<a href="">
-										<img class="grey" src="img/partner/redreamer-grey.png">
-										<img class="color" src="img/partner/redreamer.png">
-									</a>
-									<a href="">
-										<img class="grey" src="img/partner/minty-grey.png">
-										<img class="color" src="img/partner/minty.png">
-									</a>
-									<a href="">
-										<img class="grey" src="img/partner/readme-grey.png">
-										<img class="color" src="img/partner/readme.png">
-									</a>
-								</span>
-							</div>
-						</div>
-						<div class="marquee-content">
-							<div class="text-block strokeme">
-								<span class="small">
-									<a href="">
-										<img class="grey" src="img/partner/ccubed-grey.png">
-										<img class="color" src="img/partner/ccubed.png">
-									</a>
-									<a href="">
-										<img class="grey" src="img/partner/redreamer-grey.png">
-										<img class="color" src="img/partner/redreamer.png">
-									</a>
-									<a href="">
-										<img class="grey" src="img/partner/minty-grey.png">
-										<img class="color" src="img/partner/minty.png">
-									</a>
-									<a href="">
-										<img class="grey" src="img/partner/readme-grey.png">
-										<img class="color" src="img/partner/readme.png">
-									</a>
-								</span>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-		<button id="go-top" class="hidden"><img src="img/icon/arrow.svg"></button>
-		<footer>
-			<div class="links">
-				<div class="sns">
-					<h3>Follow Us</h3>
-					<ul>
-						<li>
-							<a href="" target="_blank">
-								<img src="img/icon/discord.svg"><img src="img/icon/discord-hover.svg">
-							</a>
-						</li>
-						<li>
-							<a href="" target="_blank">
-								<img src="img/icon/IG.svg"><img src="img/icon/IG-hover.svg">
-							</a>
-						</li>
-						<li>
-							<a href="" target="_blank">
-								<img src="img/icon/twitter.svg"><img src="img/icon/twitter-hover.svg">
-							</a>
-						</li>
-					</ul>
-				</div>
-				<div class="npm">
-					<h3>NPM Link</h3>
-					<ul>
-						<li><a href="" target="_blank">NPM Website</a></li>
-						<li><a href="" target="_blank">NPM Treasure</a></li>
-						<li><a href="" target="_blank">Podcast</a></li>
-						<li><a href="" target="_blank">NPM Online</a></li>
-						<li><a href="" target="_blank">Share Copyright</a></li>
-						<li><a href="" target="_blank">Library</a></li>
-					</ul>
-				</div>
-			</div>
-			<span></span>
-			<div class="additional">
-				<div class="copyright">
-					<p>© 2023 GASH POINT Co., Ltd. All right reserved</p>
-					<p>商家名稱：樂點股份有限公司 | 統一編號：53209324</p>
-				</div>
-				<ul class="info">
-					<li><a href="">服務條款</a></li>
-					<li><a href="">隱私權和 Cookie 聲明</a></li>
-					<li><a href="">聯繫客服</a></li>
+			<div class="npm">
+				<h3>NPM Link</h3>
+				<ul>
+					<li><a href="" target="_blank">NPM Website</a></li>
+					<li><a href="" target="_blank">NPM Treasure</a></li>
+					<li><a href="" target="_blank">Podcast</a></li>
+					<li><a href="" target="_blank">NPM Online</a></li>
+					<li><a href="" target="_blank">Share Copyright</a></li>
+					<li><a href="" target="_blank">Library</a></li>
 				</ul>
 			</div>
-	</div>
+		</div>
+		<span></span>
+		<div class="additional">
+			<div class="copyright">
+				<p>© 2023 GASH POINT Co., Ltd. All right reserved</p>
+				<p>商家名稱：樂點股份有限公司 | 統一編號：53209324</p>
+			</div>
+			<ul class="info">
+				<li><a href="">服務條款</a></li>
+				<li><a href="">隱私權和 Cookie 聲明</a></li>
+				<li><a href="">聯繫客服</a></li>
+			</ul>
+		</div>
 	</footer>
-	</div>
+
 
 
 	<!-- jQuery -->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<script src="vendor/jquery.min.js"></script>
 
+	<script src="js/menu.js"></script>
 	<script src="js/header-hide.js"></script>
 	<script src="js/master-hover.js"></script>
 	<script src="js/faq-show.js"></script>
-	<!-- <script src="js/go-top.js"></script> -->
+	<!-- <script src="js/parallax.js"></script> -->
+
+	<!-- AOS 套件 -->
+	<script src="vendor/aos/aos.js"></script>
+	<script type="text/javascript">
+		AOS.init({
+			once: false,
+			duration: 500
+		});
+	</script>
 
 	<!-- Swiper 套件 -->
-	<script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+	<script src="vendor/swiper/swiper-bundle.min.js"></script>
 	<script type="text/javascript">
 		// 首屏圖片輪播
 		var swiperBanner = new Swiper('.banner', {
