@@ -30,10 +30,10 @@
 			<div class="nav">
 				<button class="close"><img src="img/icon/close.svg"></button>
 				<ul>
-					<li><a href="">about</a></li>
-					<li><a href="">how to mint</a></li>
-					<li><a href="">faq</a></li>
-					<li><a href="">master plan</a></li>
+					<li><a href="#about">about</a></li>
+					<li><a href="#mint">how to mint</a></li>
+					<li><a href="#faq">faq</a></li>
+					<li><a href="#master">master plan</a></li>
 				</ul>
 				<ul class="sns">
 					<li><a href=""><img src="img/icon/discord.svg"></a></li>
@@ -47,7 +47,7 @@
 	</header>
 	<section id="main">
 		<h1 data-aos="fade-down-right">Mysterious<br>Box</h1>
-		<div data-aos="fade-up-left" class="swiper banner">
+		<div data-aos="zoom-in-up" class="swiper banner">
 			<div class="swiper-wrapper">
 				<div class="swiper-slide">
 					<img src="img/banner01.jpg">
@@ -69,7 +69,7 @@
 			<span></span><span></span><span></span><span></span><span></span><span></span><span></span>
 		</div>
 		<h2 data-aos="fade-down-right">International<br>Master</h2>
-		<div data-aos="fade-up-left" class="container">
+		<div data-aos="zoom-in-up" class="container">
 			<div class="accord-wrapper">
 				<div class="master1">
 					<div class="accord-content">
@@ -414,7 +414,6 @@
 		</div>
 	</section>
 	<section id="team">
-		<img class="deco" src="img/deco-outline.png">
 		<div>
 			<h2 data-aos="fade-up">Teams</h2>
 			<div data-aos="fade-up" data-aos-delay="300" class="swiper teams">
@@ -768,8 +767,13 @@
 
 		// 團隊輪播
 		var swiperTeams = new Swiper('.teams', {
-			slidesPerView: 5.2,
+			slidesPerView: 3.5,
 			spaceBetween: 24,
+			breakpoints: {
+				768: {
+					slidesPerView: 5.2,
+				},
+			},
 		});
 	</script>
 </body>

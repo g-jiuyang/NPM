@@ -149,6 +149,10 @@
   display: none;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: "Varela", "PingFang TC", "Noto Sans TC", sans-serif;
   font-weight: 400;
@@ -157,6 +161,8 @@ body {
   line-height: 40px;
   background-color: #E4E4E4;
   color: #323232;
+  width: 100svw;
+  overflow-x: hidden;
 }
 
 /* 文字設定 */
@@ -165,6 +171,12 @@ h1 {
   font-weight: 400;
   font-size: 220px;
   line-height: 230px;
+}
+@media screen and (max-width: 768px) {
+  h1 {
+    font-size: 80px;
+    line-height: 72px;
+  }
 }
 
 p a,
@@ -1170,6 +1182,12 @@ h2 {
   font-size: 128px;
   line-height: 128px;
 }
+@media screen and (max-width: 768px) {
+  h2 {
+    font-size: 64px;
+    line-height: 64px;
+  }
+}
 
 .subtitle {
   font-family: "Varela", "PingFang TC", "Noto Sans TC", sans-serif;
@@ -1178,12 +1196,24 @@ h2 {
   line-height: 48px;
   text-transform: uppercase;
 }
+@media screen and (max-width: 768px) {
+  .subtitle {
+    font-size: 24px;
+    line-height: 32px;
+  }
+}
 
 .content {
   font-family: "Varela", "PingFang TC", "Noto Sans TC", sans-serif;
   font-weight: 400;
   font-size: 28px;
   line-height: 40px;
+}
+@media screen and (max-width: 768px) {
+  .content {
+    font-size: 18px;
+    line-height: 26px;
+  }
 }
 
 .description {
@@ -1192,12 +1222,20 @@ h2 {
   font-size: 24px;
   line-height: 36px;
 }
+@media screen and (max-width: 768px) {
+  .description {
+    font-size: 16px;
+    line-height: 24px;
+  }
+}
 
 button {
   background-color: transparent;
   border: 2px solid #7D0200;
   border-radius: 100px;
   padding: 20px 40px;
+  font-family: "Varela", "PingFang TC", "Noto Sans TC", sans-serif;
+  font-weight: 400;
   font-size: 24px;
   color: #7D0200;
   text-transform: uppercase;
@@ -1224,6 +1262,13 @@ button:hover {
 button:hover:after {
   left: 0;
   right: -120%;
+}
+@media screen and (max-width: 768px) {
+  button {
+    font-size: 20px;
+    line-height: 26px;
+    padding: 12px 36px;
+  }
 }
 
 /* Swiper Styles */

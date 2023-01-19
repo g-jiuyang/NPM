@@ -149,6 +149,10 @@
   display: none;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: "Varela", "PingFang TC", "Noto Sans TC", sans-serif;
   font-weight: 400;
@@ -157,6 +161,8 @@ body {
   line-height: 40px;
   background-color: #E4E4E4;
   color: #323232;
+  width: 100svw;
+  overflow-x: hidden;
 }
 
 /* 文字設定 */
@@ -165,6 +171,12 @@ h1 {
   font-weight: 400;
   font-size: 220px;
   line-height: 230px;
+}
+@media screen and (max-width: 768px) {
+  h1 {
+    font-size: 80px;
+    line-height: 72px;
+  }
 }
 
 p a,
@@ -189,7 +201,7 @@ header {
   top: 0;
   left: 0;
   right: 0;
-  padding: 5svh calc(50svw - 600px) 0;
+  padding: 5svh calc(50svw - 600px) 0 calc(50svw - 600px);
   height: -webkit-min-content;
   height: -moz-min-content;
   height: min-content;
@@ -300,6 +312,7 @@ header .options .wallet button:hover {
 
 section {
   position: relative;
+  width: 100svw;
 }
 
 .bg {
@@ -326,24 +339,10 @@ section {
 
 #main {
   font-size: 220px;
-  overflow-y: scroll;
   position: relative;
 }
 #main h1 {
   margin-bottom: calc(28svw - 1.1em);
-  position: relative;
-}
-#main h1:after {
-  content: "";
-  position: absolute;
-  top: 100%;
-  left: 0;
-  width: 76px;
-  height: 76px;
-  background-image: url(../img/deco.png);
-  background-size: 100%;
-  -webkit-animation: deco-round 15s linear infinite;
-          animation: deco-round 15s linear infinite;
 }
 #main .banner {
   position: absolute;
@@ -356,6 +355,18 @@ section {
   width: 50svw;
   margin-left: calc(1200px - 50svw);
 }
+#main:after {
+  content: "";
+  position: absolute;
+  top: calc(8svw + 460px);
+  left: calc(50svw - 600px);
+  width: 76px;
+  height: 76px;
+  background-image: url(../img/deco.png);
+  background-size: 100%;
+  -webkit-animation: deco-round 15s linear infinite;
+          animation: deco-round 15s linear infinite;
+}
 
 #master {
   height: calc(50svw + 200px);
@@ -363,12 +374,6 @@ section {
 }
 #master h2 {
   position: relative;
-}
-#master h2:after {
-  content: url(../img/dot.png);
-  position: absolute;
-  top: 30px;
-  left: -30px;
 }
 #master .container {
   position: absolute;
@@ -537,6 +542,13 @@ section {
   -webkit-animation-name: breath-f;
           animation-name: breath-f;
 }
+#master:after {
+  content: url(../img/dot.png);
+  position: absolute;
+  top: calc(8svw + 64px);
+  left: calc(50svw - 600px);
+  transform: translateX(-50%);
+}
 
 #about {
   display: flex;
@@ -555,8 +567,10 @@ section {
   max-width: 400px;
 }
 #about .blindbox:after {
-  content: url(../img/deco-outline.png);
+  content: "";
   position: absolute;
+  background-image: url(../img/deco-outline.png);
+  background-size: 100%;
   top: -150px;
   left: -150px;
   width: 300px;
@@ -612,7 +626,7 @@ section {
 }
 
 #craft {
-  height: 100svh;
+  height: 100vh;
   font-size: 154px;
   line-height: 154px;
   max-height: 6em;
@@ -679,23 +693,12 @@ section {
 #mint h2 {
   position: relative;
 }
-#mint h2:after {
-  content: url(../img/deco.png);
-  position: absolute;
-  top: calc(50% - 88px);
-  right: 0;
-  width: 176px;
-  height: 176px;
-  z-index: -1;
-  -webkit-animation: deco-round 15s linear infinite;
-          animation: deco-round 15s linear infinite;
-}
 #mint ul {
   display: flex;
   text-align: center;
   width: 1200px;
   border-top: 1px solid #323232;
-  margin-top: 36px;
+  margin-top: 66px;
 }
 #mint ul li {
   flex: 1;
@@ -753,6 +756,19 @@ section {
   right: 0;
   transform: translateY(-50%);
 }
+#mint:after {
+  content: "";
+  background-image: url(../img/deco.png);
+  background-size: 100%;
+  position: absolute;
+  top: calc(8svw + 40px);
+  right: calc(50svw - 600px);
+  width: 176px;
+  height: 176px;
+  z-index: -1;
+  -webkit-animation: deco-round 15s linear infinite;
+          animation: deco-round 15s linear infinite;
+}
 
 #faq {
   padding: 3svw calc(50svw - 600px);
@@ -760,7 +776,6 @@ section {
 }
 #faq dl {
   margin-left: 240px;
-  padding-right: 28px;
 }
 #faq dl dd {
   overflow: hidden;
@@ -793,14 +808,7 @@ section {
 }
 
 #team {
-  padding: 3svw 0 5svw calc(50svw - 600px);
-}
-#team .deco {
-  width: 140px;
-  height: 140px;
-  margin-bottom: 3svw;
-  -webkit-animation: deco-round 15s linear infinite;
-          animation: deco-round 15s linear infinite;
+  padding: 10svw 0 5svw calc(50svw - 600px);
 }
 #team .swiper-slide .img {
   position: relative;
@@ -837,6 +845,19 @@ section {
 #team .swiper-slide:hover .img:after {
   background-color: transparent;
 }
+#team:after {
+  content: "";
+  background-image: url(../img/deco-outline.png);
+  background-size: 100%;
+  position: absolute;
+  top: 24px;
+  left: calc(50svw - 600px);
+  width: 140px;
+  height: 140px;
+  bottom: 3svw;
+  -webkit-animation: deco-round 15s linear infinite;
+          animation: deco-round 15s linear infinite;
+}
 
 #partner {
   height: auto;
@@ -864,8 +885,8 @@ section {
   min-width: -moz-fit-content;
   min-width: fit-content;
   margin-right: 28px;
-  -webkit-animation: scroll 20s linear infinite;
-          animation: scroll 20s linear infinite;
+  -webkit-animation: scroll 15s linear infinite;
+          animation: scroll 15s linear infinite;
 }
 #partner .marquee .line .marquee-content .text-block .small {
   display: flex;
@@ -1005,7 +1026,7 @@ footer .additional .info a:hover {
 
 @media screen and (max-width: 1440px) {
   header {
-    padding: 5svh 5svw 0;
+    padding: 5svh 5svw 0 5svw;
   }
   #main,
 #master,
@@ -1026,16 +1047,19 @@ footer .additional .info a:hover {
     width: 60svw;
     margin-left: calc(100% - 60svw);
   }
+  #main:after {
+    left: 5svw;
+  }
   #master .container {
     width: 60svw;
     height: 33.75svw;
     right: 5svw;
     top: auto;
-    bottom: 20px;
+    bottom: 8svw;
   }
-  #master .container .accord-wrapper .master1,
-#master .container .accord-wrapper .master2,
-#master .container .accord-wrapper .master3 {
+  #master .container .master1,
+#master .container .master2,
+#master .container .master3 {
     height: 33.75svw;
   }
   #about .subtitle {
@@ -1048,10 +1072,10 @@ footer .additional .info a:hover {
     padding: 3svw 5svw;
   }
   #team {
-    padding: 3svw 0 5svw 5svw;
+    padding: 12svw 0 5svw 5svw;
   }
   #partner {
-    height: 100svh;
+    padding: 200px 0;
   }
   #partner h2 {
     padding-left: 5svw;
@@ -1136,6 +1160,18 @@ footer .additional .info a:hover {
     flex: 100%;
     text-align: right;
   }
+  #master:after {
+    left: 5svw;
+  }
+  #mint:after {
+    top: 140px;
+    right: 5svw;
+    width: 90px;
+    height: 90px;
+  }
+  #faq dl {
+    margin-left: 3em;
+  }
   footer .links,
 footer .additional {
     max-width: 85svw;
@@ -1147,12 +1183,105 @@ footer .additional {
     flex: 4;
   }
 }
+@media screen and (max-width: 768px) {
+  #main,
+#master,
+#about,
+#mint {
+    padding: 120px 5svw;
+  }
+  #main {
+    height: auto;
+  }
+  #main h1 {
+    margin-bottom: 0;
+  }
+  #main .banner {
+    position: relative;
+    top: auto;
+    right: auto;
+    width: 90svw;
+    height: 50.6svw;
+    margin-top: -12px;
+  }
+  #main .subtitle {
+    margin: 20px 0 0 0;
+  }
+  #main:after {
+    top: auto;
+    right: 5svw;
+    bottom: 12px;
+    left: auto;
+  }
+  #master {
+    height: auto;
+  }
+  #master .bg {
+    height: 100%;
+  }
+  #master .container {
+    position: relative;
+    top: auto;
+    right: auto;
+    width: 90svw;
+    height: 85svw;
+    margin-top: 100px;
+  }
+  #master .container .master1,
+#master .container .master2,
+#master .container .master3 {
+    height: 85svw;
+  }
+  #master:after {
+    top: calc(8svw + 132px);
+    right: -28px;
+    left: auto;
+  }
+  #about {
+    flex-wrap: wrap;
+  }
+  #about .bg {
+    height: 100%;
+  }
+  #about > div {
+    flex: 100%;
+  }
+  #about .subtitle {
+    width: 100%;
+    padding-bottom: 26px;
+  }
+  #about .blindbox {
+    max-width: 240px;
+    margin: 54px auto;
+  }
+  #about .blindbox img {
+    width: 100%;
+    border-radius: 20%;
+  }
+  #about .blindbox:after {
+    width: 120px;
+    height: 120px;
+    top: auto;
+    right: -50px;
+    bottom: -50px;
+    left: auto;
+  }
+  #craft {
+    max-height: 100vh;
+  }
+}
 /* -- Components.scss -- */
 h2 {
   font-family: "Bebas Neue", cursive;
   font-weight: 400;
   font-size: 128px;
   line-height: 128px;
+}
+@media screen and (max-width: 768px) {
+  h2 {
+    font-size: 64px;
+    line-height: 64px;
+  }
 }
 
 .subtitle {
@@ -1162,12 +1291,24 @@ h2 {
   line-height: 48px;
   text-transform: uppercase;
 }
+@media screen and (max-width: 768px) {
+  .subtitle {
+    font-size: 24px;
+    line-height: 32px;
+  }
+}
 
 .content {
   font-family: "Varela", "PingFang TC", "Noto Sans TC", sans-serif;
   font-weight: 400;
   font-size: 28px;
   line-height: 40px;
+}
+@media screen and (max-width: 768px) {
+  .content {
+    font-size: 18px;
+    line-height: 26px;
+  }
 }
 
 .description {
@@ -1176,12 +1317,20 @@ h2 {
   font-size: 24px;
   line-height: 36px;
 }
+@media screen and (max-width: 768px) {
+  .description {
+    font-size: 16px;
+    line-height: 24px;
+  }
+}
 
 button {
   background-color: transparent;
   border: 2px solid #7D0200;
   border-radius: 100px;
   padding: 20px 40px;
+  font-family: "Varela", "PingFang TC", "Noto Sans TC", sans-serif;
+  font-weight: 400;
   font-size: 24px;
   color: #7D0200;
   text-transform: uppercase;
@@ -1208,6 +1357,13 @@ button:hover {
 button:hover:after {
   left: 0;
   right: -120%;
+}
+@media screen and (max-width: 768px) {
+  button {
+    font-size: 20px;
+    line-height: 26px;
+    padding: 12px 36px;
+  }
 }
 
 /* Swiper Styles */
