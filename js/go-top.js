@@ -1,5 +1,5 @@
 $('#go-top').click(function () {
-	$('html,body').animate({ scrollTop: 0 }, 300);
+	$('html,body').animate({ scrollTop: 0 }, 100);
 });
 $(window).scroll(function () {
 	if ($(this).scrollTop() > 300) {

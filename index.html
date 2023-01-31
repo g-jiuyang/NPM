@@ -20,6 +20,13 @@
 	<link rel="stylesheet" href="css/styles.css">
 
 	<title>NPM NFT</title>
+
+	<style>
+		.html5-video-container,
+		.ytp-title-text {
+			display: none !important;
+		}
+	</style>
 </head>
 
 <body>
@@ -41,16 +48,28 @@
 					<li><a href=""><img src="img/icon/twitter.svg"></a></li>
 				</ul>
 			</div>
-			<div class="language"><span>繁體中文</span></div>
+			<div class="language">
+				<div><span>繁體中文</span></div>
+				<ul>
+					<li class="active">繁體中文</li>
+					<li>English</li>
+					<li>日本語</li>
+					<li>한국어</li>
+				</ul>
+			</div>
 			<div class="wallet"><button>連接錢包</button></div>
 		</div>
 	</header>
 	<section id="main">
-		<h1 data-aos="fade-down-right">Mysterious<br>Box</h1>
-		<div data-aos="zoom-in-up" class="swiper banner">
+		<h1 speed="-5">Mysterious<br>Box</h1>
+		<div class="swiper banner" speed="3">
 			<div class="swiper-wrapper">
 				<div class="swiper-slide">
-					<img src="img/banner01.jpg">
+					<!-- <img src="img/banner01.jpg"> -->
+					<video width="100%" height="100%" autoplay muted loop>
+						<source src="img/HaveANiceDay.mp4" type="video/mp4">
+						Your browser does not support the video tag.
+					</video>
 				</div>
 				<div class="swiper-slide">
 					<img src="img/banner01.jpg">
@@ -61,15 +80,15 @@
 			</div>
 			<div class="swiper-pagination"></div>
 		</div>
-		<p data-aos="fade-up" class="subtitle">Get a 3D NFT model, chance to get customized collection, ticket,
+		<p class="subtitle" speed="3">Get a 3D NFT model, chance to get customized collection, ticket,
 			valuable painting.</p>
 	</section>
 	<section id="master">
 		<div class="bg">
 			<span></span><span></span><span></span><span></span><span></span><span></span><span></span>
 		</div>
-		<h2 data-aos="fade-down-right">International<br>Master</h2>
-		<div data-aos="zoom-in-up" class="container">
+		<h2 speed="0.3">International<br>Master</h2>
+		<div class="container" speed="-0.3">
 			<div class="accord-wrapper">
 				<div class="master1">
 					<div class="accord-content">
@@ -120,7 +139,7 @@
 			<img src="img/blindbox.gif">
 		</div>
 	</section>
-	<section data-aos="fade" data-aos-offset="300" data-aos-duration="1200" id="craft">
+	<section id="craft" data-aos="fade" data-aos-offset="300" data-aos-duration="1200">
 		<div class="marquee">
 			<div class="marquee-content rscroll">
 				<div class="text-block">
@@ -380,6 +399,28 @@
 					<button>Mint Now</button>
 				</li>
 			</ul>
+			<div class="swiper mint-slide" data-aos="fade" data-aos-duration="1200">
+				<div class="swiper-wrapper">
+					<div class="swiper-slide">
+						<img src="img/step.png">
+						<h3>Connect</h3>
+						<p>連接狐狸錢包</p>
+						<button>Connect</button>
+					</div>
+					<div class="swiper-slide">
+						<img src="img/step.png">
+						<h3>Buy</h3>
+						<p>購買盲盒</p>
+						<button>Mint Now</button>
+					</div>
+					<div class="swiper-slide">
+						<img src="img/step.png">
+						<h3>Get Hatch</h3>
+						<p>立即解盲</p>
+						<button>Mint Now</button>
+					</div>
+				</div>
+			</div>
 		</div>
 	</section>
 	<section id="faq">
@@ -416,7 +457,7 @@
 	<section id="team">
 		<div>
 			<h2 data-aos="fade-up">Teams</h2>
-			<div data-aos="fade-up" data-aos-delay="300" class="swiper teams">
+			<div class="swiper teams" data-aos="fade-up" data-aos-delay="300">
 				<div class="swiper-wrapper">
 					<div class="swiper-slide">
 						<div class="img"><img src="img/team01.jpg"></div>
@@ -739,9 +780,10 @@
 
 	<script src="js/menu.js"></script>
 	<script src="js/header-hide.js"></script>
+	<script src="js/language.js"></script>
 	<script src="js/master-hover.js"></script>
 	<script src="js/faq-show.js"></script>
-	<!-- <script src="js/parallax.js"></script> -->
+	<script src="js/go-top.js"></script>
 
 	<!-- AOS 套件 -->
 	<script src="vendor/aos/aos.js"></script>
@@ -767,14 +809,35 @@
 
 		// 團隊輪播
 		var swiperTeams = new Swiper('.teams', {
-			slidesPerView: 3.5,
+			slidesPerView: 3.4,
 			spaceBetween: 24,
 			breakpoints: {
-				768: {
-					slidesPerView: 5.2,
-				},
-			},
+				769: {
+					slidesPerView: 5.2
+				}
+			}
 		});
+
+		// Mint輪播
+		var swiperTeams = new Swiper('.mint-slide', {
+			slidesPerView: 'auto',
+			spaceBetween: 24,
+			hashNavigation: true,
+		});
+	</script>
+
+	<script type="text/javascript">
+		let layers = $('[speed]');
+		let speed, yPos;
+		window.addEventListener("scroll", function (event) {
+			let fromTop = this.pageYOffset;
+
+			for (let layer of layers) {
+				speed = layer.getAttribute('speed');
+				yPos = -(fromTop * speed) * 0.1;
+				layer.style.transform = `translateY(${yPos}px)`;
+			}
+		})
 	</script>
 </body>
 

@@ -243,7 +243,7 @@ header .options .nav ul {
   display: flex;
   flex-wrap: wrap;
   justify-content: right;
-  gap: 20px 80px;
+  gap: 12px 60px;
 }
 header .options .nav ul li a {
   background: linear-gradient(60deg, #7D0200 50%, #323232 51%);
@@ -265,14 +265,13 @@ header .options .language {
   font-family: "PingFang TC", "Noto Sans TC", sans-serif;
   font-weight: 500;
   font-size: 16px;
+  color: #323232;
   flex: 1;
   flex-grow: 0;
-  min-width: -webkit-max-content;
-  min-width: -moz-max-content;
-  min-width: max-content;
+  min-width: 110px;
   margin-left: 76px;
-  padding-right: 16px;
-  color: #323232;
+}
+header .options .language div {
   background: linear-gradient(60deg, #7D0200 50%, #323232 51%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -281,19 +280,56 @@ header .options .language {
   transition: all 0.5s ease-in;
   cursor: pointer;
 }
-header .options .language:hover {
+header .options .language div:hover {
   background-position: 0 100%;
 }
-header .options .language:before {
+header .options .language div:before {
   content: url(../img/icon/globe.svg);
   vertical-align: middle;
   margin-right: 8px;
 }
-header .options .language:after {
+header .options .language div:after {
   content: url(../img/icon/arrow-s.svg);
   position: absolute;
   right: 0;
   top: -2px;
+}
+header .options .language div span {
+  padding-right: 16px;
+}
+header .options .language ul {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%) translateY(10px);
+  background-color: #E4E4E4;
+  border-radius: 12px;
+  overflow: hidden;
+  height: auto;
+  max-height: 0;
+  padding: 0 52px;
+  transition: max-height 0.3s, padding 0.3s;
+}
+header .options .language ul li {
+  background: linear-gradient(60deg, #7D0200 50%, #323232 51%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 250% 100%;
+  background-position: 100%;
+  transition: all 0.5s ease-in;
+  cursor: pointer;
+  margin: 10px 0;
+  font-weight: 400;
+}
+header .options .language ul li:hover {
+  background-position: 0 100%;
+}
+header .options .language ul li.active {
+  font-weight: 700;
+}
+header .options .language.show ul {
+  max-height: 500px;
+  padding: 18px 52px;
+  border: rgba(50, 50, 50, 0.3) solid 1px;
 }
 header .options .wallet button {
   font-family: "PingFang TC", "Noto Sans TC", sans-serif;
@@ -304,7 +340,7 @@ header .options .wallet button {
   color: #E4E4E4;
 }
 header .options .wallet button:after {
-  background: linear-gradient(120deg, #E4E4E4 50%, #7D0200 51%);
+  background: linear-gradient(120deg, rgba(228, 228, 228, 0) 50%, #7D0200 51%);
 }
 header .options .wallet button:hover {
   color: #7D0200;
@@ -756,6 +792,9 @@ section {
   right: 0;
   transform: translateY(-50%);
 }
+#mint .mint-slide {
+  display: none;
+}
 #mint:after {
   content: "";
   background-image: url(../img/deco.png);
@@ -1149,12 +1188,15 @@ footer .additional .info a:hover {
   }
   header .options .language {
     order: 2;
+    min-width: -webkit-max-content;
+    min-width: -moz-max-content;
+    min-width: max-content;
   }
-  header .options .language span {
+  header .options .language div:before {
+    margin-right: 16px;
+  }
+  header .options .language div span {
     display: none;
-  }
-  header .options .language:before {
-    margin-right: 0;
   }
   header .options .wallet {
     flex: 100%;
@@ -1240,6 +1282,9 @@ footer .additional {
   #about {
     flex-wrap: wrap;
   }
+  #about h2 {
+    padding-bottom: 20px;
+  }
   #about .bg {
     height: 100%;
   }
@@ -1251,12 +1296,33 @@ footer .additional {
     padding-bottom: 26px;
   }
   #about .blindbox {
-    max-width: 240px;
+    max-width: 400px;
+    max-height: 400px;
     margin: 54px auto;
   }
   #about .blindbox img {
     width: 100%;
     border-radius: 20%;
+  }
+  #about .blindbox:after {
+    width: 200px;
+    height: 200px;
+    top: auto;
+    right: -90px;
+    bottom: -90px;
+    left: auto;
+  }
+  #craft {
+    max-height: 100vh;
+  }
+  #team h2 {
+    padding-bottom: 20px;
+  }
+}
+@media screen and (max-width: 414px) {
+  #about .blindbox {
+    max-width: 240px;
+    max-height: 240px;
   }
   #about .blindbox:after {
     width: 120px;
@@ -1266,8 +1332,12 @@ footer .additional {
     bottom: -50px;
     left: auto;
   }
-  #craft {
-    max-height: 100vh;
+  #mint ul {
+    display: none;
+  }
+  #mint .mint-slide {
+    display: inline;
+    width: 100svw;
   }
 }
 /* -- Components.scss -- */

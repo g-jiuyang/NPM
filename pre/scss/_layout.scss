@@ -46,7 +46,7 @@ header {
                 display: flex;
                 flex-wrap: wrap;
                 justify-content: right;
-                gap: 20px 80px;
+                gap: 12px 60px;
 
                 li {
                     a {
@@ -63,25 +63,62 @@ header {
         .language {
             position: relative;
             @include font(map-get($font, PingFang), map-get($font-weight, Medium), 16);
+            color: map-get($color, dark);
             flex: 1;
             flex-grow: 0;
-            min-width: max-content;
+            min-width: 110px;
             margin-left: 76px;
-            padding-right: 16px;
-            color: map-get($color, dark);
-            @include a-animate;
 
-            &:before {
-                content: url(../img/icon/globe.svg);
-                vertical-align: middle;
-                margin-right: 8px;
+            div {
+                @include a-animate;
+
+                &:before {
+                    content: url(../img/icon/globe.svg);
+                    vertical-align: middle;
+                    margin-right: 8px;
+                }
+
+                &:after {
+                    content: url(../img/icon/arrow-s.svg);
+                    position: absolute;
+                    right: 0;
+                    top: -2px;
+                }
+
+                span {
+                    padding-right: 16px;
+                }
             }
 
-            &:after {
-                content: url(../img/icon/arrow-s.svg);
+            ul {
                 position: absolute;
-                right: 0;
-                top: -2px;
+                left: 50%;
+                transform: translateX(-50%) translateY(10px);
+                background-color: map-get($color, off-white);
+                border-radius: 12px;
+                overflow: hidden;
+                height: auto;
+                max-height: 0;
+                padding: 0 52px;
+                transition: max-height .3s, padding .3s;
+
+                li {
+                    @include a-animate;
+                    margin: 10px 0;
+                    font-weight: map-get($font-weight, Regular);
+
+                    &.active {
+                        font-weight: map-get($font-weight, Bold);
+                    }
+                }
+            }
+
+            &.show {
+                ul {
+                    max-height: 500px;
+                    padding: 18px 52px;
+                    border: rgba(map-get($color, dark), .3) solid 1px;
+                }
             }
         }
 
@@ -93,7 +130,7 @@ header {
                 color: map-get($color, off-white);
 
                 &:after {
-                    background: linear-gradient(120deg, map-get($color, off-white) 50%, map-get($color, primary) 51%);
+                    background: linear-gradient(120deg, rgba(map-get($color, off-white), 0) 50%, map-get($color, primary) 51%);
                 }
 
                 &:hover {
@@ -605,6 +642,10 @@ section {
         }
     }
 
+    .mint-slide {
+        display: none;
+    }
+
     &:after {
         content: '';
         background-image: url(../img/deco.png);
@@ -1049,13 +1090,16 @@ footer {
 
             .language {
                 order: 2;
+                min-width: max-content;
 
-                span {
-                    display: none;
-                }
+                div {
+                    &:before {
+                        margin-right: 16px;
+                    }
 
-                &:before {
-                    margin-right: 0;
+                    span {
+                        display: none;
+                    }
                 }
             }
 
@@ -1176,6 +1220,10 @@ footer {
     #about {
         flex-wrap: wrap;
 
+        h2 {
+            padding-bottom: 20px;
+        }
+
         .bg {
             height: 100%;
         }
@@ -1190,13 +1238,43 @@ footer {
         }
 
         .blindbox {
-            max-width: 240px;
+            max-width: 400px;
+            max-height: 400px;
             margin: 54px auto;
 
             img {
                 width: 100%;
                 border-radius: 20%;
             }
+
+            &:after {
+                width: 200px;
+                height: 200px;
+                top: auto;
+                right: -90px;
+                bottom: -90px;
+                left: auto;
+            }
+        }
+    }
+
+    #craft {
+        max-height: 100vh;
+    }
+
+    #team {
+        h2 {
+            padding-bottom: 20px;
+        }
+    }
+}
+
+
+@media screen and (max-width: 414px) {
+    #about {
+        .blindbox {
+            max-width: 240px;
+            max-height: 240px;
 
             &:after {
                 width: 120px;
@@ -1209,8 +1287,15 @@ footer {
         }
     }
 
-    #craft {
-        max-height: 100vh;
+    #mint {
+        ul {
+            display: none;
+        }
+
+        .mint-slide {
+            display: inline;
+            width: 100svw;
+        }
     }
 }
 
