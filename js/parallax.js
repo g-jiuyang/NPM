@@ -1,6 +1,11 @@
-$('.full-cut').scroll(function () {
-	var scrollPositionY = $('.full-cut').offset().top;
-	var mainBanner = $('.banner');
-	mainBanner.css('transform', 'translateY(' + scrollPositionY + 'px');
-	console.log(scrollPositionY);
+let layers = $('[speed]');
+let speed, yPos;
+window.addEventListener("scroll", function (event) {
+	let fromTop = this.pageYOffset;
+
+	for (let layer of layers) {
+		speed = layer.getAttribute('speed');
+		yPos = -(fromTop * speed) * 0.1;
+		layer.style.transform = `translateY(${yPos}px)`;
+	}
 })

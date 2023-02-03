@@ -54,7 +54,6 @@
 					<li class="active">繁體中文</li>
 					<li>English</li>
 					<li>日本語</li>
-					<li>한국어</li>
 				</ul>
 			</div>
 			<div class="wallet"><button>連接錢包</button></div>
@@ -372,9 +371,12 @@
 				</div>
 			</div>
 		</div>
-		<div data-aos="zoom-in-up" data-aos-delay="800" class="craft">
+		<div class="craft">
 			<img src="img/craft.png">
 		</div>
+		<!-- <div data-aos="zoom-in-up" data-aos-delay="800" class="craft">
+			<img src="img/craft.png">
+		</div> -->
 	</section>
 	<section id="mint">
 		<div>
@@ -778,12 +780,25 @@
 	<!-- jQuery -->
 	<script src="vendor/jquery.min.js"></script>
 
-	<script src="js/menu.js"></script>
+	<!-- Custom settings -->
 	<script src="js/header-hide.js"></script>
+	<script src="js/menu.js"></script>
 	<script src="js/language.js"></script>
 	<script src="js/master-hover.js"></script>
 	<script src="js/faq-show.js"></script>
 	<script src="js/go-top.js"></script>
+	<script src="js/parallax.js"></script>
+
+	<!-- Parazoom 套件 -->
+	<script src="vendor/parazoom/parazoom.min.js"></script>
+	<script type="text/javascript">
+		$('.craft img').parazoom({
+			scale: 1.1,
+			tilt: true,
+			tiltXamount: '3',
+			tiltYamount: '3'
+		});
+	</script>
 
 	<!-- AOS 套件 -->
 	<script src="vendor/aos/aos.js"></script>
@@ -824,20 +839,6 @@
 			spaceBetween: 24,
 			hashNavigation: true,
 		});
-	</script>
-
-	<script type="text/javascript">
-		let layers = $('[speed]');
-		let speed, yPos;
-		window.addEventListener("scroll", function (event) {
-			let fromTop = this.pageYOffset;
-
-			for (let layer of layers) {
-				speed = layer.getAttribute('speed');
-				yPos = -(fromTop * speed) * 0.1;
-				layer.style.transform = `translateY(${yPos}px)`;
-			}
-		})
 	</script>
 </body>
 

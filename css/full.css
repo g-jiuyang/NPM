@@ -172,6 +172,11 @@ h1 {
   font-size: 220px;
   line-height: 230px;
 }
+@media screen and (max-width: 1024px) {
+  h1 {
+    font-size: 196px;
+  }
+}
 @media screen and (max-width: 768px) {
   h1 {
     font-size: 80px;

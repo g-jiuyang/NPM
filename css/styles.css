@@ -172,6 +172,11 @@ h1 {
   font-size: 220px;
   line-height: 230px;
 }
+@media screen and (max-width: 1024px) {
+  h1 {
+    font-size: 196px;
+  }
+}
 @media screen and (max-width: 768px) {
   h1 {
     font-size: 80px;
@@ -436,7 +441,19 @@ section {
   float: left;
   height: 25svw;
   width: 33.333%;
-  filter: grayscale(1);
+  filter: grayscale(0.5);
+}
+#master .master1:after,
+#master .master2:after,
+#master .master3:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(125, 2, 0, 0.3);
+  transition: background-color 0.5s ease-in-out;
 }
 #master .widthlow {
   width: 17%;
@@ -453,12 +470,16 @@ section {
   transition-duration: 0.5s;
   transition-delay: 0.3s;
 }
+#master .widthmax:after {
+  background-color: transparent;
+}
 #master .accord-content {
   color: #E4E4E4;
   height: 100%;
   display: flex;
   align-items: flex-end;
   position: relative;
+  z-index: 1;
 }
 #master .accord-content .intro {
   transform: translateY(100%);
@@ -480,10 +501,6 @@ section {
 #master .master1 {
   background-image: url(../img/master01.jpg);
 }
-#master .master1 .accord-content {
-  position: relative;
-  z-index: 1;
-}
 #master .master1:before {
   content: "";
   position: absolute;
@@ -497,8 +514,6 @@ section {
 }
 #master .master2 .accord-content {
   background: none;
-  position: relative;
-  z-index: 1;
 }
 #master .master2:before {
   content: "";
@@ -513,8 +528,6 @@ section {
 }
 #master .master3 .accord-content {
   background: none;
-  position: relative;
-  z-index: 1;
 }
 #master .master3:after {
   content: "";
@@ -1080,7 +1093,7 @@ footer .additional .info a:hover {
     width: 60svw;
     height: 33.75svw;
     right: 5svw;
-    top: calc(8svh + 1em);
+    top: calc(8svw + 1em);
   }
   #main .subtitle {
     width: 60svw;
@@ -1100,6 +1113,9 @@ footer .additional .info a:hover {
 #master .container .master2,
 #master .container .master3 {
     height: 33.75svw;
+  }
+  #master .accord-content .intro {
+    height: 50%;
   }
   #about .subtitle {
     width: 45svw;
@@ -1202,6 +1218,12 @@ footer .additional .info a:hover {
     flex: 100%;
     text-align: right;
   }
+  #main {
+    padding: 12svw 5svw 8svw;
+  }
+  #main .banner {
+    top: calc(12svw + 1em);
+  }
   #master:after {
     left: 5svw;
   }
@@ -1236,7 +1258,7 @@ footer .additional {
     height: auto;
   }
   #main h1 {
-    margin-bottom: 0;
+    margin-bottom: 12px;
   }
   #main .banner {
     position: relative;

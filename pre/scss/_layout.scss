@@ -224,7 +224,7 @@ section {
         .master1,
         .master2,
         .master3 {
-            transition: width 0.5s ease-in-out;
+            transition: width .5s ease-in-out;
             transform: skew(0, 0);
         }
     }
@@ -238,7 +238,18 @@ section {
         float: left;
         height: 25svw;
         width: 33.333%;
-        filter: grayscale(1);
+        filter: grayscale(.5);
+
+        &:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background-color: rgba(map-get($color, primary), .3);
+            transition: background-color .5s ease-in-out;
+        }
     }
 
     .widthlow {
@@ -259,6 +270,10 @@ section {
                 transition-delay: .3s;
             }
         }
+
+        &:after {
+            background-color: transparent;
+        }
     }
 
     .accord-content {
@@ -267,6 +282,7 @@ section {
         display: flex;
         align-items: flex-end;
         position: relative;
+        z-index: 1;
 
         .intro {
             transform: translateY(100%);
@@ -291,11 +307,6 @@ section {
     .master1 {
         background-image: url(../img/master01.jpg);
 
-        .accord-content {
-            position: relative;
-            z-index: 1;
-        }
-
         &:before {
             content: '';
             position: absolute;
@@ -311,8 +322,6 @@ section {
 
         .accord-content {
             background: none;
-            position: relative;
-            z-index: 1;
         }
 
         &:before {
@@ -330,8 +339,6 @@ section {
 
         .accord-content {
             background: none;
-            position: relative;
-            z-index: 1;
         }
 
         &:after {
@@ -955,7 +962,7 @@ footer {
             width: 60svw;
             height: 33.75svw;
             right: 5svw;
-            top: calc(8svh + 1em);
+            top: calc(8svw + 1em);
         }
 
         .subtitle {
@@ -980,6 +987,12 @@ footer {
             .master2,
             .master3 {
                 height: 33.75svw;
+            }
+        }
+
+        .accord-content {
+            .intro {
+                height: 50%;
             }
         }
     }
@@ -1110,6 +1123,14 @@ footer {
         }
     }
 
+    #main {
+        padding: 12svw 5svw 8svw;
+
+        .banner {
+            top: calc(12svw + 1em);
+        }
+    }
+
     #master {
         &:after {
             left: 5svw;
@@ -1164,7 +1185,7 @@ footer {
         height: auto;
 
         h1 {
-            margin-bottom: 0;
+            margin-bottom: 12px;
         }
 
         .banner {

@@ -36,6 +36,10 @@ h1 {
     @include font(map-get($font, BebasNeue), map-get($font-weight, Regular), 220);
     line-height: calc($font-size * 230);
 
+    @media screen and (max-width: 1024px) {
+        font-size: calc($font-size * 196);
+    }
+
     @media screen and (max-width: 768px) {
         @include font-size(80);
         line-height: calc($font-size * 72);
