@@ -1089,20 +1089,22 @@ footer .additional .info a:hover {
     gap: 12px 20px;
   }
   header .options .nav {
-    z-index: -5;
-    opacity: 0;
+    display: flex;
     position: fixed;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     top: 0;
     right: 0;
-    bottom: 0;
     left: 0;
+    height: auto;
+    max-height: 0;
+    overflow: hidden;
     max-width: 100svw;
     background-color: #E4E4E4;
-    padding: 120px 24px;
-    transition: opacity 0.1s ease-in-out;
+    padding: 0 24px;
+    z-index: 5;
+    transition: all 0.2s ease-in-out;
   }
   header .options .nav .close {
     display: inline;
@@ -1132,6 +1134,9 @@ footer .additional .info a:hover {
     display: inline;
     margin-right: 28px;
   }
+  header .options .nav ul.sns li a {
+    transition: none;
+  }
   header .options .menu {
     display: flex;
     align-items: center;
@@ -1143,8 +1148,9 @@ footer .additional .info a:hover {
     display: none;
   }
   header .options .menu.active + .nav {
-    z-index: 5;
-    opacity: 1;
+    bottom: 0;
+    max-height: 100svh;
+    padding: 120px 24px;
   }
   header .options .language {
     order: 2;

@@ -1025,20 +1025,23 @@ footer {
             gap: 12px 20px;
 
             .nav {
-                z-index: -5;
-                opacity: 0;
+                display: flex;
                 position: fixed;
                 display: flex;
                 flex-wrap: wrap;
                 align-items: center;
                 top: 0;
                 right: 0;
-                bottom: 0;
                 left: 0;
+                height: auto;
+                max-height: 0;
+                overflow: hidden;
                 max-width: 100svw;
                 background-color: map-get($color, off-white);
-                padding: 120px 24px;
-                transition: opacity .1s ease-in-out;
+                padding: 0 24px;
+                z-index: 5;
+                transition: all .2s ease-in-out;
+
 
                 .close {
                     display: inline;
@@ -1067,6 +1070,10 @@ footer {
                         li {
                             display: inline;
                             margin-right: 28px;
+
+                            a {
+                                transition: none;
+                            }
                         }
                     }
                 }
@@ -1084,8 +1091,9 @@ footer {
                 }
 
                 &.active+.nav {
-                    z-index: 5;
-                    opacity: 1;
+                    bottom: 0;
+                    max-height: 100svh;
+                    padding: 120px 24px;
                 }
             }
 
