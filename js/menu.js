@@ -5,3 +5,7 @@ $('.options .menu').click(function () {
 $('.options .close').click(function () {
 	$('.options .menu').removeClass('active');
 })
+
+$('.options a').click(function () {
+	$('.options .menu').removeClass('active');
+})

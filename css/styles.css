@@ -1089,7 +1089,48 @@ footer .additional .info a:hover {
     gap: 12px 20px;
   }
   header .options .nav {
+    z-index: -5;
+    opacity: 0;
+    position: fixed;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    max-width: 100svw;
+    background-color: #E4E4E4;
+    padding: 120px 24px;
+    transition: opacity 0.1s ease-in-out;
+  }
+  header .options .nav .close {
+    display: inline;
+    border: none;
+    position: absolute;
+    top: 32px;
+    right: 24px;
+    padding: 0;
+  }
+  header .options .nav .close:after {
     display: none;
+  }
+  header .options .nav ul {
+    display: inline;
+    font-family: "Bebas Neue", cursive;
+    font-weight: 400;
+    font-size: 64px;
+    line-height: 1.2;
+  }
+  header .options .nav ul.sns {
+    display: inline;
+    position: absolute;
+    bottom: 48px;
+    left: 24px;
+  }
+  header .options .nav ul.sns li {
+    display: inline;
+    margin-right: 28px;
   }
   header .options .menu {
     display: flex;
@@ -1102,46 +1143,8 @@ footer .additional .info a:hover {
     display: none;
   }
   header .options .menu.active + .nav {
-    position: fixed;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    max-width: 100svw;
     z-index: 5;
-    background-color: #E4E4E4;
-    padding: 120px 24px;
-  }
-  header .options .menu.active + .nav .close {
-    display: inline;
-    border: none;
-    position: absolute;
-    top: 32px;
-    right: 24px;
-    padding: 0;
-  }
-  header .options .menu.active + .nav .close:after {
-    display: none;
-  }
-  header .options .menu.active + .nav ul {
-    display: inline;
-    font-family: "Bebas Neue", cursive;
-    font-weight: 400;
-    font-size: 64px;
-    line-height: 1.2;
-  }
-  header .options .menu.active + .nav ul.sns {
-    display: inline;
-    position: absolute;
-    bottom: 48px;
-    left: 24px;
-  }
-  header .options .menu.active + .nav ul.sns li {
-    display: inline;
-    margin-right: 28px;
+    opacity: 1;
   }
   header .options .language {
     order: 2;
@@ -1153,6 +1156,9 @@ footer .additional .info a:hover {
   }
   header .options .language div span {
     display: none;
+  }
+  header .options .language ul {
+    transform: translateX(calc(-50% - 8px)) translateY(10px);
   }
   header .options .wallet {
     flex: 100%;
@@ -1691,7 +1697,7 @@ button:hover:after {
   justify-content: center;
   -webkit-backdrop-filter: blur(5px);
           backdrop-filter: blur(5px);
-  z-index: 5;
+  z-index: 3;
 }
 #go-top.hidden {
   transform: translateY(200%);
