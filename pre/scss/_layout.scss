@@ -167,6 +167,7 @@ section {
 #about,
 #mint {
     padding: 8svw calc(50svw - 600px);
+    overflow: hidden;
 }
 
 #main {
@@ -707,6 +708,7 @@ section {
 
 #team {
     padding: 10svw 0 5svw calc(50svw - 600px);
+    overflow: hidden;
 
     .swiper-slide {
         .img {
@@ -1498,7 +1500,7 @@ footer {
     }
 
     #team {
-        padding-bottom: 120px;
+        padding-bottom: 168px;
 
         .swiper-slide {
             h3 {
@@ -1511,14 +1513,14 @@ footer {
             top: auto;
             left: auto;
             right: calc(5svw - 12px);
-            bottom: -48px;
+            bottom: 0;
         }
     }
 
     #partner {
         width: 100svw;
         overflow: hidden;
-        padding: 96px 0;
+        padding: 48px 0 96px;
     }
 
     footer {
