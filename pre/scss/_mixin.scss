@@ -11,7 +11,7 @@
     font-size: calc($font-size * 36);
     line-height: calc($font-size * 48);
 
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 1024px) {
         font-size: calc($font-size * 24);
         line-height: calc($font-size * 32);
     }
@@ -24,7 +24,10 @@
     line-height: calc($font-size * 40);
     text-transform: uppercase;
 
-    @media screen and (max-width: 768px) {}
+    @media screen and (max-width: 1024px) {
+        font-size: calc($font-size * 18);
+        line-height: calc($font-size * 26);
+    }
 }
 
 @mixin font-discription {
@@ -33,7 +36,10 @@
     font-size: calc($font-size * 24);
     line-height: calc($font-size * 36);
 
-    @media screen and (max-width: 768px) {}
+    @media screen and (max-width: 1024px) {
+        font-size: calc($font-size * 16);
+        line-height: calc($font-size * 24);
+    }
 }
 
 // 用法：

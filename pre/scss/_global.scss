@@ -36,11 +36,11 @@ h1 {
     @include font(map-get($font, BebasNeue), map-get($font-weight, Regular), 220);
     line-height: calc($font-size * 230);
 
-    @media screen and (max-width: 1024px) {
+    @media screen and (max-width: 1200px) {
         font-size: calc($font-size * 196);
     }
 
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 1024px) {
         @include font-size(80);
         line-height: calc($font-size * 72);
     }
@@ -68,10 +68,13 @@ img {
 @media screen and (min-width: 1440px) {}
 
 
+@media screen and (max-width: 1200px) {}
+
+
 @media screen and (max-width: 1024px) {}
 
 
-@media screen and (max-width: 768px) {}
+@media screen and (max-width: 516px) {}
 
 
 @media screen and (max-width: 320px) {}

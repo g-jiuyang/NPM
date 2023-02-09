@@ -25,20 +25,6 @@
 }
 
 /* -- animation.scss -- */
-@-webkit-keyframes breath {
-  5% {
-    box-shadow: 0 0 20px transparent;
-  }
-  30% {
-    box-shadow: 0 0 20px rgba(50, 50, 50, 0.12);
-  }
-  70% {
-    box-shadow: 0 0 20px rgba(50, 50, 50, 0.12);
-  }
-  95% {
-    box-shadow: 0 0 20px transparent;
-  }
-}
 @keyframes breath {
   5% {
     box-shadow: 0 0 20px transparent;
@@ -47,20 +33,6 @@
     box-shadow: 0 0 20px rgba(50, 50, 50, 0.12);
   }
   70% {
-    box-shadow: 0 0 20px rgba(50, 50, 50, 0.12);
-  }
-  95% {
-    box-shadow: 0 0 20px transparent;
-  }
-}
-@-webkit-keyframes breath-f {
-  5% {
-    box-shadow: 0 0 20px transparent;
-  }
-  20% {
-    box-shadow: 0 0 20px rgba(50, 50, 50, 0.12);
-  }
-  80% {
     box-shadow: 0 0 20px rgba(50, 50, 50, 0.12);
   }
   95% {
@@ -81,16 +53,6 @@
     box-shadow: 0 0 20px transparent;
   }
 }
-@-webkit-keyframes deco-round {
-  0% {
-    transform: rotate(0deg);
-    transform-origin: center;
-  }
-  100% {
-    transform: rotate(359deg);
-    transform-origin: center;
-  }
-}
 @keyframes deco-round {
   0% {
     transform: rotate(0deg);
@@ -101,28 +63,12 @@
     transform-origin: center;
   }
 }
-@-webkit-keyframes scroll {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(calc(-100% - 2.75rem));
-  }
-}
 @keyframes scroll {
   from {
     transform: translateX(0);
   }
   to {
     transform: translateX(calc(-100% - 2.75rem));
-  }
-}
-@-webkit-keyframes rscroll {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(calc(100% + 2.75rem));
   }
 }
 @keyframes rscroll {
@@ -172,12 +118,12 @@ h1 {
   font-size: 220px;
   line-height: 230px;
 }
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1200px) {
   h1 {
     font-size: 196px;
   }
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1024px) {
   h1 {
     font-size: 80px;
     line-height: 72px;
@@ -207,7 +153,6 @@ header {
   left: 0;
   right: 0;
   padding: 5svh calc(50svw - 600px) 0;
-  height: -webkit-min-content;
   height: -moz-min-content;
   height: min-content;
   color: #E4E4E4;
@@ -272,7 +217,6 @@ header .options .language {
   font-size: 16px;
   flex: 1;
   flex-grow: 0;
-  min-width: -webkit-max-content;
   min-width: -moz-max-content;
   min-width: max-content;
   margin-left: 76px;
@@ -318,8 +262,7 @@ header .options .wallet button:hover {
 .full-cut {
   height: 100svh;
   overflow-y: auto;
-  -ms-scroll-snap-type: y mandatory;
-      scroll-snap-type: y mandatory;
+  scroll-snap-type: y mandatory;
 }
 .full-cut section {
   height: 100svh;
@@ -342,8 +285,7 @@ section {
 .bg span {
   position: absolute;
   background-color: #E4E4E4;
-  -webkit-animation: breath 5s infinite;
-          animation: breath 5s infinite;
+  animation: breath 5s infinite;
 }
 
 #main,
@@ -371,8 +313,7 @@ section {
   height: 76px;
   background-image: url(../img/deco.png);
   background-size: 100%;
-  -webkit-animation: deco-round 15s linear infinite;
-          animation: deco-round 15s linear infinite;
+  animation: deco-round 15s linear infinite;
 }
 #main .banner {
   position: absolute;
@@ -517,8 +458,7 @@ section {
   top: 30.5svw;
   left: 16.5svw;
   z-index: 5;
-  -webkit-animation-name: breath-f;
-          animation-name: breath-f;
+  animation-name: breath-f;
 }
 #master .bg span:nth-child(2) {
   width: 9.5svw;
@@ -538,8 +478,7 @@ section {
   top: 4.5svw;
   right: 14svw;
   z-index: 5;
-  -webkit-animation-name: breath-f;
-          animation-name: breath-f;
+  animation-name: breath-f;
 }
 #master .bg span:nth-child(5) {
   width: 5svw;
@@ -553,8 +492,7 @@ section {
   top: 15.5svw;
   right: 14svw;
   z-index: 5;
-  -webkit-animation-name: breath-f;
-          animation-name: breath-f;
+  animation-name: breath-f;
 }
 #master .bg span:nth-child(7) {
   width: 3svw;
@@ -562,8 +500,7 @@ section {
   top: 17.5svw;
   right: 12svw;
   z-index: 5;
-  -webkit-animation-name: breath-f;
-          animation-name: breath-f;
+  animation-name: breath-f;
 }
 
 #about {
@@ -590,8 +527,7 @@ section {
   width: 300px;
   height: 300px;
   z-index: -1;
-  -webkit-animation: deco-round 15s linear infinite;
-          animation: deco-round 15s linear infinite;
+  animation: deco-round 15s linear infinite;
 }
 #about .bg span:first-child {
   width: 13svw;
@@ -605,8 +541,7 @@ section {
   top: 6.5svw;
   left: 18.5svw;
   z-index: 5;
-  -webkit-animation-name: breath-f;
-          animation-name: breath-f;
+  animation-name: breath-f;
 }
 #about .bg span:nth-child(3) {
   width: 4.5svw;
@@ -614,8 +549,7 @@ section {
   bottom: 6svw;
   left: 12svw;
   z-index: 5;
-  -webkit-animation-name: breath-f;
-          animation-name: breath-f;
+  animation-name: breath-f;
 }
 #about .bg span:nth-child(4) {
   width: 5svw;
@@ -635,8 +569,7 @@ section {
   bottom: 2.5svw;
   right: 16.5svw;
   z-index: 5;
-  -webkit-animation-name: breath-f;
-          animation-name: breath-f;
+  animation-name: breath-f;
 }
 
 #craft {
@@ -654,7 +587,6 @@ section {
   justify-content: space-around;
   flex: 0 0 auto;
   grid-column-gap: 1rem;
-  min-width: -webkit-fit-content;
   min-width: -moz-fit-content;
   min-width: fit-content;
   margin-right: 28px;
@@ -663,8 +595,7 @@ section {
   animation: scroll 30s linear infinite reverse;
 }
 #craft .marquee .marquee-content.scroll {
-  -webkit-animation: scroll 30s linear infinite;
-          animation: scroll 30s linear infinite;
+  animation: scroll 30s linear infinite;
 }
 #craft .marquee .marquee-content .text-block {
   font-family: "Bebas Neue", cursive;
@@ -711,8 +642,7 @@ section {
   width: 176px;
   height: 176px;
   z-index: -1;
-  -webkit-animation: deco-round 15s linear infinite;
-          animation: deco-round 15s linear infinite;
+  animation: deco-round 15s linear infinite;
 }
 #mint ul {
   display: flex;
@@ -806,6 +736,12 @@ section {
   line-height: 36px;
   transition: all 0.2s ease-in-out;
 }
+@media screen and (max-width: 1024px) {
+  #faq dl dd {
+    font-size: 16px;
+    line-height: 24px;
+  }
+}
 #faq dl dt {
   padding: 32px 0;
   cursor: pointer;
@@ -814,6 +750,12 @@ section {
   font-size: 28px;
   line-height: 40px;
   text-transform: uppercase;
+}
+@media screen and (max-width: 1024px) {
+  #faq dl dt {
+    font-size: 18px;
+    line-height: 26px;
+  }
 }
 #faq dl dt:not(:first-child) {
   border-top: 1px solid #323232;
@@ -832,8 +774,7 @@ section {
   width: 140px;
   height: 140px;
   margin-bottom: 3svw;
-  -webkit-animation: deco-round 15s linear infinite;
-          animation: deco-round 15s linear infinite;
+  animation: deco-round 15s linear infinite;
 }
 #team .swiper-slide .img {
   position: relative;
@@ -861,11 +802,23 @@ section {
   line-height: 40px;
   text-transform: uppercase;
 }
+@media screen and (max-width: 1024px) {
+  #team .swiper-slide h3 {
+    font-size: 18px;
+    line-height: 26px;
+  }
+}
 #team .swiper-slide p {
   font-family: "Varela", "PingFang TC", "Noto Sans TC", sans-serif;
   font-weight: 400;
   font-size: 24px;
   line-height: 36px;
+}
+@media screen and (max-width: 1024px) {
+  #team .swiper-slide p {
+    font-size: 16px;
+    line-height: 24px;
+  }
 }
 #team .swiper-slide:hover .img:after {
   background-color: transparent;
@@ -893,12 +846,10 @@ section {
   justify-content: space-around;
   flex: 0 0 auto;
   grid-column-gap: 1rem;
-  min-width: -webkit-fit-content;
   min-width: -moz-fit-content;
   min-width: fit-content;
   margin-right: 28px;
-  -webkit-animation: scroll 20s linear infinite;
-          animation: scroll 20s linear infinite;
+  animation: scroll 20s linear infinite;
 }
 #partner .marquee .line .marquee-content .text-block .small {
   display: flex;
@@ -918,8 +869,7 @@ section {
   display: inline;
 }
 #partner .marquee:hover .line .marquee-content {
-  -webkit-animation-play-state: paused;
-          animation-play-state: paused;
+  animation-play-state: paused;
 }
 
 footer {
@@ -1041,9 +991,9 @@ footer .additional .info a:hover {
     padding: 5svh 5svw 0;
   }
   #main,
-#master,
-#about,
-#mint {
+  #master,
+  #about,
+  #mint {
     padding: 8svw 5svw;
   }
   #main h1 {
@@ -1067,8 +1017,8 @@ footer .additional .info a:hover {
     bottom: 20px;
   }
   #master .container .accord-wrapper .master1,
-#master .container .accord-wrapper .master2,
-#master .container .accord-wrapper .master3 {
+  #master .container .accord-wrapper .master2,
+  #master .container .accord-wrapper .master3 {
     height: 33.75svw;
   }
   #about .subtitle {
@@ -1093,7 +1043,7 @@ footer .additional .info a:hover {
     padding: 3svw 5svw 5svw;
   }
 }
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1200px) {
   header {
     padding-top: 20px;
   }
@@ -1170,7 +1120,7 @@ footer .additional .info a:hover {
     text-align: right;
   }
   footer .links,
-footer .additional {
+  footer .additional {
     max-width: 85svw;
   }
   footer .links .sns {
@@ -1187,7 +1137,7 @@ h2 {
   font-size: 128px;
   line-height: 128px;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1024px) {
   h2 {
     font-size: 64px;
     line-height: 64px;
@@ -1201,7 +1151,7 @@ h2 {
   line-height: 48px;
   text-transform: uppercase;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1024px) {
   .subtitle {
     font-size: 24px;
     line-height: 32px;
@@ -1214,7 +1164,7 @@ h2 {
   font-size: 28px;
   line-height: 40px;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1024px) {
   .content {
     font-size: 18px;
     line-height: 26px;
@@ -1227,7 +1177,7 @@ h2 {
   font-size: 24px;
   line-height: 36px;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1024px) {
   .description {
     font-size: 16px;
     line-height: 24px;
@@ -1268,7 +1218,7 @@ button:hover:after {
   left: 0;
   right: -120%;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1024px) {
   button {
     font-size: 20px;
     line-height: 26px;
@@ -1293,4 +1243,39 @@ button:hover:after {
 
 .swiper-horizontal > .swiper-pagination-bullets {
   bottom: 24px;
+}
+
+#go-top {
+  position: fixed;
+  right: 50px;
+  bottom: 50px;
+  width: 84px;
+  height: 84px;
+  padding: 0;
+  border-radius: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+  z-index: 5;
+}
+#go-top.hidden {
+  transform: translateY(200%);
+}
+#go-top img {
+  transition: filter 0.3s ease-in-out;
+  max-width: initial;
+}
+#go-top:hover img {
+  filter: brightness(0) invert(1);
+}
+
+@media screen and (max-width: 516px) {
+  #go-top {
+    right: 5svw;
+    bottom: 5svw;
+    width: 60px;
+    height: 60px;
+  }
 }

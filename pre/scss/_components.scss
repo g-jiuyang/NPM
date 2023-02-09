@@ -5,7 +5,7 @@ h2 {
     @include font(map-get($font, BebasNeue), 400, 128);
     line-height: calc($font-size * 128);
 
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 1024px) {
         font-size: calc($font-size * 64);
         line-height: calc($font-size * 64);
     }
@@ -16,7 +16,7 @@ h2 {
     line-height: calc($font-size * 48);
     text-transform: uppercase;
 
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 1024px) {
         font-size: calc($font-size * 24);
         line-height: calc($font-size * 32);
     }
@@ -26,7 +26,7 @@ h2 {
     @include font(map-get($font, Varela), 400, 28);
     line-height: calc($font-size * 40);
 
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 1024px) {
         font-size: calc($font-size * 18);
         line-height: calc($font-size * 26);
     }
@@ -36,7 +36,7 @@ h2 {
     @include font(map-get($font, Varela), 400, 24);
     line-height: calc($font-size * 36);
 
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 1024px) {
         font-size: calc($font-size * 16);
         line-height: calc($font-size * 24);
     }
@@ -79,7 +79,7 @@ button {
         }
     }
 
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 1024px) {
         @include font-size(20);
         line-height: 26px;
         padding: 12px 36px;
@@ -108,13 +108,54 @@ button {
     bottom: 24px;
 }
 
+// go top button
+#go-top {
+    position: fixed;
+    right: 50px;
+    bottom: 50px;
+    width: 84px;
+    height: 84px;
+    padding: 0;
+    border-radius: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(5px);
+    z-index: 5;
+
+    &.hidden {
+        transform: translateY(200%);
+    }
+
+    img {
+        transition: filter .3s ease-in-out;
+        max-width: initial;
+    }
+
+    &:hover {
+        img {
+            filter: brightness(0) invert(1);
+        }
+    }
+}
+
 @media screen and (min-width: 1440px) {}
+
+
+@media screen and (max-width: 1200px) {}
 
 
 @media screen and (max-width: 1024px) {}
 
 
-@media screen and (max-width: 767px) {}
+@media screen and (max-width: 516px) {
+    #go-top {
+        right: 5svw;
+        bottom: 5svw;
+        width: 60px;
+        height: 60px;
+    }
+}
 
 
 @media screen and (max-width: 320px) {}

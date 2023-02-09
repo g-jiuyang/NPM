@@ -59,6 +59,7 @@
 			<div class="wallet"><button>連接錢包</button></div>
 		</div>
 	</header>
+
 	<section id="main">
 		<h1 speed="-5">Mysterious<br>Box</h1>
 		<div class="swiper banner" speed="3">
@@ -422,6 +423,9 @@
 						<button>Mint Now</button>
 					</div>
 				</div>
+
+				<div class="swiper-button-next"></div>
+				<div class="swiper-button-prev"></div>
 			</div>
 		</div>
 	</section>
@@ -793,10 +797,10 @@
 	<script src="vendor/parazoom/parazoom.min.js"></script>
 	<script type="text/javascript">
 		$('.craft img').parazoom({
-			scale: 1.1,
+			scale: 1,
 			tilt: true,
-			tiltXamount: '3',
-			tiltYamount: '3'
+			tiltXamount: '12',
+			tiltYamount: '12'
 		});
 	</script>
 
@@ -824,20 +828,21 @@
 
 		// 團隊輪播
 		var swiperTeams = new Swiper('.teams', {
-			slidesPerView: 3.4,
+			slidesPerView: 1.7,
 			spaceBetween: 24,
 			breakpoints: {
-				769: {
-					slidesPerView: 5.2
-				}
+				517: { slidesPerView: 3.4 },
+				769: { slidesPerView: 5.2 }
 			}
 		});
 
 		// Mint輪播
 		var swiperTeams = new Swiper('.mint-slide', {
 			slidesPerView: 'auto',
-			spaceBetween: 24,
-			hashNavigation: true,
+			navigation: {
+				nextEl: '.swiper-button-next',
+				prevEl: '.swiper-button-prev',
+			},
 		});
 	</script>
 </body>
