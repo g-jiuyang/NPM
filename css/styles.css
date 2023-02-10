@@ -1382,7 +1382,7 @@ footer .additional .info a:hover {
     right: calc(5svw + 28px);
   }
   #master:after {
-    top: calc(8svw + 180px);
+    top: calc(8svw + 104px);
     transform: scale(0.5) translateX(-50%);
   }
   #about .blindbox {
@@ -1743,6 +1743,13 @@ button:hover:after {
 }
 
 @media screen and (max-width: 516px) {
+  .swiper-horizontal > .swiper-pagination-bullets {
+    bottom: 8px;
+    height: 14px;
+  }
+  .swiper-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet {
+    transform: translateY(-86px);
+  }
   #go-top {
     right: 5svw;
     bottom: 5svw;
