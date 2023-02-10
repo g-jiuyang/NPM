@@ -58,6 +58,16 @@
 //     @include font-size(12);
 // }
 
+// 字重
+@mixin font-weight($fw: Regular) {
+    font-weight: map-get($font-weight, $fw);
+}
+
+// 用法：
+// .fw {
+//     @include font-weight(Medium);
+// }
+
 // 顏色
 @each $name,
 $color in $color {

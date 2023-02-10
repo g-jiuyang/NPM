@@ -66,27 +66,41 @@ header {
             color: map-get($color, dark);
             flex: 1;
             flex-grow: 0;
-            min-width: 110px;
+            min-width: 120px;
             margin-left: 76px;
 
             div {
                 @include a-animate;
+                display: flex;
+                align-items: center;
+
+                &:before,
+                &:after {
+                    content: '';
+                    background-size: 100%;
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    height: 40px;
+                }
 
                 &:before {
-                    content: url(../img/icon/globe.svg);
-                    vertical-align: middle;
+                    width: 24px;
+                    display: inline-block;
+                    background-image: url(../img/icon/globe.svg);
                     margin-right: 8px;
                 }
 
                 &:after {
-                    content: url(../img/icon/arrow-s.svg);
+                    background-image: url(../img/icon/arrow-s.svg);
                     position: absolute;
+                    top: 0;
                     right: 0;
-                    top: -2px;
+                    width: 12px;
                 }
 
                 span {
                     padding-right: 16px;
+                    word-break: keep-all;
                 }
             }
 
@@ -105,10 +119,10 @@ header {
                 li {
                     @include a-animate;
                     margin: 10px 0;
-                    font-weight: map-get($font-weight, Regular);
+                    @include font-weight(Regular);
 
                     &.active {
-                        font-weight: map-get($font-weight, Bold);
+                        @include font-weight(Bold);
                     }
                 }
             }
@@ -953,12 +967,7 @@ footer {
         .container {
             width: calc(90svw - 10em);
             height: calc((90svw - 10em)/16*9);
-            top: calc(8svw + 5em);
-            // width: 60svw;
-            // height: 33.75svw;
             right: 5svw;
-            // top: auto;
-            // bottom: 8svw;
 
             .master1,
             .master2,
@@ -1103,7 +1112,7 @@ footer {
 
                 div {
                     &:before {
-                        margin-right: 16px;
+                        margin-right: 20px;
                     }
 
                     span {
@@ -1188,7 +1197,6 @@ footer {
     }
 
     #main,
-    #master,
     #about,
     #mint {
         padding: 120px 5svw;
@@ -1217,12 +1225,13 @@ footer {
         &:after {
             top: auto;
             right: 5svw;
-            bottom: 12px;
+            bottom: 60px;
             left: auto;
         }
     }
 
     #master {
+        padding: 60px 5svw 120px;
         height: auto;
 
         .bg {
@@ -1307,6 +1316,16 @@ footer {
         .teams {
             padding-left: 5svw;
         }
+
+        .swiper-slide {
+            &.swiper-slide-active {
+                .img {
+                    &:after {
+                        background-color: transparent;
+                    }
+                }
+            }
+        }
     }
 }
 
@@ -1341,7 +1360,7 @@ footer {
                     width: 32px;
                     height: 32px;
                     top: auto;
-                    bottom: 0;
+                    bottom: 12px;
                     left: calc(5svw + 60px);
                 }
 
@@ -1349,7 +1368,7 @@ footer {
                     width: 56px;
                     height: 56px;
                     top: auto;
-                    bottom: 30px;
+                    bottom: 44px;
                     left: calc(5svw + 12px);
                 }
 
@@ -1357,36 +1376,36 @@ footer {
                     width: 24px;
                     height: 24px;
                     top: auto;
-                    bottom: 24px;
+                    bottom: 36px;
                     left: calc(5svw + 88px);
                 }
 
                 &:nth-child(4) {
                     width: 88px;
                     height: 88px;
-                    top: 32px;
+                    top: 20px;
                     right: calc(5svw + 36px);
                 }
 
                 &:nth-child(5) {
                     width: 62px;
                     height: 62px;
-                    top: 94px;
+                    top: 80px;
                     right: 5svw;
                 }
 
                 &:nth-child(6) {
                     width: 32px;
                     height: 32px;
-                    top: 168px;
-                    right: calc(5svw + 28px);
+                    top: 128px;
+                    right: calc(5svw + 44px);
                 }
 
                 &:nth-child(7) {
-                    width: 32px;
-                    height: 32px;
-                    top: 196px;
-                    right: calc(5svw + 8px);
+                    width: 24px;
+                    height: 24px;
+                    top: 152px;
+                    right: calc(5svw + 28px);
                 }
             }
         }
@@ -1468,6 +1487,17 @@ footer {
     }
 
     #craft {
+        height: auto;
+        max-height: 200svh;
+
+        .marquee {
+            .marquee-content {
+                .text-block {
+                    @include font-size(120);
+                }
+            }
+        }
+
         .craft {
             img {
                 max-width: 130%;
@@ -1535,6 +1565,11 @@ footer {
             .swiper-button-next,
             .swiper-button-prev {
                 color: map-get($color, dark);
+                transition: opacity .2s ease-in-out;
+
+                &.swiper-button-disabled {
+                    opacity: 0;
+                }
             }
         }
     }
@@ -1658,7 +1693,7 @@ footer {
                 gap: 12px 28px;
                 margin-bottom: 40px;
                 @include font-size(14);
-                font-weight: map-get($font-weight, Medium);
+                @include font-weight(Medium);
                 flex-wrap: wrap;
 
                 li {

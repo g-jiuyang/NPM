@@ -224,7 +224,7 @@ header .options .language {
   color: #323232;
   flex: 1;
   flex-grow: 0;
-  min-width: 110px;
+  min-width: 120px;
   margin-left: 76px;
 }
 header .options .language div {
@@ -235,23 +235,35 @@ header .options .language div {
   background-position: 100%;
   transition: all 0.5s ease-in;
   cursor: pointer;
+  display: flex;
+  align-items: center;
 }
 header .options .language div:hover {
   background-position: 0 100%;
 }
+header .options .language div:before, header .options .language div:after {
+  content: "";
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 40px;
+}
 header .options .language div:before {
-  content: url(../img/icon/globe.svg);
-  vertical-align: middle;
+  width: 24px;
+  display: inline-block;
+  background-image: url(../img/icon/globe.svg);
   margin-right: 8px;
 }
 header .options .language div:after {
-  content: url(../img/icon/arrow-s.svg);
+  background-image: url(../img/icon/arrow-s.svg);
   position: absolute;
+  top: 0;
   right: 0;
-  top: -2px;
+  width: 12px;
 }
 header .options .language div span {
   padding-right: 16px;
+  word-break: keep-all;
 }
 header .options .language ul {
   position: absolute;
@@ -1042,7 +1054,6 @@ footer .additional .info a:hover {
   #master .container {
     width: calc(90svw - 10em);
     height: calc((90svw - 10em) / 16 * 9);
-    top: calc(8svw + 5em);
     right: 5svw;
   }
   #master .container .master1,
@@ -1158,7 +1169,7 @@ footer .additional .info a:hover {
     min-width: max-content;
   }
   header .options .language div:before {
-    margin-right: 16px;
+    margin-right: 20px;
   }
   header .options .language div span {
     display: none;
@@ -1207,7 +1218,6 @@ footer .additional .info a:hover {
     line-height: 20px;
   }
   #main,
-  #master,
   #about,
   #mint {
     padding: 120px 5svw;
@@ -1232,10 +1242,11 @@ footer .additional .info a:hover {
   #main:after {
     top: auto;
     right: 5svw;
-    bottom: 12px;
+    bottom: 60px;
     left: auto;
   }
   #master {
+    padding: 60px 5svw 120px;
     height: auto;
   }
   #master .bg {
@@ -1305,6 +1316,9 @@ footer .additional .info a:hover {
   #team .teams {
     padding-left: 5svw;
   }
+  #team .swiper-slide.swiper-slide-active .img:after {
+    background-color: transparent;
+  }
 }
 @media screen and (max-width: 516px) {
   header {
@@ -1326,46 +1340,46 @@ footer .additional .info a:hover {
     width: 32px;
     height: 32px;
     top: auto;
-    bottom: 0;
+    bottom: 12px;
     left: calc(5svw + 60px);
   }
   #master .bg span:nth-child(2) {
     width: 56px;
     height: 56px;
     top: auto;
-    bottom: 30px;
+    bottom: 44px;
     left: calc(5svw + 12px);
   }
   #master .bg span:nth-child(3) {
     width: 24px;
     height: 24px;
     top: auto;
-    bottom: 24px;
+    bottom: 36px;
     left: calc(5svw + 88px);
   }
   #master .bg span:nth-child(4) {
     width: 88px;
     height: 88px;
-    top: 32px;
+    top: 20px;
     right: calc(5svw + 36px);
   }
   #master .bg span:nth-child(5) {
     width: 62px;
     height: 62px;
-    top: 94px;
+    top: 80px;
     right: 5svw;
   }
   #master .bg span:nth-child(6) {
     width: 32px;
     height: 32px;
-    top: 168px;
-    right: calc(5svw + 28px);
+    top: 128px;
+    right: calc(5svw + 44px);
   }
   #master .bg span:nth-child(7) {
-    width: 32px;
-    height: 32px;
-    top: 196px;
-    right: calc(5svw + 8px);
+    width: 24px;
+    height: 24px;
+    top: 152px;
+    right: calc(5svw + 28px);
   }
   #master:after {
     top: calc(8svw + 180px);
@@ -1427,6 +1441,13 @@ footer .additional .info a:hover {
     top: calc(50% + 28px);
     left: 5svw;
   }
+  #craft {
+    height: auto;
+    max-height: 200svh;
+  }
+  #craft .marquee .marquee-content .text-block {
+    font-size: 120px;
+  }
   #craft .craft img {
     max-width: 130%;
   }
@@ -1479,6 +1500,11 @@ footer .additional .info a:hover {
   #mint .mint-slide .swiper-button-next,
   #mint .mint-slide .swiper-button-prev {
     color: #323232;
+    transition: opacity 0.2s ease-in-out;
+  }
+  #mint .mint-slide .swiper-button-next.swiper-button-disabled,
+  #mint .mint-slide .swiper-button-prev.swiper-button-disabled {
+    opacity: 0;
   }
   #faq dl {
     margin-left: 0;
